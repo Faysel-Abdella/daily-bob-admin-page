@@ -25,7 +25,7 @@ import {
 import React, { useState } from "react";
 import row4Column1 from "@/data/tables/row4Column1";
 
-const page = () => {
+const Page = () => {
   const {
     isOpen: isDeleteBtn,
     onOpen: onDeleteBtn,
@@ -440,4 +440,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

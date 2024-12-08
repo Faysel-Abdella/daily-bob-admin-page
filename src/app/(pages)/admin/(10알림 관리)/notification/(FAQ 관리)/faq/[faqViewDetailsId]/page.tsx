@@ -4,7 +4,7 @@ import { Button } from "@nextui-org/react";
 import Link from "next/link";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   return (
     <section>
       <CommonHeader title="FAQ 상세보기 " />
@@ -20,10 +20,15 @@ const page = () => {
         <div></div>
       </header>
       <div className="flex items-center justify-center mt-10">
-    <Button className="py-3 px-8 bg-mainBlack text-white "> <Link href="/admin/notification/notification-management/faq/1/1">수정</Link></Button>
+        <Button className="py-3 px-8 bg-mainBlack text-white ">
+          {" "}
+          <Link href="/admin/notification/notification-management/faq/1/1">
+            수정
+          </Link>
+        </Button>
       </div>
     </section>
   );
 };
 
-export default page;
+export default Page;

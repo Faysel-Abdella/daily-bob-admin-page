@@ -19,7 +19,7 @@ import {
 } from "@nextui-org/react";
 import React, { useState } from "react";
 
-const page = () => {
+const Page = () => {
   const viewOptions = [
     {
       key: "10",
@@ -252,14 +252,14 @@ const page = () => {
                         options={dropDownOptions}
                         defaultSelectedKeys={defaultSelectedKey}
                         titleStyles=" text-base text-mainBlack min-w-[40px]"
-                         selectStyles="w-[120px]"
+                        selectStyles="w-[120px]"
                       />
                       <DropDownWithLabel
                         title="하위 그룹"
                         options={dropDownOptions}
                         defaultSelectedKeys={defaultSelectedKey}
                         titleStyles=" text-base text-mainBlack min-w-[40px]"
-                         selectStyles="w-[120px]"
+                        selectStyles="w-[120px]"
                       />
                     </div>
                   </TableCell>
@@ -273,4 +273,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -18,7 +18,7 @@ import {
 } from "@nextui-org/react";
 import React, { useState } from "react";
 
-const page = () => {
+const Page = () => {
   const viewOptions = [
     {
       key: "10",
@@ -188,35 +188,35 @@ const page = () => {
                   <TableCell>
                     {/* Row Checkbox */}
                     <Checkbox
-                  onClick={() => {
-                    if (allListCheckedPageNumbers.includes(page)) {
-                      setAllListCheckedPageNumbers(
-                        allListCheckedPageNumbers.filter(
-                          (number) => number !== page
-                        )
-                      );
-                      setClickedRowIds(
-                        clickedRowIds.filter(
-                          (number) =>
-                            !items
-                              .map((item: any) => item.number)
-                              .includes(number)
-                        )
-                      );
-                    } else {
-                      setClickedRowIds([
-                        ...clickedRowIds,
-                        ...items.map((item: any) => item.number),
-                      ]);
-                      setAllListCheckedPageNumbers([
-                        ...allListCheckedPageNumbers,
-                        page,
-                      ]);
-                    }
-                  }}
-                  className="size-[14px] rounded-[2px] bg-transparent"
-                  isSelected={allListCheckedPageNumbers.includes(page)}
-                />
+                      onClick={() => {
+                        if (allListCheckedPageNumbers.includes(page)) {
+                          setAllListCheckedPageNumbers(
+                            allListCheckedPageNumbers.filter(
+                              (number) => number !== page
+                            )
+                          );
+                          setClickedRowIds(
+                            clickedRowIds.filter(
+                              (number) =>
+                                !items
+                                  .map((item: any) => item.number)
+                                  .includes(number)
+                            )
+                          );
+                        } else {
+                          setClickedRowIds([
+                            ...clickedRowIds,
+                            ...items.map((item: any) => item.number),
+                          ]);
+                          setAllListCheckedPageNumbers([
+                            ...allListCheckedPageNumbers,
+                            page,
+                          ]);
+                        }
+                      }}
+                      className="size-[14px] rounded-[2px] bg-transparent"
+                      isSelected={allListCheckedPageNumbers.includes(page)}
+                    />
                   </TableCell>
                   <TableCell className="truncate max-w-[80px] overflow-hidden text-ellipsis whitespace-nowrap">
                     {row.number}
@@ -246,4 +246,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

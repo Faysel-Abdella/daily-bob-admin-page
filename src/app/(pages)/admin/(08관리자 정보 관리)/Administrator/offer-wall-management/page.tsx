@@ -19,8 +19,8 @@ import {
 import Link from "next/link";
 import React, { useState } from "react";
 
-const page = () => {
-   const labelStyle = "font-bold text-base text-mainBlack min-w-[100px]";
+const Page = () => {
+  const labelStyle = "font-bold text-base text-mainBlack min-w-[100px]";
   const dropDownOptions = [
     { key: "option1", label: "카테고리" },
     { key: "option2", label: "카테고리" },
@@ -52,7 +52,6 @@ const page = () => {
 
   // Pagination Logic
   const [page, setPage] = useState(1);
-
 
   const rowsPerPage = parseInt(viewValue);
 
@@ -222,12 +221,8 @@ const page = () => {
                   <TableCell className="truncate max-w-[150px] overflow-hidden text-ellipsis whitespace-nowrap">
                     {row.advertisement}
                   </TableCell>
-                  <TableCell>
-                    {row.subGroup}
-                  </TableCell>
-                  <TableCell>
-                    {row.point}
-                  </TableCell>
+                  <TableCell>{row.subGroup}</TableCell>
+                  <TableCell>{row.point}</TableCell>
                   <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
                     <Link
                       className="text-[#4A3AFF] underline underline-offset-1"
@@ -246,4 +241,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -4,7 +4,7 @@ import { Button, Checkbox } from '@nextui-org/react'
 import { group } from 'console'
 import React, { useState } from 'react'
 
-const page = () => {
+const Page = () => {
     const groupNameData=[
         {
             superAdministrator:"최고 관리자",
@@ -108,4 +108,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

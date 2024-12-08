@@ -9,7 +9,7 @@ import assets from "@/assets";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useRef } from "react";
-const page = () => {
+const Page = () => {
     const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
     const editor = useRef(null);
   const config = {
@@ -127,4 +127,4 @@ const page = () => {
       )
 }
 
-export default page
+export default Page

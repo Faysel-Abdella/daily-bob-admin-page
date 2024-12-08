@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-const page = () => {
-  return (
-    <div>entry-ticket-member-management</div>
-  )
-}
+const Page = () => {
+  return <div>entry-ticket-member-management</div>;
+};
 
-export default page
+export default Page;

@@ -19,7 +19,7 @@ import {
 import Link from "next/link";
 import React, { useState } from "react";
 
-const page = () => {
+const Page = () => {
   const dropDownOptions = [
     { key: "option1", label: "카테고리" },
     { key: "option2", label: "카테고리" },
@@ -248,7 +248,7 @@ const page = () => {
                     <DropDown
                       options={dropDownOptions}
                       defaultSelectedKeys={defaultDropDown}
-                       selectStyles="w-[120px]"
+                      selectStyles="w-[120px]"
                     />
                   </TableCell>
                   <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
@@ -269,4 +269,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

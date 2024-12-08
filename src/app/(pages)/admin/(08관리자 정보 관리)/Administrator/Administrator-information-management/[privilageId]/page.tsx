@@ -6,7 +6,7 @@ import { Button } from '@nextui-org/react'
 import Link from 'next/link'
 import React from 'react'
 
-const page = () => {
+const Page = () => {
     const labelStyle = "font-bold text-base text-mainBlack min-w-[90px]";
   const dropDownOptions = [
     { key: "option1", label: "전체 회원" },
@@ -67,4 +67,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

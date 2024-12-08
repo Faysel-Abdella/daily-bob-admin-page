@@ -18,7 +18,7 @@ import React from "react";
 import HeaderDropDown from "@/components/HeaderDropDown";
 import Link from "next/link";
 
-const page = () => {
+const Page = () => {
   const viewOptions = [
     {
       key: "10",
@@ -171,4 +171,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
