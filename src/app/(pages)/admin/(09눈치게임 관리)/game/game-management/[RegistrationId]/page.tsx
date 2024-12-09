@@ -192,15 +192,15 @@ const Page = () => {
 
                 <div className="mt-7 flex justify-center items-center gap-3">
                   <Button
-                    className="  py-3 px-8 rounded-md bg-grayLight font-bold text-base text-white"
+                    className="  py-3 px-8 rounded-md bg-[#ECEDF1] font-bold text-base text-[#868F9A]"
                     onClick={() => {
                       onCheckBtnChange();
                     }}
                   >
-                    글쓰기
+                    취소
                   </Button>
                   <Button
-                    className=" py-3 px-8 rounded-md bg-mainRed font-bold text-base text-white"
+                    className=" py-3 px-8 rounded-md bg-[#ECEDF1] font-bold text-base text-[#ED3D2E]"
                     onClick={() => {
                       onCheckBtnChange();
                     }}
