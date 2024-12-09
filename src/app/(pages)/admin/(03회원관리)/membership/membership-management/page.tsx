@@ -25,7 +25,7 @@ import {
 import React, { useState } from "react";
 import row4Column1 from "@/data/tables/row4Column1";
 
-const Page = () => {
+const page = () => {
   const {
     isOpen: isDeleteBtn,
     onOpen: onDeleteBtn,
@@ -83,10 +83,15 @@ const Page = () => {
     return row4Column1.slice(start, end);
   }, [page, row4Column1, viewValue, rowsPerPage]);
   const labelStyle = "font-bold text-base text-mainBlack min-w-[98px]";
-  const dropDownOptions = [
-    { key: "option1", label: "전체 회원" },
-    { key: "option2", label: "전체 회원" },
-    { key: "option3", label: "전체 회원" },
+  const dropDownOptions1 = [
+    { key: "option1", label: "차단 중" },
+    { key: "option2", label: "차단 중" },
+    { key: "option3", label: "차단 중" },
+  ];
+  const dropDownOptions2 = [
+    { key: "option1", label: "자체" },
+    { key: "option2", label: "자체" },
+    { key: "option3", label: "자체" },
   ];
   // Selection Logic
   const [clickedRowIds, setClickedRowIds] = useState<number[]>([]);
@@ -97,7 +102,6 @@ const Page = () => {
   return (
     <section>
       <CommonHeader title="포인트 상세정보" />
-      <Link href="/admin/membership/membership-management/1">id</Link>
       <header className="bg-white py-7 px-10 rounded-[20px] flex  justify-between gap-8">
         <div className="w-full">
           <div className="flex items-center gap-14 w-full">
@@ -138,7 +142,7 @@ const Page = () => {
             <div w-full>
               <DropDownWithLabel
                 title="차단 여부"
-                options={dropDownOptions}
+                options={dropDownOptions1}
                 defaultSelectedKeys="option1"
                 titleStyles={labelStyle}
                 selectStyles="w-96 "
@@ -148,7 +152,7 @@ const Page = () => {
             <div className="w-full">
               <DropDownWithLabel
                 title="로그인 방식"
-                options={dropDownOptions}
+                options={dropDownOptions2}
                 defaultSelectedKeys="option1"
                 titleStyles={labelStyle}
                 selectStyles="w-96"
@@ -355,17 +359,17 @@ const Page = () => {
 
                 <div className="mt-7 flex justify-center items-center gap-3">
                   <Button
-                    className="  py-3 px-5 rounded-md bg-whiteGray font-bold text-base text-white"
+                    className="  py-3 px-5 rounded-md bg-whiteGray font-bold text-base text-[#868F9A]"
                     onClick={() => {
                       onUnblockBtnChange();
                     }}
-                  ></Button>
+                  ><p>글쓰기</p></Button>
                   <Button
-                    className=" py-3 px-8 rounded-md bg-whiteGray font-bold text-base text-white"
+                    className=" py-3 px-8 rounded-md bg-whiteGray font-bold text-base text-[#ED3D2E]"
                     onClick={() => {
                       onUnblockBtnChange();
                     }}
-                  ></Button>
+                  ><p>글쓰기</p></Button>
                 </div>
               </ModalBody>
               <ModalFooter></ModalFooter>
@@ -418,17 +422,17 @@ const Page = () => {
 
                 <div className="mt-7 flex justify-center items-center gap-3">
                   <Button
-                    className="  py-3 px-5 rounded-md bg-whiteGray font-bold text-base text-white"
+                    className="  py-3 px-5 rounded-md bg-whiteGray font-bold text-base text-[#868F9A]"
                     onClick={() => {
                       onblockBtnChange();
                     }}
-                  ></Button>
+                  ><p>취소</p></Button>
                   <Button
-                    className=" py-3 px-8 rounded-md bg-whiteGray font-bold text-base text-white"
+                    className=" py-3 px-8 rounded-md bg-whiteGray text-[#ED3D2E] font-bold text-base"
                     onClick={() => {
                       onblockBtnChange();
                     }}
-                  ></Button>
+                  ><p>확인</p></Button>
                 </div>
               </ModalBody>
               <ModalFooter></ModalFooter>
@@ -440,4 +444,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;

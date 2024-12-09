@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import React, { useRef } from "react";
 
-const Page = () => {
+const page = () => {
   const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
   const editor = useRef(null);
   const config = {
@@ -50,4 +50,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;

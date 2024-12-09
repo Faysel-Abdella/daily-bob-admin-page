@@ -37,4 +37,3 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 # GreatM-Next.js-Client-side
 # dailyBob
 # dailyBob
-# daily-bob-admin-page

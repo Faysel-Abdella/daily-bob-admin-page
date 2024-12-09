@@ -6,8 +6,8 @@ const sideBarContent = [
     mainTitle: "관리자 메인",
     icon: assets.member,
     activeIcon: assets.memberActive,
-    init: "/admin/member-points-and-entry-tickets",
-    firstRoute: "/admin/member-points-and-entry-tickets/member-points-and-entry-tickets-management",
+    init: "/admin/adminMain",
+    firstRoute: "/admin/adminMain",
     subTitles: [],
   },
   {
@@ -98,7 +98,7 @@ const sideBarContent = [
         },
         {
             label:"권한 관리",
-            route:"/admin/settlement/settlement-management"
+            route:"/admin/settlement/permission-management"
         },
         {
             label:"네이버 포인트 전환 목록",
@@ -112,7 +112,7 @@ const sideBarContent = [
     mainTitle: "광고 관리",
     icon: assets.Ads,
     activeIcon: assets.AdsActive,
-    init: "/admin/Ad",
+    init: "/admin/Administrator",
     firstRoute: "/admin/Administrator/offer-wall-management",
     subTitles: [
         {
@@ -136,11 +136,11 @@ const sideBarContent = [
     subTitles: [
         {
             label:"눈치게임 목록",
-            route: "/admin/game/game-management/Register-the-guess-game",
+            route: "/admin/game/game-management",
         },
         {
             label:"데일리 퀴즈 목록",
-            route: "/admin/game/game-management/daily-quiz-management",
+            route: "/admin/game/daily-quiz-management",
         },
 
     ],

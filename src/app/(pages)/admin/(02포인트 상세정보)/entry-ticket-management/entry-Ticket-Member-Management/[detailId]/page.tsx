@@ -58,7 +58,7 @@ const Page = () => {
         <div className="mt-6 w-full">
           <InputWithLabel label="CI" labelStyles={labelStyle} inputStyles="" />
         </div>
-        <div className="mt-6 flex items-center justify-between w-full">
+        <div className="mt-6  flex items-center gap-20 w-full">
           <InputWithLabel
             label="총 지급 포인트"
             labelStyles={labelStyle}

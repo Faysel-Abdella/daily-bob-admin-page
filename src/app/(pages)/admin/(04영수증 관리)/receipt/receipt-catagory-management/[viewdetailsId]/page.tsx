@@ -5,13 +5,31 @@ import DropDownWithLabel from "@/components/DropDownWithLabel";
 import InputWithLabel from "@/components/InputWithLabel";
 import { Button } from "@nextui-org/react";
 
-const Page = () => {
-  const dropDownOptions = [
-    { key: "option1", label: "전체 회원" },
-    { key: "option2", label: "전체 회원" },
-    { key: "option3", label: "전체 회원" },
+const page = () => {
+  const dropDownOptions1 = [
+    { key: "option1", label: "식당" },
+    { key: "option2", label: "식당" },
+    { key: "option3", label: "식당" },
   ];
-  const defaultSelectedKey = dropDownOptions[0].key;
+  const defaultSelectedKey1 = dropDownOptions1[0].key;
+  const dropDownOptions2 = [
+    { key: "option1", label: "식품" },
+    { key: "option2", label: "식품" },
+    { key: "option3", label: "식품" },
+  ];
+  const defaultSelectedKey2 = dropDownOptions2[0].key;
+  const dropDownOptions3 = [
+    { key: "option1", label: "-" },
+    { key: "option2", label: "-" },
+    { key: "option3", label: "-" },
+  ];
+  const defaultSelectedKey3 = dropDownOptions3[0].key;
+  const dropDownOptions4 = [
+    { key: "option1", label: "-" },
+    { key: "option2", label: "-" },
+    { key: "option3", label: "-" },
+  ];
+  const defaultSelectedKey4 = dropDownOptions4[0].key;
   const labelStyle = "font-bold text-base text-mainBlack min-w-[90px]";
   return (
     <section>
@@ -29,13 +47,35 @@ const Page = () => {
           </p>
           <p className="text-sm font-normal text-grayLight">YYYY-MM-DD </p>
         </div>
+        <div className="flex items-center gap-8">
         <div className="flex items-center gap-7 mt-3">
           <p className="min-w-[71px] text-base font-bold text-mainBlack">
             업종
           </p>
           <DropDown
-            options={dropDownOptions}
-            defaultSelectedKeys={defaultSelectedKey}
+            options={dropDownOptions1}
+            defaultSelectedKeys={defaultSelectedKey1}
+            selectStyles="w-[124px]"
+          />
+        </div>
+        <div className="flex items-center gap-7 mt-3">
+          <p className="min-w-[71px] text-base font-bold text-mainBlack">
+          하위 업종
+          </p>
+          <DropDown
+            options={dropDownOptions1}
+            defaultSelectedKeys={defaultSelectedKey1}
+            selectStyles="w-[124px]"
+          />
+        </div>
+        </div>
+        <div className="flex items-center gap-7 mt-3">
+          <p className="min-w-[71px] text-base font-bold text-mainBlack">
+            업종
+          </p>
+          <DropDown
+            options={dropDownOptions1}
+            defaultSelectedKeys={defaultSelectedKey1}
             selectStyles="w-[124px]"
           />
         </div>
@@ -44,8 +84,8 @@ const Page = () => {
             그룹
           </p>
           <DropDown
-            options={dropDownOptions}
-            defaultSelectedKeys={defaultSelectedKey}
+            options={dropDownOptions2}
+            defaultSelectedKeys={defaultSelectedKey2}
             selectStyles="w-[124px]"
           />
         </div>
@@ -55,8 +95,8 @@ const Page = () => {
               하위그룹
             </p>
             <DropDown
-              options={dropDownOptions}
-              defaultSelectedKeys={defaultSelectedKey}
+              options={dropDownOptions4}
+              defaultSelectedKeys={defaultSelectedKey4}
               selectStyles="w-[124px]"
             />
           </div>
@@ -93,4 +133,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;

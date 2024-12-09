@@ -4,7 +4,7 @@ import DropDown from "@/components/DropDown";
 import DropDownWithLabel from "@/components/DropDownWithLabel";
 import HeaderDropDown from "@/components/HeaderDropDown";
 import InputNoLabel from "@/components/InputNoLable";
-import row12Column1 from "@/data/tables/row12Column1";
+import row11Column1 from "@/data/tables/row11Column1";
 import {
   Button,
   Checkbox,
@@ -28,17 +28,11 @@ const page = () => {
   ];
   const defaultDropDown1 = dropDownOptions1[0].key;
   const dropDownOptions2 = [
-    { key: "option1", label: "카테고리" },
-    { key: "option2", label: "카테고리" },
-    { key: "option3", label: "카테고리" },
-  ];
-  const defaultDropDown2 = dropDownOptions2[0].key;
-  const dropDownOptions3 = [
     { key: "option1", label: "최신순" },
     { key: "option2", label: "최신순" },
     { key: "option3", label: "최신순" },
   ];
-  const defaultDropDown3 = dropDownOptions3[0].key;
+  const defaultDropDown2 = dropDownOptions2[0].key;
   const viewOptions = [
     {
       key: "10",
@@ -67,7 +61,7 @@ const page = () => {
 
   const rowsPerPage = parseInt(viewValue);
 
-  const pages = Math.ceil(row12Column1.length / rowsPerPage);
+  const pages = Math.ceil(row11Column1.length / rowsPerPage);
 
   const [currentData, setCurrentData] = useState<any>();
 
@@ -75,9 +69,9 @@ const page = () => {
     const start = (page - 1) * rowsPerPage;
     const end = start + rowsPerPage;
 
-    setCurrentData(row12Column1.slice(start, end));
-    return row12Column1.slice(start, end);
-  }, [page, row12Column1, viewValue, rowsPerPage]);
+    setCurrentData(row11Column1.slice(start, end));
+    return row11Column1.slice(start, end);
+  }, [page, row11Column1, viewValue, rowsPerPage]);
   // Selection Logic
   const [clickedRowIds, setClickedRowIds] = useState<number[]>([]);
   const [allListCheckedPageNumbers, setAllListCheckedPageNumbers] = useState<
@@ -85,7 +79,7 @@ const page = () => {
   >([]);
   return (
     <section>
-      <CommonHeader title="오퍼월 관리 " />
+      <CommonHeader title="관리자 정보 관리" />
       <header className="bg-white py-7 px-10 rounded-[20px] ">
         <div className="flex items-center gap-7 w-full">
           <p className="min-w-[72px] font-normal text-base">광고제목</p>
@@ -107,9 +101,9 @@ const page = () => {
             selectStyles="w-[425px]"
           />
           <DropDownWithLabel
-            options={dropDownOptions2}
-            defaultSelectedKeys={defaultDropDown2}
-            title="하하위 그룹"
+            options={dropDownOptions1}
+            defaultSelectedKeys={defaultDropDown1}
+            title="하위 그룹"
             titleStyles={labelStyle}
             selectStyles="w-[425px]"
           />
@@ -120,8 +114,8 @@ const page = () => {
           <p className="font-bold text-mainBlack">총 00건</p>
           <div className="flex items-center gap-3">
             <DropDown
-              options={dropDownOptions3}
-              defaultSelectedKeys={defaultDropDown3}
+              options={dropDownOptions2}
+              defaultSelectedKeys={defaultDropDown2}
               selectStyles="w-[124px]"
             />
             <HeaderDropDown
@@ -132,11 +126,12 @@ const page = () => {
               styles="w-[100px] "
               mainStyles="bg-transparent border border-grayBorder rounded-[5px]"
             />
-            <Button className="py-3 px-5 rounded-md bg-mainBlack text-white">
-              삭제
+            <Button className="py-3 px-10 rounded-md bg-mainBlack text-white">
+                <Link href="/admin/settlement/permission-management/1">  권한 그룹 관리</Link>
+          
             </Button>
-            <Button className="py-3 px-5 rounded-md bg-grayLight text-white">
-              등록
+            <Button className="py-3 px-8 rounded-md bg-mainBlack text-white">
+            신규 추가
             </Button>
           </div>
         </div>
@@ -200,11 +195,13 @@ const page = () => {
                 ></Checkbox>
               </TableColumn>
               <TableColumn className="w-[5%] truncate">번호</TableColumn>
-              <TableColumn className="w-[5%] truncate">썸네일</TableColumn>
-              <TableColumn className="w-[20%] truncate">광고 제목</TableColumn>
-              <TableColumn className="w-[15%] truncate">하위 그룹</TableColumn>
-              <TableColumn className="w-[15%] truncate">포인트</TableColumn>
-              <TableColumn className="w-[15%] truncate">상세보기</TableColumn>
+              <TableColumn className="w-[5%] truncate">권한</TableColumn>
+              <TableColumn className="w-[5%] truncate">아이디</TableColumn>
+              <TableColumn className="w-[8%] truncate">휴대전화번호</TableColumn>
+              <TableColumn className="w-[8%] truncate">이름</TableColumn>
+              <TableColumn className="w-[25%] truncate">가입일시</TableColumn>
+              <TableColumn className="w-[25%] truncate">승인일시</TableColumn>
+              <TableColumn className="w-[10%] truncate">승인</TableColumn>
             </TableHeader>
             <TableBody>
               {items.map((row) => (
@@ -227,21 +224,24 @@ const page = () => {
                   <TableCell className="truncate max-w-[100px] overflow-hidden  whitespace-nowrap">
                     {row.number}
                   </TableCell>
-                  <TableCell className="max-w-[100px]">
-                    <div className="w-[49px] h-[49px] bg-[#FFE8E8]"></div>
-                  </TableCell>
                   <TableCell className="truncate max-w-[150px] overflow-hidden text-ellipsis whitespace-nowrap">
-                    {row.advertisement}
+                    {row.authority}
                   </TableCell>
-                  <TableCell>{row.subGroup}</TableCell>
-                  <TableCell>{row.point}</TableCell>
+                  <TableCell  className="truncate max-w-[130px] overflow-hidden text-ellipsis whitespace-nowrap">{row.id}</TableCell>
+                  <TableCell  className="truncate max-w-[130px] overflow-hidden text-ellipsis whitespace-nowrap">{row.phoneNumber}</TableCell>
                   <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
-                    <Link
-                      className="text-[#4A3AFF] underline underline-offset-1"
-                      href="/admin/Administrator/offer-wall-management/1"
-                    >
-                      {row.viewDetails}
-                    </Link>
+                    
+                      {row.name}
+                    
+                  </TableCell>
+                  <TableCell className="max-w-[100px]">
+                    {row.registrationDate}
+                  </TableCell>
+                  <TableCell className="max-w-[100px]">
+                    {row.approvalDate}
+                  </TableCell>
+                  <TableCell className="max-w-[100px]">
+                    <Button className="border  border-[#4D4D4D] py-2 px-3 bg-white text-mainBlack">승인</Button>
                   </TableCell>
                 </TableRow>
               ))}

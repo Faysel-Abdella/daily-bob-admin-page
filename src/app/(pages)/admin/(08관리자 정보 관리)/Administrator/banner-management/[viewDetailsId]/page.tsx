@@ -9,7 +9,7 @@ import { Button, Dropdown } from "@nextui-org/react";
 import Image from "next/image";
 import React from "react";
 
-const Page = () => {
+const page = () => {
   const dropDownOptions = [
     { key: "option1", label: "카테고리" },
     { key: "option2", label: "카테고리" },
@@ -83,4 +83,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;

@@ -18,7 +18,7 @@ import {
 } from "@nextui-org/react";
 import React, { useState } from "react";
 
-const Page = () => {
+const page = () => {
   const viewOptions = [
     {
       key: "10",
@@ -60,9 +60,9 @@ const Page = () => {
   }, [page, row18Column1, viewValue, rowsPerPage]);
   const labelStyle = "font-normal text-base text-mainBlack min-w-[98px]";
   const dropDownOptions = [
-    { key: "option1", label: "전체 회원" },
-    { key: "option2", label: "전체 회원" },
-    { key: "option3", label: "전체 회원" },
+    { key: "option1", label: "최신순" },
+    { key: "option2", label: "최신순" },
+    { key: "option3", label: "최신순" },
   ];
   const defaultDropDown = dropDownOptions[0].key;
   // Selection Logic
@@ -213,7 +213,7 @@ const Page = () => {
                   <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
                     <Link
                       className="text-[#9388FE] underline underline-offset-1"
-                      href="/admin/notification/notification-management/faq/1"
+                      href="/admin/notification/faq/1"
                     >
                       {row.viewDetails}
                     </Link>
@@ -228,4 +228,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;

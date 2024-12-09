@@ -20,14 +20,20 @@ import {
 import React, { useState } from "react";
 import row10Column1 from "@/data/tables/row10Column1";
 
-const Page = () => {
+const page = () => {
   const labelStyle = "font-normal text-base text-mainBlack min-w-[90px]";
-  const dropDownOptions = [
-    { key: "option1", label: "전체 회원" },
-    { key: "option2", label: "전체 회원" },
-    { key: "option3", label: "전체 회원" },
+  const dropDownOptions1 = [
+    { key: "option1", label: "성공" },
+    { key: "option2", label: "성공" },
+    { key: "option3", label: "성공" },
   ];
-  const defaultDropDown = dropDownOptions[0].key;
+  const defaultDropDown1 = dropDownOptions1[0].key;
+  const dropDownOptions2 = [
+    { key: "option1", label: "최신순" },
+    { key: "option2", label: "최신순" },
+    { key: "option3", label: "최신순" },
+  ];
+  const defaultDropDown2 = dropDownOptions2[0].key;
   const viewOptions = [
     { key: "10", label: "10개씩 보기" },
     { key: "20", label: "20개씩 보기" },
@@ -72,8 +78,8 @@ const Page = () => {
         </div>
         <div className="mt-5">
           <DropDownWithLabel
-            options={dropDownOptions}
-            defaultSelectedKeys={defaultDropDown}
+            options={dropDownOptions1}
+            defaultSelectedKeys={defaultDropDown1}
             title="상태"
             titleStyles={labelStyle}
             selectStyles="w-[470px]"
@@ -85,8 +91,8 @@ const Page = () => {
           <p className="font-bold text-mainBlack">총 00건</p>
           <div className="flex items-center gap-3">
             <DropDown
-              options={dropDownOptions}
-              defaultSelectedKeys={defaultDropDown}
+              options={dropDownOptions2}
+              defaultSelectedKeys={defaultDropDown2}
               selectStyles="w-[124px]"
             />
             <HeaderDropDown
@@ -214,4 +220,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;

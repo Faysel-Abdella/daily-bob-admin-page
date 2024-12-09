@@ -17,7 +17,7 @@ import {
 } from "@nextui-org/react";
 import React, { useState } from "react";
 
-const Page = () => {
+const page = () => {
   const viewOptions = [
     {
       key: "10",
@@ -226,4 +226,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;

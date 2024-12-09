@@ -4,13 +4,23 @@ import DropDownWithLabel from "@/components/DropDownWithLabel";
 import InputWithLabel from "@/components/InputWithLabel";
 import { Button } from "@nextui-org/react";
 
-const Page = () => {
+const page = () => {
   const labelStyle = "font-bold text-base text-mainBlack min-w-[130px]";
   // Dummy data for the dropdown
-  const dropDownOptions = [
+  const dropDownOptions1 = [
     { key: "option1", label: "전체 회원" },
     { key: "option2", label: "전체 회원" },
     { key: "option3", label: "전체 회원" },
+  ];
+  const dropDownOptions2 = [
+    { key: "option1", label: "포인트" },
+    { key: "option2", label: "포인트" },
+    { key: "option3", label: "포인트" },
+  ];
+  const dropDownOptions3 = [
+    { key: "option1", label: "눈치 게임 참여" },
+    { key: "option2", label: "눈치 게임 참여" },
+    { key: "option3", label: "눈치 게임 참여" },
   ];
 
   return (
@@ -21,7 +31,7 @@ const Page = () => {
           <div className="w-full">
             <DropDownWithLabel
               title="대상 회원"
-              options={dropDownOptions}
+              options={dropDownOptions1}
               defaultSelectedKeys="option1"
               titleStyles={labelStyle}
               selectStyles="w-96" // Default selected key
@@ -40,7 +50,7 @@ const Page = () => {
           <div className="w-full">
             <DropDownWithLabel
               title="지급 구분"
-              options={dropDownOptions}
+              options={dropDownOptions2}
               defaultSelectedKeys="option1"
               titleStyles={labelStyle}
               selectStyles="w-96"
@@ -50,15 +60,15 @@ const Page = () => {
           <div className="w-full">
             <DropDownWithLabel
               title="지급 명목"
-              options={dropDownOptions}
+              options={dropDownOptions3}
               defaultSelectedKeys="option1"
               titleStyles={labelStyle}
-              selectStyles="w-96"
+              selectStyles="w-[350px]"
               // Default selected key
             />
           </div>
         </div>
-        <div className="flex items-center w-  w-1/2 mt-6">
+        <div className="flex items-center w-1/2 mt-6">
           <div className="w-1/2">
             <InputWithLabel label="지급 내용" labelStyles={labelStyle} />
           </div>
@@ -71,4 +81,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;

@@ -17,9 +17,10 @@ import {
   TableHeader,
   TableRow,
 } from "@nextui-org/react";
+import Link from "next/link";
 import React, { useState } from "react";
 
-const Page = () => {
+const page = () => {
   const viewOptions = [
     {
       key: "10",
@@ -61,17 +62,36 @@ const Page = () => {
   }, [page, row5Column1, viewValue, rowsPerPage]);
   const labelStyle = "font-bold text-base text-mainBlack min-w-[98px]";
   const dropDownOptions = [
-    { key: "option1", label: "전체 회원" },
-    { key: "option2", label: "전체 회원" },
-    { key: "option3", label: "전체 회원" },
+    { key: "option1", label: "사용" },
+    { key: "option2", label: "사용" },
+    { key: "option3", label: "사용" },
   ];
+  const defaultSelectedKey = dropDownOptions[0].key;
+  const dropDownOptions1 = [
+    { key: "option1", label: "최신순" },
+    { key: "option2", label: "최신순" },
+    { key: "option3", label: "최신순" },
+  ];
+  const defaultSelectedKey2= dropDownOptions[0].key;
+  const dropDownOptions2 = [
+    { key: "option1", label: "식당" },
+    { key: "option2", label: "식당" },
+    { key: "option3", label: "식당" },
+  ];
+  const defaultSelectedKey1= dropDownOptions[0].key;
+  const dropDownOptions3 = [
+    { key: "option1", label: "식품" },
+    { key: "option2", label: "식품" },
+    { key: "option3", label: "식품" },
+  ];
+  const defaultSelectedKey3= dropDownOptions[0].key;
   // Selection Logic
   const [clickedRowIds, setClickedRowIds] = useState<number[]>([]);
   const [allListCheckedPageNumbers, setAllListCheckedPageNumbers] = useState<
     number[]
   >([]);
 
-  const defaultSelectedKey = dropDownOptions[0].key;
+  
   return (
     <section>
       <CommonHeader title="영수증 관리" />
@@ -117,8 +137,9 @@ const Page = () => {
           <p className="font-bold text-mainBlack">총 00건</p>
           <div className="flex items-center gap-3">
             <DropDown
-              options={dropDownOptions}
-              defaultSelectedKeys={defaultSelectedKey}
+              options={dropDownOptions1}
+              defaultSelectedKeys={defaultSelectedKey1}
+              selectStyles="w-[100px]"
             />
             <HeaderDropDown
               options={viewOptions}
@@ -227,15 +248,16 @@ const Page = () => {
                     {row.number}
                   </TableCell>
                   <TableCell className="truncate max-w-[100px] overflow-hidden  whitespace-nowrap">
-                    {row.storeName}
+                    <Link className="text-[#007AFF]" href="/admin/receipt/receipt-catagory-management/1">{row.storeName}</Link>
+                    
                   </TableCell>
                   <TableCell className="truncate max-w-[100px] overflow-hidden  whitespace-nowrap">
                     {row.point}
                   </TableCell>
                   <TableCell>
                     <DropDown
-                      options={dropDownOptions}
-                      defaultSelectedKeys={defaultSelectedKey}
+                      options={dropDownOptions2}
+                      defaultSelectedKeys={defaultSelectedKey2}
                       selectStyles="w-[120px]"
                     />
                   </TableCell>
@@ -249,17 +271,17 @@ const Page = () => {
                     <div className="flex gap-4">
                       <DropDownWithLabel
                         title="그룹"
-                        options={dropDownOptions}
-                        defaultSelectedKeys={defaultSelectedKey}
+                        options={dropDownOptions3}
+                        defaultSelectedKeys={defaultSelectedKey3}
                         titleStyles=" text-base text-mainBlack min-w-[40px]"
-                        selectStyles="w-[120px]"
+                         selectStyles="w-[120px]"
                       />
                       <DropDownWithLabel
                         title="하위 그룹"
-                        options={dropDownOptions}
-                        defaultSelectedKeys={defaultSelectedKey}
+                        options={dropDownOptions3}
+                        defaultSelectedKeys={defaultSelectedKey3}
                         titleStyles=" text-base text-mainBlack min-w-[40px]"
-                        selectStyles="w-[120px]"
+                         selectStyles="w-[120px]"
                       />
                     </div>
                   </TableCell>
@@ -273,4 +295,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;

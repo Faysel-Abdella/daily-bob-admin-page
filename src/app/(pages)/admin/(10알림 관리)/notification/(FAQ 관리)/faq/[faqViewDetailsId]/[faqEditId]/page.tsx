@@ -2,7 +2,7 @@ import CommonHeader from "@/components/CommonHeader";
 import { Button, Textarea } from "@nextui-org/react";
 import React from "react";
 
-const Page = () => {
+const page = () => {
   return (
     <section>
       <CommonHeader title="FAQ 수정하기 " />
@@ -18,7 +18,7 @@ const Page = () => {
         <div className="flex gap-8 mt-10">
           <p className="font-bold min-w-[40px]">답변</p>
           <Textarea
-            minRows={8}
+          minRows={8}
             className="max-w-6xl bg-white "
             placeholder="A. 답변 텍스트 영역입니다.."
           />
@@ -31,4 +31,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;

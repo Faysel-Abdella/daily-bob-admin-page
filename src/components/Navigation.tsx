@@ -95,7 +95,7 @@ const Navigation = ({
               pathname === firstRoute || pathname.includes(init)
                 ? "text-mainPurple"
                 : "text-mainGray"
-            } font-bold  text-[16px] leading-[22px] tracking-[-2%]`}
+            } font-bold text-[16px] leading-[22px] tracking-[-2%]`}
           >
             {mainTitle}
           </p>
@@ -108,7 +108,7 @@ const Navigation = ({
             parseInt(order) === currentOpened && pathname.includes(init)
               ? ""
               : "hidden"
-          } pl-11 pt-2  flex flex-col  gap-2`}
+          } pl-11 pt-2 flex flex-col gap-2`}
         >
           {subTitles.map((item, index) => (
             <Link
@@ -116,7 +116,15 @@ const Navigation = ({
               key={index}
               onClick={() => setSelectedOrder(order)}
             >
-              <div className="flex gap-2 items-center  cursor-pointer">
+              <div className="flex gap-2 items-center cursor-pointer">
+                {/* Add the dot before the subtitle */}
+                <span
+                  className={`h-2 w-2 rounded-full ${
+                    pathname === item.route || pathname.includes(item.route)
+                      ? "bg-mainPurple"
+                      : "bg-mainGray"
+                  }`}
+                ></span>
                 <p
                   className={`text-base ${
                     pathname === item.route || pathname.includes(item.route)

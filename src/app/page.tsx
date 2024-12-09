@@ -58,7 +58,7 @@ const page = () => {
             <Checkbox defaultSelected>아이디 저장</Checkbox>
           </div>
 
-          <Link href="/admin/member-points-and-entry-tickets/member-points-and-entry-tickets-management">
+          <Link href="/admin/entry-ticket-management/entry-Ticket-Member-Management">
             <Button className="mt-7 w-full rounded-[10px]  bg-mainPurple font-normal text-[16px] leading-[22px] text-mainWhite">
               로그인
             </Button>

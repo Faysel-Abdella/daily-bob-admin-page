@@ -2,7 +2,7 @@ import CommonHeader from "@/components/CommonHeader";
 import { Button, Checkbox } from "@nextui-org/react";
 import React from "react";
 
-const Page = () => {
+const page = () => {
   return (
     <section>
       <CommonHeader title="회원 정보 상세보기" />
@@ -116,4 +116,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;

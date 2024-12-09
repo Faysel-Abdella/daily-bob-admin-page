@@ -2,25 +2,19 @@
 import CommonHeader from "@/components/CommonHeader";
 import InputNoLabel from "@/components/InputNoLable";
 import InputWithLabel from "@/components/InputWithLabel";
-import {
-  Button,
-  Checkbox,
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalFooter,
-  useDisclosure,
-} from "@nextui-org/react";
-
+import { Button, Checkbox, Modal, ModalBody, ModalContent, ModalFooter, useDisclosure } from "@nextui-org/react";
+import { group } from "console";
+import { div } from "framer-motion/client";
 import React, { useState } from "react";
 
-const Page = () => {
-  const {
-    isOpen: isRegisterBtn,
-    onOpen: onRegisterBtn,
-    onOpenChange: onRegisterBtnChange,
-  } = useDisclosure();
-
+const page = () => {
+    const {
+        isOpen: isRegisterBtn,
+        onOpen: onRegisterBtn,
+        onOpenChange: onRegisterBtnChange,
+      } = useDisclosure();
+    
+      
   const [isGroup, setGroup] = useState(true);
   const groupNameData = [
     {
@@ -59,6 +53,8 @@ const Page = () => {
       <CommonHeader title="상품 관리 " />
 
       <div className="mt-10 bg-white px-5 py-5">
+       
+
         <div className="flex items-center">
           <Button
             onClick={() => setGroup(!isGroup)}
@@ -77,6 +73,8 @@ const Page = () => {
             업종
           </Button>
         </div>
+
+     
 
         <div className="flex items-center justify-center gap-10">
           <div>
@@ -140,10 +138,7 @@ const Page = () => {
               ))}
             </div>
             <div className="flex items-center justify-end mt-5">
-              <Button
-                onClick={onRegisterBtn}
-                className="py-3 px-5 bg-[#353A46] text-white"
-              >
+              <Button onClick={onRegisterBtn} className="py-3 px-5 bg-[#353A46] text-white">
                 추가
               </Button>
             </div>
@@ -170,36 +165,34 @@ const Page = () => {
                 <div className="mt-8">
                   <div className=" flex items-center  gap-3 w-full ">
                     <p className=" min-w-[70px] font-bold text-sm text-secondWhiteGray">
-                      하위 그룹명
+                    하위 그룹명
                     </p>
-                    <div className="w-full">
-                      <InputNoLabel />
-                    </div>
+                   <div className="w-full"><InputNoLabel/></div>
+                    
                   </div>
                   <div className=" flex items-center  gap-3 w-full mt-5 ">
                     <p className=" min-w-[70px] font-bold text-sm text-secondWhiteGray">
-                      지급 포인트
+                    지급 포인트
                     </p>
-                    <div className="w-full">
-                      {" "}
-                      <InputNoLabel />
-                    </div>
+                   <div className="w-full">  <InputNoLabel/></div>
+                  
                   </div>
+                  
                 </div>
 
                 <div className="mt-7 flex justify-center items-center gap-3">
                   <Button
-                    className="  py-3 px-5 rounded-md bg-whiteGray font-bold text-base text-white"
+                    className="  py-3 px-5 rounded-md bg-whiteGray font-bold text-base text-[#868F9A]"
                     onClick={() => {
                       onRegisterBtnChange();
                     }}
-                  ></Button>
+                  ><p>취소</p></Button>
                   <Button
-                    className=" py-3 px-8 rounded-md bg-whiteGray font-bold text-base text-white"
+                    className=" py-3 px-8 rounded-md bg-whiteGray font-bold text-base text-[#ED3D2E]"
                     onClick={() => {
                       onRegisterBtnChange();
                     }}
-                  ></Button>
+                  ><p>글쓰기</p></Button>
                 </div>
               </ModalBody>
               <ModalFooter></ModalFooter>
@@ -211,4 +204,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;

@@ -13,14 +13,21 @@ import assets from "@/assets";
 
 const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
 
-const Page = () => {
+const page = () => {
   const labelStyle = "font-bold text-base !text-grayLight min-w-[95px]";
-  const dropDownOptions = [
-    { key: "option1", label: "전체 회원" },
-    { key: "option2", label: "전체 회원" },
-    { key: "option3", label: "전체 회원" },
+  const dropDownOptions1 = [
+    { key: "option1", label: "카테고리" },
+    { key: "option2", label: "카테고리" },
+    { key: "option3", label: "카테고리" },
   ];
-  const defaultDropDown = dropDownOptions[0].key;
+  const defaultDropDown1 = dropDownOptions1[0].key;
+  
+  const dropDownOptions2 = [
+    { key: "option1", label: "Y" },
+    { key: "option2", label: "Y" },
+    { key: "option3", label: "Y" },
+  ];
+  const defaultDropDown2 = dropDownOptions2[0].key;
   const editor = useRef(null);
   const config = {
     readonly: false,
@@ -75,16 +82,16 @@ const Page = () => {
           <p className=" font-bold text-base min-w-[82px]  text-grayLight">
             상세 이미지
           </p>
-          <div className="flex items-center gap-8 w-full">
-            <div className="w-full">
+          <div className="flex items-center gap-8 ">
+            <div className="w-[400px]">
               <InputNoLabel placeholder="상품명 텍스트" />
             </div>
-            <div className="flex items-center gap-8 w-full">
-              <div w-full>
+            <div className="flex items-center gap-8 ">
+              <div className="w-[240px]">
                 <InputWithLabel label="상품 원가" labelStyles={labelStyle} />
               </div>
               <div className="flex items-center gap-5">
-                <div className="w-full">
+                <div className="w-[240px]">
                   <InputWithLabel
                     label="상품 아이디"
                     placeholder="11111111"
@@ -100,29 +107,29 @@ const Page = () => {
           <p className=" font-bold text-base min-w-[82px]  text-grayLight">
             상세 이미지
           </p>
-          <div className="flex items-center gap-8 w-full">
+          <div className="flex items-center gap-8 ">
             <div>
               <DropDown
-                options={dropDownOptions}
-                defaultSelectedKeys={defaultDropDown}
-                selectStyles="w-[150px]"
+                options={dropDownOptions1}
+                defaultSelectedKeys={defaultDropDown1}
+                selectStyles="w-[138px]"
               />
             </div>
             <div>
               <DropDownWithLabel
                 title="그룹"
-                options={dropDownOptions}
-                defaultSelectedKeys={defaultDropDown}
-                selectStyles="w-[150px]"
+                options={dropDownOptions1}
+                defaultSelectedKeys={defaultDropDown2}
+                selectStyles="w-[138px]"
                 titleStyles={labelStyle}
               />
             </div>
             <div>
               <DropDownWithLabel
                 title="하위 그룹"
-                options={dropDownOptions}
-                defaultSelectedKeys={defaultDropDown}
-                selectStyles="w-[150px]"
+                options={dropDownOptions1}
+                defaultSelectedKeys={defaultDropDown1}
+                selectStyles="w-[138px]"
                 titleStyles={labelStyle}
               />
             </div>
@@ -130,8 +137,8 @@ const Page = () => {
               <div>
                 <DropDownWithLabel
                   title="판매 여부"
-                  options={dropDownOptions}
-                  defaultSelectedKeys={defaultDropDown}
+                  options={dropDownOptions2}
+                  defaultSelectedKeys={defaultDropDown2}
                   selectStyles="w-[65px]"
                   titleStyles={labelStyle}
                 />
@@ -139,8 +146,8 @@ const Page = () => {
               <div>
                 <DropDownWithLabel
                   title="보험 가입 필"
-                  options={dropDownOptions}
-                  defaultSelectedKeys={defaultDropDown}
+                  options={dropDownOptions2}
+                  defaultSelectedKeys={defaultDropDown2}
                   selectStyles="w-[65px]"
                   titleStyles={labelStyle}
                 />
@@ -152,33 +159,33 @@ const Page = () => {
           <p className=" font-bold text-base min-w-[82px]  text-grayLight">
             상세 이미지
           </p>
-          <div className="flex items-center gap-8 ">
-            <div className="">
+          <div className="flex items-center gap-8  ">
+            <div className="w-[140px]">
               <InputNoLabel />
             </div>
-            <div className=" flex items-center gap-8 w-full">
-              <div className=" w-1/3">
+            
+              <div className=" w-[170px]">
                 <InputWithLabel
                   label="1인 판매 제한"
                   labelStyles="font-bold text-base !text-grayLight min-w-[102px]"
                 />
               </div>
-              <div className="w-1/3">
+              <div className="w-[170px]">
                 <InputWithLabel
                   label="판매 개수"
                   labelStyles="font-bold text-base !text-grayLight min-w-[102px]"
                 />
               </div>
-              <div className="w-1/3">
+              <div className="w-[200px]">
                 <InputWithLabel
                   label="최대 사용 포인트"
                   labelStyles="font-bold text-base !text-grayLight min-w-[140px]"
                   placeholder="50%"
                 />
               </div>
-            </div>
+          
 
-            <div className="">
+            <div className="w-[240px]">
               <InputWithLabel
                 label="유효 기간"
                 labelStyles="font-bold text-base !text-grayLight min-w-[102px]"
@@ -186,9 +193,9 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <div className="w-full min-h-[400px] p-[8px] mt-8">
+        <div className=" min-h-[400px] p-[8px] mt-8">
           <p className="font-bold text-base text-grayLight">상품 상세 정보</p>
-          <div className="w-full mt-4">
+          <div className="w-[1150px] mt-4">
             <JoditEditor
               ref={editor}
               config={config}
@@ -197,11 +204,11 @@ const Page = () => {
             />
           </div>
         </div>
-        <div className="w-full min-h-[400px] p-[8px] mt-8">
+        <div className=" min-h-[400px] p-[8px] mt-8">
           <p className="font-bold text-base text-grayLight">
             반품 및 교환 안내
           </p>
-          <div className="w-full mt-4">
+          <div className="w-[1150px] mt-4">
             <JoditEditor
               ref={editor}
               config={config}
@@ -210,11 +217,11 @@ const Page = () => {
             />
           </div>
         </div>
-        <div className="w-full min-h-[400px] p-[8px] mt-8">
+        <div className="min-h-[400px] p-[8px] mt-8">
           <p className="font-bold text-base text-grayLight">
             반품 및 교환 기준
           </p>
-          <div className="w-full mt-4">
+          <div className="w-[1150px] mt-4">
             <JoditEditor
               ref={editor}
               config={config}
@@ -223,16 +230,16 @@ const Page = () => {
             />
           </div>
         </div>
-        <div className="mt-52">
+        <div className="mt-52 w-full">
           <p>영수증 발행</p>
           <div className="mt-36">
-            <div className="flex items-center gap-7 w-full">
+            <div className="flex items-center gap-7 ">
               <p className="min-w-[240px]">발행자</p>
               <div className="w-full">
                 <InputNoLabel />
               </div>
             </div>
-            <div className="flex items-center gap-7 w-full mt-6">
+            <div className="flex items-center gap-7  mt-6">
               <div className="min-w-[240px] flex flex-col">
                 <p>유효기간, 이용조건</p>
                 <p>(유효기간 경과시 보상 기준 포함)</p>
@@ -241,19 +248,19 @@ const Page = () => {
                 <InputNoLabel />
               </div>
             </div>
-            <div className="flex items-center gap-7 w-full mt-6">
+            <div className="flex items-center gap-7  mt-6">
               <p className="min-w-[240px]">이용 가능 매장</p>
               <div className="w-full">
                 <InputNoLabel />
               </div>
             </div>
-            <div className="flex items-center gap-7 w-full mt-6">
+            <div className="flex items-center gap-7  mt-6">
               <p className="min-w-[240px]">환불 조건 및 방법</p>
               <div className="w-full">
                 <InputNoLabel />
               </div>
             </div>
-            <div className="flex items-center gap-7 w-full mt-6">
+            <div className="flex items-center gap-7  mt-6">
               <p className="min-w-[240px]">소비자 상담 관련 전화번호</p>
               <div className="w-full">
                 <InputNoLabel />
@@ -270,4 +277,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;

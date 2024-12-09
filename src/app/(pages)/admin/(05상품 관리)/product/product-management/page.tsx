@@ -19,7 +19,7 @@ import {
 import Link from "next/link";
 import React, { useState } from "react";
 
-const Page = () => {
+const page = () => {
   const viewOptions = [
     {
       key: "10",
@@ -125,6 +125,7 @@ const Page = () => {
             <DropDown
               options={dropDownOptions}
               defaultSelectedKeys={defaultDropDown}
+              selectStyles="w-[120px]"
             />
             <HeaderDropDown
               options={viewOptions}
@@ -264,4 +265,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;

@@ -18,7 +18,7 @@ import {
 import Link from "next/link";
 import React, { useState } from "react";
 
-const Page = () => {
+const page = () => {
   const viewOptions = [
     {
       key: "10",
@@ -144,7 +144,7 @@ const Page = () => {
             }
           >
             <TableHeader>
-              <TableColumn className="w-[5%]">
+            <TableColumn className="w-[5%]">
                 <Checkbox
                   onClick={() => {
                     if (allListCheckedPageNumbers.includes(page)) {
@@ -217,7 +217,7 @@ const Page = () => {
                   <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
                     <Link
                       className="text-[#9388FE] underline underline-offset-1"
-                      href="/admin/game/game-management/daily-quiz-management/1"
+                      href="/admin/game/daily-quiz-management/1"
                     >
                       {row.viewDetails}
                     </Link>
@@ -232,4 +232,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;

@@ -15,7 +15,7 @@ import {
 } from "@nextui-org/react";
 import React, { useState } from "react";
 
-const Page = () => {
+const page = () => {
   const dropDownOptions = [
     { key: "option1", label: "전체 회원" },
     { key: "option2", label: "전체 회원" },
@@ -87,80 +87,81 @@ const Page = () => {
           </Button>
         </div>
         <article className="mt-8">
-          <Table
-            aria-label="Data Table"
-            shadow="none"
-            classNames={{
-              th: "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px] text-center",
-              td: "px-6 text-center font-normal text-base text-[#363941]",
-            }}
-            bottomContent={
-              <div className="flex w-full justify-center mt-8">
-                <Pagination
-                  isCompact
-                  showControls
-                  showShadow
-                  color="secondary"
-                  page={page}
-                  total={pages}
-                  onChange={setPage}
-                />
-              </div>
-            }
-          >
-            <TableHeader>
-              <TableColumn className="w-[10%]">고객아이디</TableColumn>
-              <TableColumn className="w-[10%]">상품코드</TableColumn>
-              <TableColumn className="w-[10%]">상품명</TableColumn>
-              <TableColumn className="w-[10%]">원가</TableColumn>
-              <TableColumn className="w-[25%]">판매가</TableColumn>
-              <TableColumn className="w-[10%]">판매구분</TableColumn>
-              <TableColumn className="w-[10%]">수량</TableColumn>
-              <TableColumn className="w-[10%]">판매금액</TableColumn>
-              <TableColumn className="w-[10%]">취소금액</TableColumn>
-              <TableColumn className="w-[10%]">갱신일시</TableColumn>
-            </TableHeader>
-            <TableBody>
-              {items.map((row) => (
-                <TableRow key={row.customerId} className="border-b-1">
-                  <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
-                    {row.customerId}
-                  </TableCell>
-                  <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
-                    {row.productCode}
-                  </TableCell>
-                  <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
-                    {row.productName}
-                  </TableCell>
-                  <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
-                    {row.cost}
-                  </TableCell>
-                  <TableCell className="truncate max-w-[150px] overflow-hidden text-ellipsis whitespace-nowrap">
-                    {row.salePrice}
-                  </TableCell>
-                  <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
-                    {row.salesCatagory}
-                  </TableCell>
-                  <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
-                    {row.quantity}
-                  </TableCell>
-                  <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
-                    {row.salesAmount}
-                  </TableCell>
-                  <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
-                    {row.cancellationAMount}
-                  </TableCell>
-                  <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
-                    {row.upDate}
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </article>
-      </div>
+        <Table
+          aria-label="Data Table"
+          shadow="none"
+          classNames={{
+            th: "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px] text-center",
+            td: "px-6 text-center font-normal text-base text-[#363941]",
+          }}
+          bottomContent={
+            <div className="flex w-full justify-center mt-8">
+              <Pagination
+                isCompact
+                showControls
+                showShadow
+                color="secondary"
+                page={page}
+                total={pages}
+                onChange={setPage}
+              />
+            </div>
+          }
+        >
+          <TableHeader>
+            <TableColumn className="w-[10%]">고객아이디</TableColumn>
+            <TableColumn className="w-[10%]">상품코드</TableColumn>
+            <TableColumn className="w-[10%]">상품명</TableColumn>
+            <TableColumn className="w-[10%]">원가</TableColumn>
+            <TableColumn className="w-[25%]">판매가</TableColumn>
+            <TableColumn className="w-[10%]">판매구분</TableColumn>
+            <TableColumn className="w-[10%]">수량</TableColumn>
+            <TableColumn className="w-[10%]">판매금액</TableColumn>
+            <TableColumn className="w-[10%]">취소금액</TableColumn>
+            <TableColumn className="w-[10%]">갱신일시</TableColumn>
+          </TableHeader>
+          <TableBody>
+            {items.map((row) => (
+              <TableRow key={row.customerId} className="border-b-1">
+                <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
+                  {row.customerId}
+                </TableCell>
+                <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
+                  {row.productCode}
+                </TableCell>
+                <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
+                  {row.productName}
+                </TableCell>
+                <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
+                  {row.cost}
+                </TableCell>
+                <TableCell className="truncate max-w-[150px] overflow-hidden text-ellipsis whitespace-nowrap">
+                  {row.salePrice}
+                </TableCell>
+                <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
+                  {row.salesCatagory}
+                </TableCell>
+                <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
+                  {row.quantity}
+                </TableCell>
+                <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
+                  {row.salesAmount}
+                </TableCell>
+                <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
+                  {row.cancellationAMount}
+                </TableCell>
+                <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
+                  {row.upDate}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </article>
+        </div>
+      
     </section>
   );
 };
 
-export default Page;
+export default page;
