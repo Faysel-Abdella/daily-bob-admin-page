@@ -133,6 +133,7 @@ const page = () => {
                   labelStyles={`${labelStyle}`}
                 />
               </div>
+
               <div className="w-full">
                 <InputNoLabel type="date" />
               </div>
@@ -363,13 +364,17 @@ const page = () => {
                     onClick={() => {
                       onUnblockBtnChange();
                     }}
-                  ><p>글쓰기</p></Button>
+                  >
+                    <p>글쓰기</p>
+                  </Button>
                   <Button
                     className=" py-3 px-8 rounded-md bg-whiteGray font-bold text-base text-[#ED3D2E]"
                     onClick={() => {
                       onUnblockBtnChange();
                     }}
-                  ><p>글쓰기</p></Button>
+                  >
+                    <p>글쓰기</p>
+                  </Button>
                 </div>
               </ModalBody>
               <ModalFooter></ModalFooter>
@@ -426,13 +431,17 @@ const page = () => {
                     onClick={() => {
                       onblockBtnChange();
                     }}
-                  ><p>취소</p></Button>
+                  >
+                    <p>취소</p>
+                  </Button>
                   <Button
                     className=" py-3 px-8 rounded-md bg-whiteGray text-[#ED3D2E] font-bold text-base"
                     onClick={() => {
                       onblockBtnChange();
                     }}
-                  ><p>확인</p></Button>
+                  >
+                    <p>확인</p>
+                  </Button>
                 </div>
               </ModalBody>
               <ModalFooter></ModalFooter>
