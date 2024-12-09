@@ -19,7 +19,7 @@ import {
 } from "@nextui-org/react";
 import React, { useState } from "react";
 
-const page = () => {
+const Page = () => {
   const viewOptions = [
     {
       key: "10",
@@ -155,9 +155,11 @@ const page = () => {
             <Button className="py-3 px-5 rounded-md bg-grayLight text-white">
               삭제
             </Button>
-            <Button className="py-3 px-5 rounded-md bg-mainBlack text-white"> 
-              <Link className="text-white" href="/admin/game/game-management/1"> 추가</Link>
-             
+            <Button className="py-3 px-5 rounded-md bg-mainBlack text-white">
+              <Link className="text-white" href="/admin/game/game-management/1">
+                {" "}
+                추가
+              </Link>
             </Button>
           </div>
         </header>
@@ -293,4 +295,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

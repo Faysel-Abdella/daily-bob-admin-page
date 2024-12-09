@@ -6,7 +6,7 @@ import { Button } from "@nextui-org/react";
 import Link from "next/link";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   const labelStyle = "font-bold text-base text-mainBlack min-w-[90px]";
   const dropDownOptions = [
     { key: "option1", label: "전체 회원" },
@@ -76,13 +76,11 @@ const page = () => {
       </header>
       <div className="flex items-center justify-center mt-11">
         <Button className="py-3 px-7 bg-mainBlack text-white">
-          <Link href="/admin/settlement/permission-management/1/1">
-            n확인
-          </Link>
+          <Link href="/admin/settlement/permission-management/1/1">n확인</Link>
         </Button>
       </div>
     </section>
   );
 };
 
-export default page;
+export default Page;

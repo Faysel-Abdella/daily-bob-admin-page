@@ -19,7 +19,7 @@ import {
 import Link from "next/link";
 import React, { useState } from "react";
 
-const page = () => {
+const Page = () => {
   const labelStyle = "font-bold text-base text-mainBlack min-w-[100px]";
   const dropDownOptions1 = [
     { key: "option1", label: "카테고리" },
@@ -253,4 +253,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

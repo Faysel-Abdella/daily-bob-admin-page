@@ -19,7 +19,7 @@ import {
 import Link from "next/link";
 import React, { useState } from "react";
 
-const page = () => {
+const Page = () => {
   const labelStyle = "font-bold text-base text-mainBlack min-w-[100px]";
   const dropDownOptions1 = [
     { key: "option1", label: "카테고리" },
@@ -127,11 +127,13 @@ const page = () => {
               mainStyles="bg-transparent border border-grayBorder rounded-[5px]"
             />
             <Button className="py-3 px-10 rounded-md bg-mainBlack text-white">
-                <Link href="/admin/settlement/permission-management/1">  권한 그룹 관리</Link>
-          
+              <Link href="/admin/settlement/permission-management/1">
+                {" "}
+                권한 그룹 관리
+              </Link>
             </Button>
             <Button className="py-3 px-8 rounded-md bg-mainBlack text-white">
-            신규 추가
+              신규 추가
             </Button>
           </div>
         </div>
@@ -197,7 +199,9 @@ const page = () => {
               <TableColumn className="w-[5%] truncate">번호</TableColumn>
               <TableColumn className="w-[5%] truncate">권한</TableColumn>
               <TableColumn className="w-[5%] truncate">아이디</TableColumn>
-              <TableColumn className="w-[8%] truncate">휴대전화번호</TableColumn>
+              <TableColumn className="w-[8%] truncate">
+                휴대전화번호
+              </TableColumn>
               <TableColumn className="w-[8%] truncate">이름</TableColumn>
               <TableColumn className="w-[25%] truncate">가입일시</TableColumn>
               <TableColumn className="w-[25%] truncate">승인일시</TableColumn>
@@ -227,12 +231,14 @@ const page = () => {
                   <TableCell className="truncate max-w-[150px] overflow-hidden text-ellipsis whitespace-nowrap">
                     {row.authority}
                   </TableCell>
-                  <TableCell  className="truncate max-w-[130px] overflow-hidden text-ellipsis whitespace-nowrap">{row.id}</TableCell>
-                  <TableCell  className="truncate max-w-[130px] overflow-hidden text-ellipsis whitespace-nowrap">{row.phoneNumber}</TableCell>
+                  <TableCell className="truncate max-w-[130px] overflow-hidden text-ellipsis whitespace-nowrap">
+                    {row.id}
+                  </TableCell>
+                  <TableCell className="truncate max-w-[130px] overflow-hidden text-ellipsis whitespace-nowrap">
+                    {row.phoneNumber}
+                  </TableCell>
                   <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
-                    
-                      {row.name}
-                    
+                    {row.name}
                   </TableCell>
                   <TableCell className="max-w-[100px]">
                     {row.registrationDate}
@@ -241,7 +247,9 @@ const page = () => {
                     {row.approvalDate}
                   </TableCell>
                   <TableCell className="max-w-[100px]">
-                    <Button className="border  border-[#4D4D4D] py-2 px-3 bg-white text-mainBlack">승인</Button>
+                    <Button className="border  border-[#4D4D4D] py-2 px-3 bg-white text-mainBlack">
+                      승인
+                    </Button>
                   </TableCell>
                 </TableRow>
               ))}
@@ -253,4 +261,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

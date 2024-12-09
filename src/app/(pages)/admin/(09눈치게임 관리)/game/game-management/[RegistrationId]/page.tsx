@@ -4,12 +4,20 @@ import DropDown from "@/components/DropDown";
 import DropDownWithLabel from "@/components/DropDownWithLabel";
 import InputNoLabel from "@/components/InputNoLable";
 import InputWithLabel from "@/components/InputWithLabel";
-import { Button, Dropdown, Modal, ModalBody, ModalContent, ModalFooter, useDisclosure } from "@nextui-org/react";
+import {
+  Button,
+  Dropdown,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  useDisclosure,
+} from "@nextui-org/react";
 import assets from "@/assets";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useRef } from "react";
-const page = () => {
+const Page = () => {
   const {
     isOpen: isCheckBtn,
     onOpen: onCheckBtn,
@@ -112,8 +120,14 @@ const page = () => {
             titleStyles={labelStyle}
             selectStyles="w-[110px]"
           />
-          <span>당첨자</span><Button onClick={onCheckBtn} className="py-3 px-4 border bg-white border-[#DCDCDC]"> </Button>
-         
+          <span>당첨자</span>
+          <Button
+            onClick={onCheckBtn}
+            className="py-3 px-4 border bg-white border-[#DCDCDC]"
+          >
+            {" "}
+          </Button>
+
           <InputWithLabel
             label="당첨 가격"
             labelStyles={labelStyle}
@@ -158,7 +172,7 @@ const page = () => {
             <>
               <ModalBody>
                 <h3 className="mt-3 text-mainBlack font-bold text-3xl text-center">
-                당첨자 정보 확인
+                  당첨자 정보 확인
                 </h3>
 
                 <div className="flex items-center gap-8">
@@ -166,7 +180,9 @@ const page = () => {
                   <p className="text-[#868F9A] text-sm">홍길동</p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <p className="min-w-[63px text-[#868F9A] font-bold">전화번호</p>
+                  <p className="min-w-[63px text-[#868F9A] font-bold">
+                    전화번호
+                  </p>
                   <p className="text-[#868F9A] text-sm">010-1111-1111</p>
                 </div>
                 <div className="flex items-center gap-3">
@@ -189,7 +205,7 @@ const page = () => {
                       onCheckBtnChange();
                     }}
                   >
-                  확인
+                    확인
                   </Button>
                 </div>
               </ModalBody>
@@ -202,4 +218,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

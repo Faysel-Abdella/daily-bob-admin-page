@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import React, { useRef } from "react";
 
-const page = () => {
+const Page = () => {
   const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
   const editor = useRef(null);
   const config = {
@@ -41,10 +41,16 @@ const page = () => {
         </div>
       </header>
       <div className="flex items-center justify-center mt-10">
-        <Button className="py-3 px-8 bg-mainBlack text-white">  <Link href="/admin/notification/notification-management/notice-management/1/1"> 수정</Link></Button>
+        <Button className="py-3 px-8 bg-mainBlack text-white">
+          {" "}
+          <Link href="/admin/notification/notification-management/notice-management/1/1">
+            {" "}
+            수정
+          </Link>
+        </Button>
       </div>
     </section>
   );
 };
 
-export default page;
+export default Page;

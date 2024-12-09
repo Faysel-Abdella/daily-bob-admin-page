@@ -4,7 +4,7 @@ import DropDownWithLabel from "@/components/DropDownWithLabel";
 import InputNoLabel from "@/components/InputNoLable";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   const dropDownOptions1 = [
     { key: "option1", label: "선택" },
     { key: "option2", label: "선택" },
@@ -68,4 +68,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

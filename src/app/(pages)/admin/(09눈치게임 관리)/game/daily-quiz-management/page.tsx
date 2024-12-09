@@ -18,7 +18,7 @@ import {
 import Link from "next/link";
 import React, { useState } from "react";
 
-const page = () => {
+const Page = () => {
   const viewOptions = [
     {
       key: "10",
@@ -144,7 +144,7 @@ const page = () => {
             }
           >
             <TableHeader>
-            <TableColumn className="w-[5%]">
+              <TableColumn className="w-[5%]">
                 <Checkbox
                   onClick={() => {
                     if (allListCheckedPageNumbers.includes(page)) {
@@ -232,4 +232,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -5,7 +5,7 @@ import DropDownWithLabel from "@/components/DropDownWithLabel";
 import InputWithLabel from "@/components/InputWithLabel";
 import { Button } from "@nextui-org/react";
 
-const page = () => {
+const Page = () => {
   const dropDownOptions1 = [
     { key: "option1", label: "식당" },
     { key: "option2", label: "식당" },
@@ -133,4 +133,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

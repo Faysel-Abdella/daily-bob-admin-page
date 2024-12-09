@@ -20,7 +20,7 @@ import {
 import React, { useState } from "react";
 import row10Column1 from "@/data/tables/row10Column1";
 
-const page = () => {
+const Page = () => {
   const labelStyle = "font-normal text-base text-mainBlack min-w-[90px]";
   const dropDownOptions1 = [
     { key: "option1", label: "성공" },
@@ -220,4 +220,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

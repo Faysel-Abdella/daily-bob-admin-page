@@ -13,7 +13,7 @@ import assets from "@/assets";
 
 const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
 
-const page = () => {
+const Page = () => {
   const labelStyle = "font-bold text-base !text-grayLight min-w-[95px]";
   const dropDownOptions1 = [
     { key: "option1", label: "카테고리" },
@@ -277,4 +277,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

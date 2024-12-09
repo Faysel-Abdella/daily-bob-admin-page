@@ -19,7 +19,7 @@ import {
 import Link from "next/link";
 import React, { useState } from "react";
 
-const page = () => {
+const Page = () => {
   const dropDownOptions1 = [
     { key: "option1", label: "사용" },
     { key: "option2", label: "사용" },
@@ -287,4 +287,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

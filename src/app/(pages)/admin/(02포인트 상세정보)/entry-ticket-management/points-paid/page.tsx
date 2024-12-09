@@ -4,7 +4,7 @@ import DropDownWithLabel from "@/components/DropDownWithLabel";
 import InputWithLabel from "@/components/InputWithLabel";
 import { Button } from "@nextui-org/react";
 
-const page = () => {
+const Page = () => {
   const labelStyle = "font-bold text-base text-mainBlack min-w-[130px]";
   // Dummy data for the dropdown
   const dropDownOptions1 = [
@@ -81,4 +81,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

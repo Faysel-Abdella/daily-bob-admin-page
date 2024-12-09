@@ -19,14 +19,14 @@ import {
 import Link from "next/link";
 import React, { useState } from "react";
 
-const page = () => {
+const Page = () => {
   const dropDownOptions1 = [
     { key: "option1", label: "사용" },
     { key: "option2", label: "사용" },
     { key: "option3", label: "사용" },
   ];
   const defaultDropDown1 = dropDownOptions1[0].key;
-  const dropDownOptions2= [
+  const dropDownOptions2 = [
     { key: "option1", label: "최신순" },
     { key: "option2", label: "최신순" },
     { key: "option3", label: "최신순" },
@@ -37,7 +37,7 @@ const page = () => {
     { key: "option2", label: "사용" },
     { key: "option3", label: "사용" },
   ];
-  const defaultDropDown3= dropDownOptions3[0].key;
+  const defaultDropDown3 = dropDownOptions3[0].key;
   const dropDownOptions4 = [
     { key: "option1", label: "1" },
     { key: "option2", label: "1" },
@@ -287,4 +287,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

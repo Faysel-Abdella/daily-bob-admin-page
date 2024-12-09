@@ -20,7 +20,7 @@ import {
 import Link from "next/link";
 import React, { useState } from "react";
 
-const page = () => {
+const Page = () => {
   const viewOptions = [
     {
       key: "10",
@@ -72,26 +72,25 @@ const page = () => {
     { key: "option2", label: "최신순" },
     { key: "option3", label: "최신순" },
   ];
-  const defaultSelectedKey2= dropDownOptions[0].key;
+  const defaultSelectedKey2 = dropDownOptions[0].key;
   const dropDownOptions2 = [
     { key: "option1", label: "식당" },
     { key: "option2", label: "식당" },
     { key: "option3", label: "식당" },
   ];
-  const defaultSelectedKey1= dropDownOptions[0].key;
+  const defaultSelectedKey1 = dropDownOptions[0].key;
   const dropDownOptions3 = [
     { key: "option1", label: "식품" },
     { key: "option2", label: "식품" },
     { key: "option3", label: "식품" },
   ];
-  const defaultSelectedKey3= dropDownOptions[0].key;
+  const defaultSelectedKey3 = dropDownOptions[0].key;
   // Selection Logic
   const [clickedRowIds, setClickedRowIds] = useState<number[]>([]);
   const [allListCheckedPageNumbers, setAllListCheckedPageNumbers] = useState<
     number[]
   >([]);
 
-  
   return (
     <section>
       <CommonHeader title="영수증 관리" />
@@ -248,8 +247,12 @@ const page = () => {
                     {row.number}
                   </TableCell>
                   <TableCell className="truncate max-w-[100px] overflow-hidden  whitespace-nowrap">
-                    <Link className="text-[#007AFF]" href="/admin/receipt/receipt-catagory-management/1">{row.storeName}</Link>
-                    
+                    <Link
+                      className="text-[#007AFF]"
+                      href="/admin/receipt/receipt-catagory-management/1"
+                    >
+                      {row.storeName}
+                    </Link>
                   </TableCell>
                   <TableCell className="truncate max-w-[100px] overflow-hidden  whitespace-nowrap">
                     {row.point}
@@ -274,14 +277,14 @@ const page = () => {
                         options={dropDownOptions3}
                         defaultSelectedKeys={defaultSelectedKey3}
                         titleStyles=" text-base text-mainBlack min-w-[40px]"
-                         selectStyles="w-[120px]"
+                        selectStyles="w-[120px]"
                       />
                       <DropDownWithLabel
                         title="하위 그룹"
                         options={dropDownOptions3}
                         defaultSelectedKeys={defaultSelectedKey3}
                         titleStyles=" text-base text-mainBlack min-w-[40px]"
-                         selectStyles="w-[120px]"
+                        selectStyles="w-[120px]"
                       />
                     </div>
                   </TableCell>
@@ -295,4 +298,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

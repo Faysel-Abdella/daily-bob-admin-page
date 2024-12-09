@@ -2,7 +2,7 @@ import CommonHeader from "@/components/CommonHeader";
 import { Button, Textarea } from "@nextui-org/react";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   return (
     <section>
       <CommonHeader title="FAQ 수정하기 " />
@@ -31,4 +31,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

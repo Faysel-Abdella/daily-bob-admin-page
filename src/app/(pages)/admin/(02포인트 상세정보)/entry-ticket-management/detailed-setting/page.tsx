@@ -1,6 +1,6 @@
 import CommonHeader from "@/components/CommonHeader";
 import InputWithLabel from "@/components/InputWithLabel";
-const page = () => {
+const Page = () => {
   return (
     <section>
       <CommonHeader title="세부 설정" />
@@ -36,7 +36,7 @@ const page = () => {
         <div className="flex items-center justify-center gap-14 w-full">
           <div className="w-full">
             <InputWithLabel
-            placeholder="1000"
+              placeholder="1000"
               label="포인트"
               labelStyles="font-bold text-base text-mainBlack min-w-[100px]"
             />
@@ -48,7 +48,7 @@ const page = () => {
           </div>
           <div className="w-full">
             <InputWithLabel
-            placeholder="1"
+              placeholder="1"
               label="응모권"
               labelStyles="font-bold text-base text-mainBlack min-w-[100px]"
             />
@@ -59,4 +59,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
