@@ -147,13 +147,13 @@ const Page = () => {
           <Table
             aria-label="Data Table"
             shadow="none"
-            className="table-fixed w-full" // Ensures the table layout doesn't expand
+            className="table-fixed w-full"
             classNames={{
               th: [
                 "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px] text-center whitespace-nowrap",
               ],
               td: [
-                "px-6 text-center font-normal text-base text-[#363941] whitespace-nowrap truncate max-w-[150px]", // Truncate text and limit width
+                "px-2 text-center font-normal text-base text-[#363941] whitespace-nowrap truncate max-w-[150px]",
               ],
             }}
             bottomContent={
@@ -171,7 +171,7 @@ const Page = () => {
             }
           >
             <TableHeader>
-              <TableColumn className="w-[5%]">
+              <TableColumn>
                 <Checkbox
                   onClick={() => {
                     if (allListCheckedPageNumbers.includes(page)) {
@@ -199,38 +199,38 @@ const Page = () => {
                       ]);
                     }
                   }}
-                  className="size-[14px] rounded-[2px] bg-transparent"
+                  className={`size-[14px] rounded-[2px] bg-transparent`}
                   isSelected={allListCheckedPageNumbers.includes(page)}
-                />
+                ></Checkbox>
               </TableColumn>
-              <TableColumn className="w-[10%]">상품 아이디</TableColumn>
-              <TableColumn className="w-[10%]">업종</TableColumn>
-              <TableColumn className="w-[10%]">그룹</TableColumn>
-              <TableColumn className="w-[10%]">하위그룹</TableColumn>
-              <TableColumn className="w-[20%]">상품명</TableColumn>
-              <TableColumn className="w-[10%]">재고수량</TableColumn>
-              <TableColumn className="w-[10%]">판매가</TableColumn>
-              <TableColumn className="w-[10%]">판매 여부</TableColumn>
-              <TableColumn className="w-[10%]">구매 제한</TableColumn>
-              <TableColumn className="w-[15%]">상품 수정일</TableColumn>
+              <TableColumn>상품 아이디</TableColumn>
+              <TableColumn>업종</TableColumn>
+              <TableColumn>그룹</TableColumn>
+              <TableColumn>하위그룹</TableColumn>
+              <TableColumn>상품명</TableColumn>
+              <TableColumn>재고수량</TableColumn>
+              <TableColumn>판매가</TableColumn>
+              <TableColumn>판매 여부</TableColumn>
+              <TableColumn>구매 제한</TableColumn>
+              <TableColumn>상품 수정일</TableColumn>
             </TableHeader>
             <TableBody>
               {items.map((row) => (
                 <TableRow key={row.productId} className="border-b-1">
                   <TableCell>
                     <Checkbox
-                      className="text-center size-[14px] rounded-[2px]"
+                      className={`text-center size-[14px] rounded-[2px]`}
                       onClick={() => {
-                        if (clickedRowIds.includes(row.productId)) {
+                        if (clickedRowIds.includes(row.number)) {
                           setClickedRowIds(
-                            clickedRowIds.filter((id) => id !== row.productId)
+                            clickedRowIds.filter((id) => id !== row.number)
                           );
                         } else {
-                          setClickedRowIds([...clickedRowIds, row.productId]);
+                          setClickedRowIds([...clickedRowIds, row.number]);
                         }
                       }}
-                      isSelected={clickedRowIds.includes(row.productId)}
-                    />
+                      isSelected={clickedRowIds.includes(row.number)}
+                    ></Checkbox>
                   </TableCell>
                   <TableCell className="truncate">{row.productId}</TableCell>
                   <TableCell className="truncate">{row.industry}</TableCell>
@@ -252,9 +252,7 @@ const Page = () => {
                   <TableCell className="truncate">
                     {row.purchaseLimit}
                   </TableCell>
-                  <TableCell className="truncate">
-                    {row.modificationDate}
-                  </TableCell>
+                  <TableCell>{row.modificationDate}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

@@ -122,10 +122,10 @@ const Page = () => {
             </div>
           </div>
           <div className="flex items-center gap-14 w-full mt-5">
-            <div className="w-full">
+            <div className="w-1/2">
               <InputWithLabel label="이름" labelStyles={`${labelStyle}`} />
             </div>
-            <div className=" flex items-center gap-14  w-full ">
+            <div className=" flex items-center gap-1  w-1/2 ">
               <div className="w-full">
                 <InputWithLabel
                   type="date"
@@ -133,30 +133,30 @@ const Page = () => {
                   labelStyles={`${labelStyle}`}
                 />
               </div>
-
+              <p>~</p>
               <div className="w-full">
                 <InputNoLabel type="date" />
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-14 w-full mt-5">
-            <div w-full>
+          <div className="flex items-center gap-14  mt-5 ">
+            <div>
               <DropDownWithLabel
                 title="차단 여부"
                 options={dropDownOptions1}
                 defaultSelectedKeys="option1"
                 titleStyles={labelStyle}
-                selectStyles="w-96 "
+                selectStyles="w-80 "
                 // Default selected key
               />
             </div>
-            <div className="w-full">
+            <div>
               <DropDownWithLabel
                 title="로그인 방식"
                 options={dropDownOptions2}
                 defaultSelectedKeys="option1"
                 titleStyles={labelStyle}
-                selectStyles="w-96"
+                selectStyles="w-80"
                 // Default selected key
               />
             </div>
@@ -194,7 +194,7 @@ const Page = () => {
             </Button>
           </div>
         </header>
-        <article className="mt-10">
+        <article className="mt-10 ">
           <Table
             aria-label="Data Table"
             shadow="none"
@@ -202,7 +202,7 @@ const Page = () => {
               th: [
                 "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px]  text-center",
               ],
-              td: ["px-6  text-center font-normal text-base text-[#363941] "],
+              td: ["  text-center font-normal text-base text-[#363941] "],
             }}
             bottomContent={
               <div className="flex w-full justify-center  mt-8">
@@ -219,7 +219,6 @@ const Page = () => {
             }
           >
             <TableHeader>
-              {/* <TableColumn>번호</TableColumn> */}
               <TableColumn className="flex justify-center items-center">
                 <Checkbox
                   onClick={() => {

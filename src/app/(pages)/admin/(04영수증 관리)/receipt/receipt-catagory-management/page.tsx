@@ -96,10 +96,10 @@ const Page = () => {
       <CommonHeader title="영수증 관리" />
       <header className="bg-white py-7 px-10 rounded-[20px]">
         <div className="flex items-center gap-14 w-full">
-          <div className="w-full">
+          <div className="w-1/2">
             <InputWithLabel label="가게명" labelStyles={labelStyle} />
           </div>
-          <div className="flex items-center gap-3 w-full">
+          <div className="flex items-center gap-3 w-1/2">
             <div className="w-full">
               <DropDownWithLabel
                 options={dropDownOptions}
@@ -110,27 +110,31 @@ const Page = () => {
               />
             </div>
 
-            <Button className="py-2 px-5  bg-mainBlack text-white">검색</Button>
+            <Button className="py-2 px-5  bg-mainBlack text-white rounded-md">
+              검색
+            </Button>
           </div>
         </div>
         <div className="flex items-center gap-16 mt-5 w-full">
-          <div className="w-full">
+          <div className="w-1/2">
             <InputWithLabel label="상품명" labelStyles={labelStyle} />
           </div>
-          <div className=" flex items-center gap-14  w-full ">
-            <div className="w-[140px">
+          <div className=" flex items-center gap-3  w-1/2 ">
+            <div>
               <InputWithLabel
                 type="date"
                 label="등록일"
                 labelStyles={`${labelStyle}`}
               />
             </div>
-            <div className="w-[140px]">
+            <p>~</p>
+            <div>
               <InputNoLabel type="date" />
             </div>
           </div>
         </div>
       </header>
+
       <div className="bg-white py-10 px-10 rounded-[20px] mt-9">
         <header className="flex items-center justify-between">
           <p className="font-bold text-mainBlack">총 00건</p>
@@ -167,7 +171,7 @@ const Page = () => {
               th: [
                 "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px]  text-center",
               ],
-              td: ["px-6  text-center font-normal text-base text-[#363941] "],
+              td: [" text-center font-normal text-base text-[#363941] "],
             }}
             bottomContent={
               <div className="flex w-full justify-center  mt-8">
@@ -184,7 +188,6 @@ const Page = () => {
             }
           >
             <TableHeader>
-              {/* <TableColumn>번호</TableColumn> */}
               <TableColumn className="flex justify-center items-center">
                 <Checkbox
                   onClick={() => {

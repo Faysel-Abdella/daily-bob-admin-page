@@ -115,7 +115,7 @@ const Page = () => {
               th: [
                 "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px]  text-center",
               ],
-              td: ["px-6  text-center font-normal text-base text-[#363941] "],
+              td: [" text-center font-normal text-base text-[#363941] "],
             }}
             bottomContent={
               <div className="flex w-full justify-center  mt-8">

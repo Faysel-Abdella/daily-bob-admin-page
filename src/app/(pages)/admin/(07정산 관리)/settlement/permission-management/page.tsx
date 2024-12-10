@@ -89,7 +89,9 @@ const Page = () => {
               <InputNoLabel placeholder="상품명" />
             </div>
 
-            <Button className="py-3 px-5 bg-mainBlack text-white">검색</Button>
+            <Button className="py-3 px-5 bg-mainBlack text-white rounded-md">
+              검색
+            </Button>
           </div>
         </div>
         <div className="flex items-center gap-6 mt-5">
@@ -98,18 +100,18 @@ const Page = () => {
             defaultSelectedKeys={defaultDropDown1}
             title="그룹"
             titleStyles={labelStyle}
-            selectStyles="w-[425px]"
+            selectStyles="w-[400px]"
           />
           <DropDownWithLabel
             options={dropDownOptions1}
             defaultSelectedKeys={defaultDropDown1}
             title="하위 그룹"
             titleStyles={labelStyle}
-            selectStyles="w-[425px]"
+            selectStyles="w-[400px]"
           />
         </div>
       </header>
-      <header className=" bg-white py-10 px-10 rounded-[20px] mt-5">
+      <section className=" bg-white py-10 px-10 rounded-[20px] mt-5">
         <div className="flex items-center justify-between">
           <p className="font-bold text-mainBlack">총 00건</p>
           <div className="flex items-center gap-3">
@@ -256,7 +258,7 @@ const Page = () => {
             </TableBody>
           </Table>
         </article>
-      </header>
+      </section>
     </section>
   );
 };
