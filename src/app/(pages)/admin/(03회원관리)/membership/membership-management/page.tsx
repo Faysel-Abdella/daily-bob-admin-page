@@ -103,7 +103,7 @@ const Page = () => {
     <section>
       <CommonHeader title="포인트 상세정보" />
       <header className="bg-white py-7 px-10 rounded-[20px] flex  justify-between gap-8">
-        <div className="w-full">
+        <div className="">
           <div className="flex items-center gap-14 w-full">
             <div className="w-full">
               <InputWithLabel
@@ -122,11 +122,11 @@ const Page = () => {
             </div>
           </div>
           <div className="flex items-center gap-14 w-full mt-5">
-            <div className="w-1/2">
+            <div className="w-full">
               <InputWithLabel label="이름" labelStyles={`${labelStyle}`} />
             </div>
-            <div className=" flex items-center gap-1  w-1/2 ">
-              <div className="w-full">
+            <div className=" flex  items-center gap-14 w-full   ">
+              <div className="w-[130px]">
                 <InputWithLabel
                   type="date"
                   label="등록일"
@@ -134,7 +134,7 @@ const Page = () => {
                 />
               </div>
               <p>~</p>
-              <div className="w-full">
+              <div className="w-[130px]">
                 <InputNoLabel type="date" />
               </div>
             </div>
@@ -146,7 +146,7 @@ const Page = () => {
                 options={dropDownOptions1}
                 defaultSelectedKeys="option1"
                 titleStyles={labelStyle}
-                selectStyles="w-80 "
+                selectStyles="w-72 "
                 // Default selected key
               />
             </div>
@@ -156,7 +156,7 @@ const Page = () => {
                 options={dropDownOptions2}
                 defaultSelectedKeys="option1"
                 titleStyles={labelStyle}
-                selectStyles="w-80"
+                selectStyles="w-72"
                 // Default selected key
               />
             </div>

@@ -250,15 +250,28 @@ const Page = () => {
                     <Checkbox
                       className="text-center size-[14px] rounded-[2px]"
                       onClick={() => {
-                        if (clickedRowIds.includes(row.round)) {
+                        if (clickedRowIds.includes(row.number)) {
                           setClickedRowIds(
-                            clickedRowIds.filter((id) => id !== row.round)
+                            clickedRowIds.filter((id) => id !== row.number)
                           );
                         } else {
-                          setClickedRowIds([...clickedRowIds, row.round]);
+                          setClickedRowIds([...clickedRowIds, row.number]);
                         }
                       }}
-                      isSelected={clickedRowIds.includes(row.round)}
+                      isSelected={clickedRowIds.includes(row.number)}
+                    ></Checkbox>
+                    <Checkbox
+                      className="text-center size-[14px] rounded-[2px]"
+                      onClick={() => {
+                        if (clickedRowIds.includes(row.number)) {
+                          setClickedRowIds(
+                            clickedRowIds.filter((id) => id !== row.number)
+                          );
+                        } else {
+                          setClickedRowIds([...clickedRowIds, row.number]);
+                        }
+                      }}
+                      isSelected={clickedRowIds.includes(row.number)}
                     ></Checkbox>
                   </TableCell>
                   <TableCell className="truncate max-w-[80px] overflow-hidden text-ellipsis whitespace-nowrap">

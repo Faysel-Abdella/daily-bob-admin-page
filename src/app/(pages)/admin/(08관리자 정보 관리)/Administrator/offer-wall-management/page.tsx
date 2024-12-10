@@ -88,7 +88,7 @@ const Page = () => {
       <CommonHeader title="오퍼월 관리 " />
       <header className="bg-white py-7 px-10 rounded-[20px] ">
         <div className="flex items-center gap-7 w-full">
-          <p className="min-w-[72px] font-normal text-base">광고제목</p>
+          <p className="min-w-80px] font-normal text-base">광고제목</p>
           <div className="flex items-center gap-7 w-full">
             <div className="w-full">
               {" "}
@@ -104,14 +104,14 @@ const Page = () => {
             defaultSelectedKeys={defaultDropDown1}
             title="그룹"
             titleStyles={labelStyle}
-            selectStyles="w-[425px]"
+            selectStyles="w-[360px]"
           />
           <DropDownWithLabel
             options={dropDownOptions2}
             defaultSelectedKeys={defaultDropDown2}
             title="하하위 그룹"
             titleStyles={labelStyle}
-            selectStyles="w-[425px]"
+            selectStyles="w-[360px]"
           />
         </div>
       </header>

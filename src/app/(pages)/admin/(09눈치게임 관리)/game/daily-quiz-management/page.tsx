@@ -155,16 +155,16 @@ const Page = () => {
                       );
                       setClickedRowIds(
                         clickedRowIds.filter(
-                          (number) =>
-                            !items
+                          (id) =>
+                            !currentData
                               .map((item: any) => item.number)
-                              .includes(number)
+                              .includes(id)
                         )
                       );
                     } else {
                       setClickedRowIds([
                         ...clickedRowIds,
-                        ...items.map((item: any) => item.number),
+                        ...currentData.map((item: any) => item.number),
                       ]);
                       setAllListCheckedPageNumbers([
                         ...allListCheckedPageNumbers,
@@ -174,7 +174,7 @@ const Page = () => {
                   }}
                   className="size-[14px] rounded-[2px] bg-transparent"
                   isSelected={allListCheckedPageNumbers.includes(page)}
-                />
+                ></Checkbox>
               </TableColumn>
               <TableColumn className="truncate max-w-[80px]">회차</TableColumn>
               <TableColumn className="truncate max-w-[100px]">분류</TableColumn>
@@ -191,16 +191,16 @@ const Page = () => {
                     <Checkbox
                       className="text-center size-[14px] rounded-[2px]"
                       onClick={() => {
-                        if (clickedRowIds.includes(row.round)) {
+                        if (clickedRowIds.includes(row.number)) {
                           setClickedRowIds(
-                            clickedRowIds.filter((id) => id !== row.round)
+                            clickedRowIds.filter((id) => id !== row.number)
                           );
                         } else {
-                          setClickedRowIds([...clickedRowIds, row.round]);
+                          setClickedRowIds([...clickedRowIds, row.number]);
                         }
                       }}
-                      isSelected={clickedRowIds.includes(row.round)}
-                    />
+                      isSelected={clickedRowIds.includes(row.number)}
+                    ></Checkbox>
                   </TableCell>
                   <TableCell className="truncate max-w-[80px] overflow-hidden text-ellipsis whitespace-nowrap">
                     {row.round}

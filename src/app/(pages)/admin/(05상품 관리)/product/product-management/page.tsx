@@ -89,12 +89,12 @@ const Page = () => {
         </div>
         <div className="flex items-center gap-7 mt-5">
           <p className="min-w-[72px]">업종</p>
-          <div className="flex items-center  gap-[70px]">
+          <div className="flex items-center  gap-4">
             <div className="w-full">
               <DropDown
                 options={dropDownOptions}
                 defaultSelectedKeys={defaultDropDown}
-                selectStyles="w-[200px]"
+                selectStyles="w-[220px]"
               />
             </div>
             <div className="w-full">
@@ -103,7 +103,7 @@ const Page = () => {
                 options={dropDownOptions}
                 defaultSelectedKeys={defaultDropDown}
                 titleStyles={labelStyle}
-                selectStyles="w-[235px]"
+                selectStyles="w-[220px]"
               />
             </div>
             <div className="w-full">
@@ -112,7 +112,7 @@ const Page = () => {
                 options={dropDownOptions}
                 defaultSelectedKeys={defaultDropDown}
                 titleStyles={labelStyle}
-                selectStyles="w-[235px]"
+                selectStyles="w-[220px]"
               />
             </div>
           </div>
@@ -199,7 +199,7 @@ const Page = () => {
                       ]);
                     }
                   }}
-                  className={`size-[14px] rounded-[2px] bg-transparent`}
+                  className={`size-[30px] rounded-[2px] bg-transparent`}
                   isSelected={allListCheckedPageNumbers.includes(page)}
                 ></Checkbox>
               </TableColumn>
@@ -219,7 +219,7 @@ const Page = () => {
                 <TableRow key={row.productId} className="border-b-1">
                   <TableCell>
                     <Checkbox
-                      className={`text-center size-[14px] rounded-[2px]`}
+                      className={`text-center size-[30px] rounded-[2px]`}
                       onClick={() => {
                         if (clickedRowIds.includes(row.number)) {
                           setClickedRowIds(

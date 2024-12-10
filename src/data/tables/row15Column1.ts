@@ -1,6 +1,7 @@
 const demo = [
   {
     round: 1,
+    number: 1,
     classification: "일반 ",
     questions: "질문 영역입니다. 질문 영역입니다. 질문 영역 입니다.",
     correctAnswer: "홍길동",
@@ -12,6 +13,7 @@ const row15Column1 = [
   ...Array.from({ length: 70 }, (_, index) => ({
     ...demo[0],
     round: index + 1,
+    number: index + 1,
   })),
 ];
 

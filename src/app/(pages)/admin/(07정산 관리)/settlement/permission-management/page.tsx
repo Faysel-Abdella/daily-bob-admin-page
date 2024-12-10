@@ -242,13 +242,13 @@ const Page = () => {
                   <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
                     {row.name}
                   </TableCell>
-                  <TableCell className="max-w-[100px]">
+                  <TableCell className="truncate max-w-[130px] overflow-hidden text-ellipsis whitespace-nowrap">
                     {row.registrationDate}
                   </TableCell>
-                  <TableCell className="max-w-[100px]">
+                  <TableCell className="truncate max-w-[130px] overflow-hidden text-ellipsis whitespace-nowrap">
                     {row.approvalDate}
                   </TableCell>
-                  <TableCell className="max-w-[100px]">
+                  <TableCell className="max-w-[130px]">
                     <Button className="border  border-[#4D4D4D] py-2 px-3 bg-white text-mainBlack">
                       승인
                     </Button>
