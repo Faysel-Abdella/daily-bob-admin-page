@@ -108,7 +108,7 @@ const Navigation = ({
             parseInt(order) === currentOpened && pathname.includes(init)
               ? ""
               : "hidden"
-          } pl-11 pt-2 flex flex-col gap-2`}
+          } pl-11 pt-2  flex flex-col gap-2`}
         >
           {subTitles.map((item, index) => (
             <Link
@@ -116,8 +116,7 @@ const Navigation = ({
               key={index}
               onClick={() => setSelectedOrder(order)}
             >
-              <div className="flex gap-2 items-center cursor-pointer">
-                {/* Add the dot before the subtitle */}
+              <div className="flex cursor-pointer items-center gap-2">
                 <span
                   className={`h-2 w-2 rounded-full ${
                     pathname === item.route || pathname.includes(item.route)

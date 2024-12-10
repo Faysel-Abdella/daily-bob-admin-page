@@ -13,14 +13,14 @@ const SideBar = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <section className="flex bg-[#F3F3F3]">
-      <article className="bg-white rounded-tr-[30px]  min-w-[312px] max-w-[312px] min-h-screen">
+      <article className="min-h-screen min-w-[330px] bg-white rounded-tr-[30px]  ">
         <div className="flex justify-center items-center pt-[55px]">
           <div className=" flex justify-center items-center w-[210px] h-[55px] ">
             <Image src={logo} alt="Our logo - Great Meat" />
           </div>
         </div>
 
-        <section className="pt-16  flex justify-center items-center ">
+        <section className="pt-16 pl-10  flex justify-start items-center ">
           <section>
             {sideBarContents.map((item) => (
               <Navigation
