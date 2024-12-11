@@ -43,6 +43,7 @@ const Page = () => {
             minRows={8}
             className=" bg-white "
             placeholder="A. 답변 텍스트 영역입니다.."
+            variant="bordered"
           />
         </div>
       </header>
