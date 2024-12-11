@@ -82,17 +82,17 @@ const Page = () => {
         </div>
         <div className="flex items-center gap-16 mt-7">
           <p className="min-w-[82px] font-bold text-mainBlack">그룹</p>
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-8 w-full">
             <DropDown
               options={dropDownOptions}
               defaultSelectedKeys={defaultDropDown}
-              selectStyles="w-[443px]"
+              selectStyles="w-[300px]"
             />
             <DropDownWithLabel
               title="하위 그룹"
               options={dropDownOptions}
               defaultSelectedKeys={defaultDropDown}
-              selectStyles="w-[443px]"
+              selectStyles="w-[300px]"
               titleStyles={labelStyle}
             />
           </div>
@@ -100,13 +100,14 @@ const Page = () => {
         <div className="flex items-center gap-16 mt-7">
           <p className="min-w-[82px] font-bold text-mainBlack">적립 포인트</p>
           <div className="flex items-center gap-8 w-full">
-            <div className="w-3/4">
-              <InputNoLabel />
+            <div>
+              <InputNoLabel inputStyles="w-[300px]" />
             </div>
-            <div className="w-3/4">
+            <div>
               <InputWithLabel
                 label="참여 링크"
-                labelStyles="font-bold text-base text-mainBlack min-w-[65px]"
+                labelStyles="font-bold text-base text-mainBlack min-w-[82px]"
+                inputStyles="w-[300px]"
               />
             </div>
           </div>
