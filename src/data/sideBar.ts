@@ -163,7 +163,7 @@ const sideBarContent = [
       },
       {
         label: "1:1 문의 관리",
-        route: "/admin/notification/1:1-inquiry-management",
+        route: "/admin/notification/1_1-inquiry-management",
       },
     ],
   },
