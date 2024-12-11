@@ -95,7 +95,9 @@ const Page = () => {
               <InputNoLabel placeholder="상품명" />
             </div>
 
-            <Button className="py-3 px-5 bg-mainBlack text-white">검색</Button>
+            <Button className="py-3 px-5 bg-mainBlack text-white rounded-md">
+              검색
+            </Button>
           </div>
         </div>
         <div className="flex items-center gap-6 mt-5">

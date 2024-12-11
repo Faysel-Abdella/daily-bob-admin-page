@@ -92,7 +92,7 @@ const Page = () => {
                 defaultSelectedKeys={defaultDropDown}
                 selectStyles="w-[330px]"
               />
-              <Button className="py-3 px-16 bg-mainBlack text-white">
+              <Button className="py-3 px-16 bg-mainBlack text-white rounded-md">
                 검색
               </Button>
             </div>

@@ -73,7 +73,9 @@ const Page = () => {
             <div className="w-full">
               <InputWithLabel label="이름" labelStyles={labelStyle} />
             </div>
-            <Button className="py-3 px-5 bg-mainBlack text-white">검색</Button>
+            <Button className="py-3 px-5 bg-mainBlack text-white rounded-md">
+              검색
+            </Button>
           </div>
         </div>
         <div className="mt-5">

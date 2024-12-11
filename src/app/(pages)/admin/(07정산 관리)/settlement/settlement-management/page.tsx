@@ -61,7 +61,7 @@ const Page = () => {
                 defaultSelectedKeys={defaultDropDown}
                 selectStyles="w-[400px]"
               />
-              <Button className="py-3 px-5 bg-mainBlack text-white">
+              <Button className="py-3 px-5 bg-mainBlack text-white rounded-md">
                 검색
               </Button>
             </div>
@@ -82,7 +82,7 @@ const Page = () => {
       <div className="bg-white py-10 px-10 rounded-[20px] mt-9">
         <div className="flex items-center justify-between">
           <p className="font-bold text-base">총 00건</p>
-          <Button className="py-3 px-5 bg-mainBlack text-white">
+          <Button className="py-3 px-5 bg-mainBlack text-white rounded-md">
             엑셀 다운로드
           </Button>
         </div>

@@ -55,7 +55,7 @@ const Page = () => {
       <header className=" bg-white py-10 px-10 rounded-[20px] mt-10">
         <div className="flex items-center justify-between">
           <p className="font-bold text-base">총 00건</p>
-          <Button className="bg-mainBlack text-white px-5 py-4">
+          <Button className="bg-mainBlack text-white px-5 py-4 rounded-md">
             엑셀 다운로드
           </Button>
         </div>
