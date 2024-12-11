@@ -28,11 +28,11 @@ const Page = () => {
           </div>
         </div>
       </header>
-      <header className="bg-white py-10 px-10 rounded-[20px] ">
+      <header className="mt-10 bg-white py-10 px-10 rounded-[20px] ">
         <div className="flex gap-8">
           {" "}
           <p className="font-bold min-w-[40px]">질문</p>
-          <div className="flex min-w-[1118px] min-h-[150px] py-2 px-3 border  border-[#DCDCDC] rounded-[5px]">
+          <div className="flex w-full min-h-[150px] py-2 px-3 border  border-[#DCDCDC] rounded-[5px]">
             <p className="text-sm text-grayLight">Q. 질문 텍스트 영역입니다.</p>
           </div>
         </div>
@@ -41,7 +41,7 @@ const Page = () => {
           <p className="font-bold min-w-[40px]">답변</p>
           <Textarea
             minRows={8}
-            className="max-w-6xl bg-white "
+            className=" bg-white "
             placeholder="A. 답변 텍스트 영역입니다.."
           />
         </div>

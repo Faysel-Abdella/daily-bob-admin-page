@@ -217,7 +217,7 @@ const Page = () => {
                   <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
                     <Link
                       className="text-[#9388FE] underline underline-offset-1"
-                      href="/admin/notification/1:1-inquiry-management/1"
+                      href="/admin/notification/1_1-inquiry-management/1"
                     >
                       {row.viewDetails}
                     </Link>
