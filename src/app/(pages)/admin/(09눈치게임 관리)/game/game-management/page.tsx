@@ -95,7 +95,9 @@ const Page = () => {
               />
             </div>
 
-            <Button className="py-2 px-5  bg-mainBlack text-white">검색</Button>
+            <Button className="py-2 px-5  bg-mainBlack text-white rounded-md">
+              검색
+            </Button>
           </div>
         </div>
         <div className="flex items-center gap-16 mt-5 w-full">
@@ -106,7 +108,7 @@ const Page = () => {
               labelStyles={labelStyle}
             />
           </div>
-          <div className=" flex items-center gap-14  w-full ">
+          <div className=" flex items-center gap-1  w-full ">
             <div className="w-[140px">
               <InputWithLabel
                 type="date"
@@ -114,6 +116,7 @@ const Page = () => {
                 labelStyles={`${labelStyle}`}
               />
             </div>
+            <p>~</p>
             <div className="w-[140px]">
               <InputNoLabel type="date" />
             </div>
