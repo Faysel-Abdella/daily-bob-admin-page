@@ -2,6 +2,7 @@
 import CommonHeader from "@/components/CommonHeader";
 import DropDownWithLabel from "@/components/DropDownWithLabel";
 import InputNoLabel from "@/components/InputNoLable";
+import InputWithLabel from "@/components/InputWithLabel";
 import React from "react";
 
 const Page = () => {
@@ -23,21 +24,27 @@ const Page = () => {
     { key: "option3", label: "30분" },
   ];
   const defaultDropDown3 = dropDownOptions3[0].key;
-  const labelStyle = "font-bold text-base text-mainBlack min-w-[98px]";
+  const labelStyle = "font-bold text-base text-mainBlack min-w-[50px]";
   return (
     <section>
       <CommonHeader title="알림 작성 / 상세보기" />
       <header className="bg-white py-7 px-10 rounded-[20px] ">
-        <div className="flex items-center gap-7 w-[1150px]">
-          <p className="min-w-[72px] font-bold text-base">제목</p>
+        <div className="flex items-center gap-7 ">
           <div className="w-full">
-            <InputNoLabel placeholder="Q. 질문 텍스트 영역입니다." />
+            <InputWithLabel
+              label="제목"
+              labelStyles="min-w-[50px] font-bold text-base"
+              placeholder="Q. 질문 텍스트 영역입니다."
+            />
           </div>
         </div>
         <div className="flex items-center gap-7 w-full mt-8">
-          <p className="min-w-[72px] font-bold text-base">내용</p>
-          <div className="w-3/4">
-            <InputNoLabel placeholder="A. 답변 텍스트 영역입니다." />
+          <div className="w-full">
+            <InputWithLabel
+              label="내용"
+              labelStyles="min-w-[50px] font-bold text-base"
+              placeholder="A. 답변 텍스트 영역입니다."
+            />
           </div>
         </div>
         <div className="flex items-center gap-10 mt-8">
@@ -46,21 +53,21 @@ const Page = () => {
             defaultSelectedKeys={defaultDropDown1}
             title="날짜"
             titleStyles={labelStyle}
-            selectStyles="w-[259px]"
+            selectStyles="w-[200px]"
           />
           <DropDownWithLabel
             options={dropDownOptions2}
             defaultSelectedKeys={defaultDropDown2}
             title="시"
             titleStyles={labelStyle}
-            selectStyles="w-[259px]"
+            selectStyles="w-[200px]"
           />
           <DropDownWithLabel
             options={dropDownOptions3}
             defaultSelectedKeys={defaultDropDown3}
             title="분"
             titleStyles={labelStyle}
-            selectStyles="w-[259px]"
+            selectStyles="w-[200px]"
           />
         </div>
       </header>
