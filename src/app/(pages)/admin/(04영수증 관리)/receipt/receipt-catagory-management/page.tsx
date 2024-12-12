@@ -60,7 +60,7 @@ const Page = () => {
     setCurrentData(row5Column1.slice(start, end));
     return row5Column1.slice(start, end);
   }, [page, row5Column1, viewValue, rowsPerPage]);
-  const labelStyle = "font-bold text-base text-mainBlack min-w-[98px]";
+  const labelStyle = " text-base text-mainBlack min-w-[98px]";
   const dropDownOptions = [
     { key: "option1", label: "사용" },
     { key: "option2", label: "사용" },
@@ -95,11 +95,11 @@ const Page = () => {
     <section>
       <CommonHeader title="영수증 관리" />
       <header className="bg-white py-7 px-10 rounded-[20px]">
-        <div className="flex items-center gap-14 w-full">
-          <div className="w-1/2">
+        <div className="flex items-center gap-10 w-full">
+          <div className="w-[45%]">
             <InputWithLabel label="가게명" labelStyles={labelStyle} />
           </div>
-          <div className="flex items-center gap-3 w-1/2">
+          <div className="flex items-center gap-6 w-[45%]">
             <div className="w-full">
               <DropDownWithLabel
                 options={dropDownOptions}
@@ -110,14 +110,18 @@ const Page = () => {
               />
             </div>
 
-            <Button className="py-2 px-5  bg-mainBlack text-white rounded-md">
+            <Button className="w-[10%] py-2 px-5  bg-mainBlack text-white rounded-md">
               검색
             </Button>
           </div>
         </div>
-        <div className="flex items-center gap-16 mt-5 w-full">
-          <div className="w-1/2">
-            <InputWithLabel label="상품명" labelStyles={labelStyle} />
+        <div className="flex items-center gap-10 mt-5 w-full">
+          <div className="w-[45%]">
+            <InputWithLabel
+              label="상품명"
+              labelStyles={labelStyle}
+              inputStyles="w-full"
+            />
           </div>
           <div className=" flex items-center gap-3  w-1/2 ">
             <div>
@@ -127,7 +131,7 @@ const Page = () => {
                 labelStyles={`${labelStyle}`}
               />
             </div>
-            <p>~</p>
+            <p className="text-mainBlack">~</p>
             <div>
               <InputNoLabel type="date" />
             </div>

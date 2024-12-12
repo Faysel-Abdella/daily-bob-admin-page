@@ -18,7 +18,7 @@ const InputNoLabel = ({
   type?: "text" | "number" | "date";
 }) => {
   return (
-    <section className={`flex items-center gap-7 ${mainStyles}`}>
+    <section className={`flex items-center ${mainStyles}`}>
       <div className="w-full">
         <div className={`${inputParentStyles} `}>
           <Input

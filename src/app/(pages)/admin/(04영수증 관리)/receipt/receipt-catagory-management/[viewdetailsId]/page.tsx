@@ -30,75 +30,66 @@ const Page = () => {
     { key: "option3", label: "-" },
   ];
   const defaultSelectedKey4 = dropDownOptions4[0].key;
-  const labelStyle = "font-bold text-base text-mainBlack min-w-[90px]";
+  const labelStyle = "font-bold text-base text-mainBlack min-w-[96px]";
   return (
     <section>
       <CommonHeader title="영수증 상세보기" />
       <header className="bg-white py-7 px-10 rounded-[20px]">
-        <div className="flex items-center gap-7 ">
-          <p className="min-w-[71px] text-base font-bold text-mainBlack">
-            작성자
-          </p>
+        <div className="flex items-center  ">
+          <p className={labelStyle}>작성자</p>
           <p className="text-sm font-normal text-grayLight">abc@naver.com</p>
         </div>
-        <div className="flex items-center gap-7 mt-5">
-          <p className="min-w-[71px] text-base font-bold text-mainBlack">
-            작성자
-          </p>
+        <div className="flex items-center  mt-5">
+          <p className={labelStyle}>작성자</p>
           <p className="text-sm font-normal text-grayLight">YYYY-MM-DD </p>
         </div>
         <div className="flex items-center gap-8">
-        <div className="flex items-center gap-7 mt-3">
-          <p className="min-w-[71px] text-base font-bold text-mainBlack">
-            업종
-          </p>
-          <DropDown
-            options={dropDownOptions1}
-            defaultSelectedKeys={defaultSelectedKey1}
-            selectStyles="w-[124px]"
-          />
+          <div className="flex items-center  mt-3">
+            <p className={labelStyle}>업종</p>
+            <div className="w-[124px]">
+              <DropDown
+                options={dropDownOptions1}
+                defaultSelectedKeys={defaultSelectedKey1}
+                selectStyles="w-full"
+                insideStyles="w-full"
+              />
+            </div>
+          </div>
+          <div className="flex items-center  mt-3">
+            <p className={labelStyle}>하위 업종</p>
+            <div className="w-[124px]">
+              <DropDown
+                options={dropDownOptions1}
+                defaultSelectedKeys={defaultSelectedKey1}
+                selectStyles="w-full"
+                insideStyles="w-full"
+              />
+            </div>
+          </div>
         </div>
-        <div className="flex items-center gap-7 mt-3">
-          <p className="min-w-[71px] text-base font-bold text-mainBlack">
-          하위 업종
-          </p>
-          <DropDown
-            options={dropDownOptions1}
-            defaultSelectedKeys={defaultSelectedKey1}
-            selectStyles="w-[124px]"
-          />
-        </div>
-        </div>
-        <div className="flex items-center gap-7 mt-3">
-          <p className="min-w-[71px] text-base font-bold text-mainBlack">
-            업종
-          </p>
-          <DropDown
-            options={dropDownOptions1}
-            defaultSelectedKeys={defaultSelectedKey1}
-            selectStyles="w-[124px]"
-          />
-        </div>
-        <div className="flex items-center gap-7 mt-5">
-          <p className="min-w-[71px] text-base font-bold text-mainBlack">
-            그룹
-          </p>
-          <DropDown
-            options={dropDownOptions2}
-            defaultSelectedKeys={defaultSelectedKey2}
-            selectStyles="w-[124px]"
-          />
-        </div>
-        <div className="flex items-center gap-6 mt-4">
-          <div className="flex items-center gap-7">
-            <p className="min-w-[71px] text-base font-bold text-mainBlack">
-              하위그룹
-            </p>
+
+        <div className="flex items-center  mt-5">
+          <p className={labelStyle}>그룹</p>
+          <div className="w-[124px]">
             <DropDown
-              options={dropDownOptions4}
-              defaultSelectedKeys={defaultSelectedKey4}
-              selectStyles="w-[124px]"
+              options={dropDownOptions2}
+              defaultSelectedKeys={defaultSelectedKey2}
+              selectStyles="w-full"
+              insideStyles="w-full"
             />
+          </div>
+        </div>
+        <div className="flex items-center gap-8 mt-4">
+          <div className="flex items-center ">
+            <p className={labelStyle}>하위그룹</p>
+            <div className="w-[124px]">
+              <DropDown
+                options={dropDownOptions2}
+                defaultSelectedKeys={defaultSelectedKey2}
+                selectStyles="w-full"
+                insideStyles="w-full"
+              />
+            </div>
           </div>
           <div>
             <InputWithLabel
@@ -110,17 +101,13 @@ const Page = () => {
           </div>
         </div>
         <div className="flex items-center gap-6 mt-7">
-          <div className="flex  gap-7">
-            <p className="min-w-[71px] text-base font-bold text-mainBlack">
-              하위그룹
-            </p>
+          <div className="flex  ">
+            <p className={labelStyle}>사진</p>
             <div className="h-[530px] w-[363px] bg-whiteRed"></div>
           </div>
-          <div className="flex  gap-7">
-            <p className="min-w-[71px] text-base font-bold text-mainBlack">
-              하위그룹
-            </p>
-            <div className="flex items-center justify-center h-[530px] w-[363px] bg-whiteRed">
+          <div className="flex  ">
+            <p className={labelStyle}>게시내용</p>
+            <div className="font-bold flex items-center justify-center h-[530px] w-[363px] bg-whiteRed">
               텍스트가 들어갑니다.
             </div>
           </div>

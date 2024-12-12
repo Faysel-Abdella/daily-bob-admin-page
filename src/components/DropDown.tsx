@@ -13,25 +13,25 @@ const DropDown = ({
   insideStyles?: string;
 }) => {
   return (
-    <div className="flex items-center">
-      <div>
-        <Select
-          classNames={{
-            mainWrapper: [
-              `${selectStyles} border-1 border-[#D2D5D6]  rounded-[5px] text-mainGray`,
-            ],
-            trigger: [`${insideStyles}  bg-[#ffffff] `],
-            value: ["text-[15px] "],
-          }}
-          disallowEmptySelection={true}
-          defaultSelectedKeys={[defaultSelectedKeys]}
-          aria-label="Toggle selection"
-        >
-          {options.map((option) => (
-            <SelectItem key={option.key}>{option.label}</SelectItem>
-          ))}
-        </Select>
-      </div>
+    <div className="w-full">
+      <Select
+        classNames={{
+          base: "w-full",
+          mainWrapper: [
+            `${selectStyles} border-1 border-[#D2D5D6] rounded-[5px] text-mainGray w-full`,
+          ],
+          trigger: [`${insideStyles} bg-[#ffffff] w-full`],
+          value: ["text-[15px]"],
+        }}
+        className="max-w-full"
+        disallowEmptySelection={true}
+        defaultSelectedKeys={[defaultSelectedKeys]}
+        aria-label="Toggle selection"
+      >
+        {options.map((option) => (
+          <SelectItem key={option.key}>{option.label}</SelectItem>
+        ))}
+      </Select>
     </div>
   );
 };
