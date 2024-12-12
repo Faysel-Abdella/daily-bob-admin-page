@@ -24,9 +24,7 @@ const InputWithLabel = ({
   return (
     <section className={`flex items-center ${mainStyles}`}>
       <div>
-        <h3 className={`${labelStyles} text-mainBlack  text-base text-nowrap`}>
-          {label}
-        </h3>
+        <h3 className={`${labelStyles}    text-nowrap`}>{label}</h3>
       </div>
 
       <div className="w-full">

@@ -20,7 +20,7 @@ const Page = () => {
         <div></div>
       </header>
       <div className="flex items-center justify-center mt-10">
-        <Button className="py-3 px-8 bg-mainBlack text-white ">
+        <Button className="py-3 px-8 rounded-md bg-mainBlack text-white ">
           {" "}
           <Link href="/admin/notification/notification-management/faq/1/1">
             수정

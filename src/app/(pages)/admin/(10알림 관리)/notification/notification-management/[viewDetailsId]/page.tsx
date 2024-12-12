@@ -3,6 +3,7 @@ import CommonHeader from "@/components/CommonHeader";
 import DropDownWithLabel from "@/components/DropDownWithLabel";
 import InputNoLabel from "@/components/InputNoLable";
 import InputWithLabel from "@/components/InputWithLabel";
+import { Button } from "@nextui-org/react";
 import React from "react";
 
 const Page = () => {
@@ -29,24 +30,24 @@ const Page = () => {
     <section>
       <CommonHeader title="알림 작성 / 상세보기" />
       <header className="bg-white py-7 px-10 rounded-[20px] ">
-        <div className="flex items-center gap-7 ">
-          <div className="w-full">
-            <InputWithLabel
-              label="제목"
-              labelStyles="min-w-[50px] font-bold text-base"
-              placeholder="Q. 질문 텍스트 영역입니다."
-            />
-          </div>
+        <div className="w-full">
+          <InputWithLabel
+            label="제목"
+            labelStyles={labelStyle}
+            placeholder="Q. 질문 텍스트 영역입니다."
+            inputStyles="w-full"
+          />
         </div>
-        <div className="flex items-center gap-7 w-full mt-8">
-          <div className="w-full">
-            <InputWithLabel
-              label="내용"
-              labelStyles="min-w-[50px] font-bold text-base"
-              placeholder="A. 답변 텍스트 영역입니다."
-            />
-          </div>
+
+        <div className="w-full mt-7">
+          <InputWithLabel
+            label="내용"
+            labelStyles={labelStyle}
+            placeholder="A. 답변 텍스트 영역입니다."
+            inputStyles="w-full"
+          />
         </div>
+
         <div className="flex items-center gap-10 mt-8">
           <DropDownWithLabel
             options={dropDownOptions1}
@@ -71,6 +72,18 @@ const Page = () => {
           />
         </div>
       </header>
+
+      <div className="mt-10 flex items-center justify-center gap-3">
+        <Button className="rounded-md bg-mainBlack text-center text-white text-base px-6">
+          확인
+        </Button>
+        <Button
+          className="rounded-md bg-mainGray text-center text-white text-base
+ px-6"
+        >
+          취소
+        </Button>
+      </div>
     </section>
   );
 };

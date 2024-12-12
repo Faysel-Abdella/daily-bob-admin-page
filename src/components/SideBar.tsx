@@ -41,7 +41,7 @@ const SideBar = ({ children }: { children: React.ReactNode }) => {
 
       {/* <section className="w-full pl-9 py-12 pr-6">{children}</section> */}
 
-      <section className="max-w-[1250px] w-[1250px]  pl-9 py-12 pr-6">
+      <section className="max-w-[1350px] w-[1350px]  pl-9 py-12 pr-6">
         {children}
       </section>
     </section>

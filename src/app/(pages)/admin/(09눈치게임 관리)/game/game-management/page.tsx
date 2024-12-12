@@ -76,40 +76,39 @@ const Page = () => {
     <section>
       <CommonHeader title="눈치게임 관리" />
       <header className="bg-white py-7 px-10 rounded-[20px]">
-        <div className="flex items-center gap-14 w-full">
-          <div className="w-full">
+        <div className="flex items-center gap-7 w-full">
+          <div className="w-1/2">
             <InputWithLabel
               label="당첨 유저"
               placeholder="상품명"
               labelStyles={labelStyle}
+              inputStyles="w-full"
             />
           </div>
-          <div className="flex items-center gap-3 w-full">
-            <div className="w-full">
-              <DropDownWithLabel
-                options={dropDownOptions}
-                defaultSelectedKeys={defaultSelectedKey}
-                title="상태"
-                titleStyles={labelStyle}
-                selectStyles="w-[355px] "
-              />
-            </div>
-
-            <Button className="py-2 px-5  bg-mainBlack text-white rounded-md">
-              검색
-            </Button>
+          <div className="w-1/2">
+            <DropDownWithLabel
+              options={dropDownOptions}
+              defaultSelectedKeys={defaultSelectedKey}
+              title="상태"
+              titleStyles={labelStyle}
+              selectStyles="w-full "
+            />
           </div>
+          <Button className="py-2 px-5  bg-mainBlack text-white rounded-md">
+            검색
+          </Button>
         </div>
-        <div className="flex items-center gap-16 mt-5 w-full">
-          <div className="w-full">
+
+        <div className="w-[92%] flex items-center gap-7 mt-5">
+          <div className="w-1/2">
             <InputWithLabel
               label="상품명"
               placeholder="상품명"
               labelStyles={labelStyle}
             />
           </div>
-          <div className=" flex items-center gap-1  w-full ">
-            <div className="w-[140px">
+          <div className="w-1/2 flex items-center gap-3  ">
+            <div className="">
               <InputWithLabel
                 type="date"
                 label="등록일"
@@ -117,28 +116,28 @@ const Page = () => {
               />
             </div>
             <p>~</p>
-            <div className="w-[140px]">
+            <div>
               <InputNoLabel type="date" />
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-16 mt-5 w-full">
-          <div className="w-full">
+
+        <div className="w-[92%] flex items-center gap-7 mt-5">
+          <div className="w-1/2">
             <InputWithLabel
               label="회차"
               placeholder="상품명"
               labelStyles={labelStyle}
             />
           </div>
-          <div className=" flex items-center gap-14  w-full ">
-            <div className="w-full">
-              <InputWithLabel label="가격 범위" labelStyles={`${labelStyle}`} />
+          <div className="w-[45%] flex items-center ">
+            <p className={labelStyle}>가격 범위</p>
+            <div className="w-1/2">
+              <InputNoLabel inputStyles="w-full" />
             </div>
-            <div className="flex items-center gap-14 w-full ">
-              <div className="w-full">
-                <InputNoLabel />
-              </div>
-              <div className="py-2 px-5"></div>
+            <p className="px-3">~</p>
+            <div className="w-1/2">
+              <InputNoLabel inputStyles="w-full" />
             </div>
           </div>
         </div>

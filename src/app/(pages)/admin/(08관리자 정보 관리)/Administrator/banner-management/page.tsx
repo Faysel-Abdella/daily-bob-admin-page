@@ -4,6 +4,7 @@ import DropDown from "@/components/DropDown";
 import DropDownWithLabel from "@/components/DropDownWithLabel";
 import HeaderDropDown from "@/components/HeaderDropDown";
 import InputNoLabel from "@/components/InputNoLable";
+import InputWithLabel from "@/components/InputWithLabel";
 import row13Column1 from "@/data/tables/row13Column1";
 import {
   Button,
@@ -88,45 +89,46 @@ const Page = () => {
   const [allListCheckedPageNumbers, setAllListCheckedPageNumbers] = useState<
     number[]
   >([]);
+
+  const labelStyle = "font-bold text-base text-mainBlack min-w-[80px]";
   return (
     <section>
-      <CommonHeader title="상품 관리 " />
+      <CommonHeader title="배너 관리  " />
       <header className=" bg-white py-10 px-10 rounded-[20px] ">
-        <div className="flex items-center gap-16">
-          <div className="flex items-center gap-7 w-full">
-            <p className="min-w-[72px]">배너 제목</p>
-            <div className="w-full">
-              <InputNoLabel placeholder="상품명" />
-            </div>
+        <div className="flex items-center gap-8">
+          <div className="w-1/2">
+            <InputWithLabel
+              label="배너 제목"
+              labelStyles={labelStyle}
+              placeholder="상품명"
+              inputStyles="w-full"
+            />
           </div>
-          <div className="flex items-center gap-7">
-            <p className="min-w-[72px]">상태</p>
-            <div className="flex items-center gap-7 w-full">
-              <DropDown
-                options={dropDownOptions1}
-                defaultSelectedKeys={defaultDropDown1}
-                selectStyles="w-[400px]"
-              />
-              <Button className="py-3 px-5 bg-mainBlack text-white">
-                검색
-              </Button>
-            </div>
+          <div className="w-1/2">
+            <DropDownWithLabel
+              title="상태"
+              titleStyles={labelStyle}
+              options={dropDownOptions1}
+              defaultSelectedKeys={defaultDropDown1}
+              selectStyles="w-full"
+            />
           </div>
+          <Button className="rounded-md py-3 px-5 bg-mainBlack text-white">
+            검색
+          </Button>
         </div>
-        <div className="flex items-center gap-8 mt-5">
-          <div className="flex items-center gap-7 w-full">
-            <p className="min-w-[72px]">등록일</p>
-            <div className="w-3/4">
-              <InputNoLabel type="date" />
-            </div>
+
+        <div className="w-[90%] flex items-center gap-4 mt-5">
+          <div className="w-1/2">
+            <InputWithLabel
+              label="등록일"
+              labelStyles={labelStyle}
+              type="date"
+            />
           </div>
-          <div className="w-full">
-            <div className="flex items-center gap-8 w-full ">
-              <div className="w-full">
-                <InputNoLabel type="date" />
-              </div>
-              <div className="py-3 px-9"></div>
-            </div>
+          <p>~</p>
+          <div className="w-1/2">
+            <InputNoLabel inputStyles="w-full" type="date" />
           </div>
         </div>
       </header>
@@ -217,13 +219,13 @@ const Page = () => {
                   isSelected={allListCheckedPageNumbers.includes(page)}
                 ></Checkbox>
               </TableColumn>
-              <TableColumn className="w-[5%] truncate">번호</TableColumn>
-              <TableColumn className="w-[5%] truncate">이미지</TableColumn>
-              <TableColumn className="w-[40%] truncate">배너 이름</TableColumn>
-              <TableColumn className="w-[10%] truncate">링크</TableColumn>
-              <TableColumn className="w-[10%] truncate">사용여부</TableColumn>
-              <TableColumn className="w-[10%] truncate">노출 순서</TableColumn>
-              <TableColumn className="w-[15%] truncate">상세보기</TableColumn>
+              <TableColumn>번호</TableColumn>
+              <TableColumn>이미지</TableColumn>
+              <TableColumn>배너 이름</TableColumn>
+              <TableColumn>링크</TableColumn>
+              <TableColumn>사용여부</TableColumn>
+              <TableColumn>노출 순서</TableColumn>
+              <TableColumn>상세보기</TableColumn>
             </TableHeader>
             <TableBody>
               {items.map((row) => (
@@ -256,18 +258,22 @@ const Page = () => {
                     {row.link}
                   </TableCell>
                   <TableCell>
-                    <DropDown
-                      options={dropDownOptions3}
-                      defaultSelectedKeys={defaultDropDown3}
-                      selectStyles="w-[120px]"
-                    />
+                    <div className="w-[110px]">
+                      <DropDown
+                        options={dropDownOptions3}
+                        defaultSelectedKeys={defaultDropDown3}
+                        selectStyles="w-full"
+                      />
+                    </div>
                   </TableCell>
                   <TableCell>
-                    <DropDown
-                      options={dropDownOptions4}
-                      defaultSelectedKeys={defaultDropDown4}
-                      selectStyles="w-[120px]"
-                    />
+                    <div className="w-[81px]">
+                      <DropDown
+                        options={dropDownOptions4}
+                        defaultSelectedKeys={defaultDropDown4}
+                        selectStyles="w-full"
+                      />
+                    </div>
                   </TableCell>
                   <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
                     <Link

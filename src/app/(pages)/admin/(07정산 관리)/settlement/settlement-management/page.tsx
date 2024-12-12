@@ -1,7 +1,9 @@
 "use client";
 import CommonHeader from "@/components/CommonHeader";
 import DropDown from "@/components/DropDown";
+import DropDownWithLabel from "@/components/DropDownWithLabel";
 import InputNoLabel from "@/components/InputNoLable";
+import InputWithLabel from "@/components/InputWithLabel";
 import row9Column1 from "@/data/tables/row9Column1";
 import {
   Button,
@@ -42,38 +44,47 @@ const Page = () => {
     return row9Column1.slice(start, start + rowsPerPage);
   }, [page, rowsPerPage]);
 
+  const labelStyle = "font-medium text-base text-mainBlack min-w-[72px]";
+
   return (
     <section>
       <CommonHeader title="상품 관리 " />
-      <header className=" bg-white py-10 px-10 rounded-[20px] ">
-        <div className="flex items-center gap-16">
-          <div className="flex items-center gap-7 w-full">
-            <p className="min-w-[72px]">상품명</p>
-            <div className="w-full">
-              <InputNoLabel placeholder="상품명" />
-            </div>
+      <header className="w-full bg-white py-10 px-10 rounded-[20px] ">
+        <div className="w-full flex items-center gap-8">
+          <div className="w-1/2">
+            <InputWithLabel
+              label="상품명"
+              labelStyles={labelStyle}
+              placeholder="상품명"
+              inputStyles="w-full"
+            />
           </div>
-          <div className="flex items-center gap-7">
-            <p className="min-w-[72px]">상태</p>
-            <div className="flex items-center gap-7 w-full">
-              <DropDown
-                options={dropDownOptions}
-                defaultSelectedKeys={defaultDropDown}
-                selectStyles="w-[400px]"
-              />
-              <Button className="py-3 px-5 bg-mainBlack text-white rounded-md">
-                검색
-              </Button>
-            </div>
+
+          <div className=" w-1/2">
+            <DropDownWithLabel
+              title="상태"
+              titleStyles={labelStyle}
+              options={dropDownOptions}
+              defaultSelectedKeys={defaultDropDown}
+              selectStyles="w-full"
+            />
           </div>
+
+          <Button className="py-3 px-5 bg-mainBlack text-white rounded-md">
+            검색
+          </Button>
         </div>
-        <div className="flex items-center gap-8 mt-5">
-          <div className="flex items-center gap-7 w-full">
-            <p className="min-w-[72px]">등록일</p>
-            <div className="w-full">
-              <InputNoLabel type="date" />
-            </div>
+
+        <div className="w-[90%] flex items-center gap-8 mt-5">
+          <div className="w-full">
+            <InputWithLabel
+              label="등록일"
+              labelStyles={labelStyle}
+              type="date"
+            />
           </div>
+          <p>~</p>
+
           <div className="w-full">
             <InputNoLabel type="date" />
           </div>

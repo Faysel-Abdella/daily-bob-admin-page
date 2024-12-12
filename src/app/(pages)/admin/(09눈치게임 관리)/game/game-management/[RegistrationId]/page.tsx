@@ -35,20 +35,28 @@ const Page = () => {
     minHeight: "500px",
   };
   const dropDownOptions = [
-    { key: "option1", label: "카테고리" },
-    { key: "option2", label: "카테고리" },
-    { key: "option3", label: "카테고리" },
+    { key: "option1", label: "총 참여인원" },
+    { key: "option2", label: "총 참여인원" },
+    { key: "option3", label: "총 참여인원" },
   ];
+
+  const dropDownOptions1 = [
+    { key: "option1", label: "10회차" },
+    { key: "option2", label: "20회차" },
+    { key: "option3", label: "30회차" },
+  ];
+
   const defaultDropDown = dropDownOptions[0].key;
+  const defaultDropDown1 = dropDownOptions1[0].key;
   const labelStyle = "font-bold text-base text-mainBlack min-w-[80px]";
   return (
     <section>
-      <CommonHeader title="오퍼월 등록하기 " />
+      <CommonHeader title="눈치게임 등록하기 " />
       <header className=" bg-white py-10 px-10 rounded-[20px] ">
         <div className="flex items center gap-8">
-          <div className="flex items-center gap-7">
-            <p className="min-w-[120px] font-bold text-mainBlack">썸네일</p>
-            <button className="py-3 px-4 flex flex-col gap-2 rounded-[10px] border-1 border-lightBorder">
+          <div className="flex items-center ">
+            <p className={labelStyle}>썸네일</p>
+            <button className="py-3 px-6 flex flex-col items-center justify-center gap-2 rounded-[10px] border-1 border-lightBorder">
               <Image
                 src={assets.importImage}
                 alt="An example image"
@@ -59,91 +67,115 @@ const Page = () => {
               <p className="text-sm font-semibold text-grayLight">추가</p>
             </button>
           </div>
-          <div className="py-4 px-7 bg-[#FFEDED] rounded-[5px]"></div>
-          <div className="py-4 px-7 bg-[#FFEDED]"></div>
-          <div className="py-4 px-7 bg-[#FFEDED]"></div>
+          <div className="w-[120px] h-[85px] bg-[#FFEDED] rounded-[10px]"></div>
+          <div className="w-[120px] h-[85px] bg-[#FFEDED] rounded-[10px]"></div>
+          <div className="w-[120px] h-[85px] bg-[#FFEDED] rounded-[10px]"></div>
         </div>
 
         <div className="flex items-center gap-16 mt-7">
-          <p className="min-w-[82px] font-bold text-mainBlack">광고 제목</p>
-          <DropDown
-            options={dropDownOptions}
-            defaultSelectedKeys={defaultDropDown}
-            selectStyles="w-[150px]"
-          />
-
-          <InputWithLabel
-            labelStyles={labelStyle}
-            label="진행 기간"
-            type="date"
-            inputStyles="w-[320px]"
-          />
-
-          <InputNoLabel type="date" inputStyles="w-[320px]" />
-        </div>
-        <div className="flex items-center gap-16  mt-7">
-          <p className="min-w-[82px] font-bold text-mainBlack">광고 제목</p>
-
-          <InputNoLabel inputStyles="w-[510px]" />
-
-          <div className="flex gap-5">
-            <InputWithLabel
-              label="정상 가격"
-              labelStyles={labelStyle}
-              inputStyles="w-[100px]"
+          <div className="w-[30%]">
+            <DropDownWithLabel
+              title="광고 제목"
+              titleStyles={labelStyle}
+              options={dropDownOptions1}
+              defaultSelectedKeys={defaultDropDown1}
+              selectStyles="w-full"
             />
+          </div>
 
-            <div className="">
+          <div className="w-[70%] flex items-center">
+            <div className="w-1/2">
               <InputWithLabel
-                label="진행 가격"
                 labelStyles={labelStyle}
-                inputStyles="w-[60px]"
+                label="진행 기간"
+                type="date"
+                inputStyles="w-full"
               />
             </div>
-            <div>
-              <InputNoLabel inputStyles="w-[60px]" />
+            <p className="px-3">~</p>
+
+            <div className="w-1/2">
+              <InputNoLabel type="date" inputStyles="w-full" />
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-3 mt-7">
-          <p className="min-w-[140px] font-bold text-mainBlack">광고 제목</p>
-          <InputNoLabel inputStyles="w-[90px]" />
-          <InputWithLabel
-            label="총 참여인원"
-            inputStyles="w-[90px]"
-            labelStyles={labelStyle}
-          />
-          <DropDownWithLabel
-            title="앱 내 노출"
-            options={dropDownOptions}
-            defaultSelectedKeys={defaultDropDown}
-            titleStyles={labelStyle}
-            selectStyles="w-[110px]"
-          />
-          <span>당첨자</span>
-          <Button
-            onClick={onCheckBtn}
-            className="py-3 px-4 border bg-white border-[#DCDCDC]"
-          >
-            {" "}
-          </Button>
 
-          <InputWithLabel
-            label="당첨 가격"
-            labelStyles={labelStyle}
-            inputStyles="w-[80px]"
-          />
-          <InputWithLabel
-            label="응모권 회수"
-            labelStyles={labelStyle}
-            inputStyles="w-[80px]"
-          />
+        <div className="w-full flex items-center  gap-6  mt-7">
+          <div className="w-[40%]">
+            <InputWithLabel label="광고 제목" labelStyles={labelStyle} />
+          </div>
+
+          <div className="w-[60%] flex items-center gap-6">
+            <div className="w-1/2">
+              <InputWithLabel
+                label="정상 가격"
+                labelStyles={labelStyle}
+                inputStyles="w-full"
+              />
+            </div>
+
+            <div className="w-1/2 flex items-center">
+              <p className={labelStyle}>진행 가격</p>
+              <div className="w-full">
+                <InputNoLabel inputStyles="w-full" />
+              </div>
+              <p className="px-3">~</p>
+              <div className="w-full">
+                <InputNoLabel inputStyles="w-full" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="w-full flex items-center gap-3 mt-7">
+          <div className="w-1/6">
+            <InputWithLabel
+              label="광고 제목"
+              labelStyles={labelStyle}
+              inputStyles="w-full"
+            />
+          </div>
+          <div className="w-1/6">
+            <InputWithLabel
+              label="총 참여인원"
+              labelStyles={labelStyle}
+              inputStyles="w-full"
+            />
+          </div>
+          <div className="w-1/6">
+            <DropDownWithLabel
+              title="앱 내 노출"
+              options={dropDownOptions}
+              defaultSelectedKeys={defaultDropDown}
+              titleStyles={labelStyle}
+              selectStyles="w-full"
+            />
+          </div>
+
+          <div className="w-1/6">
+            <InputWithLabel
+              label="당첨자"
+              labelStyles="font-bold text-base text-mainBlack min-w-[60px]"
+              inputStyles="w-full"
+            />
+          </div>
+
+          <div className="w-1/6">
+            <InputWithLabel
+              label="당첨 가격"
+              labelStyles={labelStyle}
+              inputStyles="w-full"
+            />
+          </div>
+          <div className="w-1/6">
+            <InputWithLabel
+              label="응모권 회수"
+              labelStyles={labelStyle}
+              inputStyles="w-full"
+            />
+          </div>
         </div>
 
         <div className="w-full min-h-[400px] p-[8px] mt-8">
-          <p className="font-bold text-base text-mainBlack">
-            유의사항 및 상세 안내
-          </p>
           <div className="w-full mt-4">
             <JoditEditor
               ref={editor}

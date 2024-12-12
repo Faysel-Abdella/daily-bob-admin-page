@@ -18,9 +18,7 @@ const DropDownWithLabel = ({
 }) => {
   return (
     <div className="flex items-center w-full">
-      <h4 className={`${titleStyles} text-mainBlack text-base text-nowrap `}>
-        {title}
-      </h4>
+      <h4 className={`${titleStyles}  text-nowrap `}>{title}</h4>
       <div className="flex-grow">
         <Select
           classNames={{

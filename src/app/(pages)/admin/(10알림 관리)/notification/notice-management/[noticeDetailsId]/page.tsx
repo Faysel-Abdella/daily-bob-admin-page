@@ -18,7 +18,7 @@ const Page = () => {
   };
   return (
     <section>
-      <CommonHeader title="공지사항 관리" />
+      <CommonHeader title="공지사항 상세보기" />
       <header className="bg-white py-7 px-10 rounded-[20px] ">
         <div className="flex items-center gap-8">
           <p className="font-bold text-mainBlack min-w-[41px]">작성일</p>
@@ -28,7 +28,7 @@ const Page = () => {
           <p className="font-bold text-mainBlack min-w-[41px]">제목</p>
           <p className="text-sm text-grayLight">공지사항 제목 영역입니다.</p>
         </div>
-        <div className="w-full min-h-[400px] p-[8px] mt-8">
+        <div className="w-full min-h-[400px]  mt-8">
           <p className="font-bold text-base text-mainBlack">내용</p>
           <div className="w-full mt-8">
             <JoditEditor
@@ -41,12 +41,9 @@ const Page = () => {
         </div>
       </header>
       <div className="flex items-center justify-center mt-10">
-        <Button className="py-3 px-8 bg-mainBlack text-white">
+        <Button className="py-3 px-8 bg-mainBlack rounded-md text-white">
           {" "}
-          <Link href="/admin/notification/notification-management/notice-management/1/1">
-            {" "}
-            수정
-          </Link>
+          <Link href=""> 수정</Link>
         </Button>
       </div>
     </section>

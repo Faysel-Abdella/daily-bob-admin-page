@@ -4,6 +4,7 @@ import DropDown from "@/components/DropDown";
 import DropDownWithLabel from "@/components/DropDownWithLabel";
 import HeaderDropDown from "@/components/HeaderDropDown";
 import InputNoLabel from "@/components/InputNoLable";
+import InputWithLabel from "@/components/InputWithLabel";
 import row11Column1 from "@/data/tables/row11Column1";
 import {
   Button,
@@ -49,39 +50,47 @@ const Page = () => {
   const [allListCheckedPageNumbers, setAllListCheckedPageNumbers] = useState<
     number[]
   >([]);
+
   return (
     <section>
       <CommonHeader title="상품 관리 " />
       <header className="bg-white py-7 px-10 rounded-[20px] ">
-        <div className="flex items-center gap-7 w-full">
-          <p className="min-w-[72px] font-normal text-base">광고제목</p>
-          <div className="flex items-center gap-7 w-full">
-            <div className="w-full">
-              {" "}
-              <InputNoLabel placeholder="상품명" />
-            </div>
+        <div className="w-full flex items-center gap-7">
+          <div className="w-full">
+            <InputWithLabel
+              label="광고제목"
+              labelStyles={labelStyle}
+              placeholder="상품명"
+            />
+          </div>
 
-            <Button className="py-3 px-5 bg-mainBlack text-white">검색</Button>
+          <Button className="py-3 px-5 rounded-md bg-mainBlack text-white">
+            검색
+          </Button>
+        </div>
+
+        <div className="flex items-center gap-6 mt-5">
+          <div className="w-1/2">
+            <DropDownWithLabel
+              options={dropDownOptions}
+              defaultSelectedKeys={defaultDropDown}
+              title="그룹"
+              titleStyles={labelStyle}
+              selectStyles="w-full"
+            />
+          </div>
+          <div className="w-1/2">
+            <DropDownWithLabel
+              options={dropDownOptions}
+              defaultSelectedKeys={defaultDropDown}
+              title="하위 그룹"
+              titleStyles={labelStyle}
+              selectStyles="w-full"
+            />
           </div>
         </div>
-        <div className="flex items-center gap-6 mt-5">
-          <DropDownWithLabel
-            options={dropDownOptions}
-            defaultSelectedKeys={defaultDropDown}
-            title="그룹"
-            titleStyles={labelStyle}
-            selectStyles="w-[425px]"
-          />
-          <DropDownWithLabel
-            options={dropDownOptions}
-            defaultSelectedKeys={defaultDropDown}
-            title="하위 그룹"
-            titleStyles={labelStyle}
-            selectStyles="w-[425px]"
-          />
-        </div>
       </header>
-      <header className=" bg-white py-10 px-10 rounded-[20px] mt-5">
+      <section className=" bg-white py-10 px-10 rounded-[20px] mt-5">
         <div className="flex items-center justify-between">
           <p className="font-bold text-mainBlack">총 00건</p>
           <div className="flex items-center gap-3">
@@ -115,13 +124,13 @@ const Page = () => {
           <Table
             aria-label="Data Table"
             shadow="none"
-            className="table-fixed w-full" // Ensures the table layout doesn't expand
+            className="table-fixed w-full"
             classNames={{
               th: [
                 "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px] text-center whitespace-nowrap",
               ],
               td: [
-                "px-6 text-center font-normal text-base text-[#363941] whitespace-nowrap truncate max-w-[150px]", // Truncate text and limit width
+                " text-center font-normal text-base text-[#363941] whitespace-nowrap truncate max-w-[150px]", // Truncate text and limit width
               ],
             }}
             bottomContent={
@@ -220,7 +229,7 @@ const Page = () => {
             </TableBody>
           </Table>
         </article>
-      </header>
+      </section>
     </section>
   );
 };

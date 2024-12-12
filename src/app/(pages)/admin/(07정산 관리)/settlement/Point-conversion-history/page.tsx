@@ -92,19 +92,24 @@ const Page = () => {
         <div className="flex items-center justify-between">
           <p className="font-bold text-mainBlack">총 00건</p>
           <div className="flex items-center gap-3">
-            <DropDown
-              options={dropDownOptions2}
-              defaultSelectedKeys={defaultDropDown2}
-              selectStyles="w-[124px]"
-            />
-            <HeaderDropDown
-              options={viewOptions}
-              defaultSelectedKey={viewOptionsDefault}
-              value={viewValue}
-              setNewValue={setViewValue}
-              styles="w-[100px] "
-              mainStyles="bg-transparent border border-grayBorder rounded-[5px]"
-            />
+            <div className="w-[150px]">
+              <DropDown
+                options={dropDownOptions2}
+                defaultSelectedKeys={defaultDropDown2}
+                selectStyles="w-full"
+              />
+            </div>
+            <div>
+              <HeaderDropDown
+                options={viewOptions}
+                defaultSelectedKey={viewOptionsDefault}
+                value={viewValue}
+                setNewValue={setViewValue}
+                styles="w-[100px] "
+                mainStyles="bg-transparent border border-grayBorder rounded-[5px]"
+              />
+            </div>
+
             <Button className="py-3 px-5 rounded-md bg-grayLight text-white">
               삭제
             </Button>

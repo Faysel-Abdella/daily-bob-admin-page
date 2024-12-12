@@ -26,15 +26,15 @@ const Page = () => {
     { key: "option3", label: "카테고리" },
   ];
   const defaultDropDown = dropDownOptions[0].key;
-  const labelStyle = "font-bold text-base text-mainBlack min-w-[80px]";
+  const labelStyle = "font-bold text-base text-mainBlack min-w-[90px]";
   return (
     <section>
       <CommonHeader title="오퍼월 등록하기 " />
       <header className=" bg-white py-10 px-10 rounded-[20px] ">
         <div className="flex items center gap-[348px]">
-          <div className="flex items-center gap-7">
-            <p className="min-w-[120px] font-bold text-mainBlack">썸네일</p>
-            <button className="py-3 px-4 flex flex-col gap-2 rounded-[10px] border-1 border-lightBorder">
+          <div className="flex items-center ">
+            <p className={labelStyle}>썸네일</p>
+            <button className="py-3 px-6 flex flex-col items-center justify-center gap-2 rounded-[10px] border-1 border-lightBorder">
               <Image
                 src={assets.importImage}
                 alt="An example image"
@@ -55,7 +55,7 @@ const Page = () => {
               </p>
             </div>
 
-            <button className="py-3 px-4 flex flex-col gap-2 rounded-[10px] border-1 border-lightBorder">
+            <button className="py-3 px-6 flex flex-col items-center justify-center gap-2 rounded-[10px] border-1 border-lightBorder">
               <Image
                 src={assets.importImage}
                 alt="An example image"
@@ -68,48 +68,58 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="flex items-center gap-16 w-5/6 mt-7">
-          <p className="min-w-[82px] font-bold text-mainBlack">광고 제목</p>
-          <div className="w-full">
-            <InputNoLabel />
-          </div>
+        <div className="mt-7 w-full">
+          <InputWithLabel
+            label="광고 제목"
+            labelStyles={labelStyle}
+            inputStyles="w-full"
+          />
         </div>
-        <div className="flex items-center gap-16 w-5/6 mt-7">
-          <p className="min-w-[82px] font-bold text-mainBlack">제공 문구</p>
-          <div className="w-full">
-            <InputNoLabel />
-          </div>
+        <div className="mt-7 w-full">
+          <InputWithLabel
+            label="제공 문구"
+            labelStyles={labelStyle}
+            inputStyles="w-full"
+          />
         </div>
-        <div className="flex items-center gap-16 mt-7">
-          <p className="min-w-[82px] font-bold text-mainBlack">그룹</p>
-          <div className="flex items-center gap-8 w-full">
-            <DropDown
-              options={dropDownOptions}
-              defaultSelectedKeys={defaultDropDown}
-              selectStyles="w-[300px]"
-            />
-            <DropDownWithLabel
-              title="하위 그룹"
-              options={dropDownOptions}
-              defaultSelectedKeys={defaultDropDown}
-              selectStyles="w-[300px]"
-              titleStyles={labelStyle}
-            />
-          </div>
-        </div>
-        <div className="flex items-center gap-16 mt-7">
-          <p className="min-w-[82px] font-bold text-mainBlack">적립 포인트</p>
-          <div className="flex items-center gap-8 w-full">
-            <div>
-              <InputNoLabel inputStyles="w-[300px]" />
-            </div>
-            <div>
-              <InputWithLabel
-                label="참여 링크"
-                labelStyles="font-bold text-base text-mainBlack min-w-[82px]"
-                inputStyles="w-[300px]"
+
+        <div className="w-full flex items-center gap-16 mt-7">
+          <div className="w-full flex items-center gap-8">
+            <div className="w-1/2">
+              <DropDownWithLabel
+                title="그룹"
+                titleStyles={labelStyle}
+                options={dropDownOptions}
+                defaultSelectedKeys={defaultDropDown}
+                selectStyles="w-full"
               />
             </div>
+            <div className="w-1/2">
+              <DropDownWithLabel
+                title="하위 그룹"
+                options={dropDownOptions}
+                defaultSelectedKeys={defaultDropDown}
+                titleStyles={labelStyle}
+                selectStyles="w-full"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-16 mt-7">
+          <div className="w-1/2">
+            <InputWithLabel
+              label="적립 포인트"
+              labelStyles={labelStyle}
+              inputStyles="w-full"
+            />
+          </div>
+          <div className="w-1/2">
+            <InputWithLabel
+              label="참여 링크"
+              labelStyles={labelStyle}
+              inputStyles="w-full"
+            />
           </div>
         </div>
         <div className="w-full min-h-[400px] p-[8px] mt-8">

@@ -3,6 +3,7 @@ import CommonHeader from "@/components/CommonHeader";
 import DropDown from "@/components/DropDown";
 import HeaderDropDown from "@/components/HeaderDropDown";
 import InputNoLabel from "@/components/InputNoLable";
+import InputWithLabel from "@/components/InputWithLabel";
 import row18Column1 from "@/data/tables/row18Column1";
 import {
   Button,
@@ -58,7 +59,7 @@ const Page = () => {
     setCurrentData(row18Column1.slice(start, end));
     return row18Column1.slice(start, end);
   }, [page, row18Column1, viewValue, rowsPerPage]);
-  const labelStyle = "font-normal text-base text-mainBlack min-w-[98px]";
+  const labelStyle = "font-bold text-base text-mainBlack min-w-[98px]";
   const dropDownOptions = [
     { key: "option1", label: "최신순" },
     { key: "option2", label: "최신순" },
@@ -74,18 +75,21 @@ const Page = () => {
   const defaultSelectedKey = dropDownOptions[0].key;
   return (
     <section>
-      <CommonHeader title="알림 관리 " />
+      <CommonHeader title="FAQ 관리" />
       <header className="bg-white py-7 px-10 rounded-[20px] ">
         <div className="flex items-center gap-7 w-full">
-          <p className="min-w-[72px] font-normal text-base">제목</p>
-          <div className="flex items-center gap-7 w-full">
-            <div className="w-full">
-              {" "}
-              <InputNoLabel placeholder="상품명" />
-            </div>
-
-            <Button className="py-3 px-16 bg-mainBlack text-white">검색</Button>
+          <div className="w-full">
+            <InputWithLabel
+              label="제목"
+              labelStyles={labelStyle}
+              placeholder="상품명"
+              inputStyles="w-full"
+            />
           </div>
+
+          <Button className="py-3 px-16 rounded-md bg-mainBlack text-white">
+            검색
+          </Button>
         </div>
       </header>
       <div className="bg-white py-10 px-10 rounded-[20px] mt-9">
@@ -95,7 +99,7 @@ const Page = () => {
             <DropDown
               options={dropDownOptions}
               defaultSelectedKeys={defaultDropDown}
-              selectStyles="w-[124px]"
+              selectStyles="min-w-[124px]"
             />
             <HeaderDropDown
               options={viewOptions}
@@ -121,7 +125,7 @@ const Page = () => {
               th: [
                 "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px] text-center",
               ],
-              td: ["px-6 text-center font-normal text-base text-[#363941]"],
+              td: [" text-center font-normal text-base text-[#363941]"],
             }}
             bottomContent={
               <div className="flex w-full justify-center mt-8">

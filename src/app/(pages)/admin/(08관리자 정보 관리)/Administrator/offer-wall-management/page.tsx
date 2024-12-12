@@ -88,7 +88,7 @@ const Page = () => {
       <CommonHeader title="오퍼월 관리 " />
       <header className="bg-white py-7 px-10 rounded-[20px] ">
         <div className="flex items-center gap-7 w-full">
-          <p className="min-w-80px] font-normal text-base">광고제목</p>
+          <p className="min-w-[80px] font-normal text-base">광고제목</p>
           <div className="flex items-center gap-7 w-full">
             <div className="w-full">
               {" "}
@@ -121,19 +121,23 @@ const Page = () => {
         <div className="flex items-center justify-between">
           <p className="font-bold text-mainBlack">총 00건</p>
           <div className="flex items-center gap-3">
-            <DropDown
-              options={dropDownOptions3}
-              defaultSelectedKeys={defaultDropDown3}
-              selectStyles="w-[124px]"
-            />
-            <HeaderDropDown
-              options={viewOptions}
-              defaultSelectedKey={viewOptionsDefault}
-              value={viewValue}
-              setNewValue={setViewValue}
-              styles="w-[100px] "
-              mainStyles="bg-transparent border border-grayBorder rounded-[5px]"
-            />
+            <div className="w-[150px]">
+              <DropDown
+                options={dropDownOptions3}
+                defaultSelectedKeys={defaultDropDown3}
+                selectStyles="w-full"
+              />
+            </div>
+            <div>
+              <HeaderDropDown
+                options={viewOptions}
+                defaultSelectedKey={viewOptionsDefault}
+                value={viewValue}
+                setNewValue={setViewValue}
+                styles="w-[100px] "
+                mainStyles="bg-transparent border border-grayBorder rounded-[5px]"
+              />
+            </div>
             <Button className="py-3 px-5 rounded-md bg-mainBlack text-white">
               삭제
             </Button>
@@ -151,7 +155,7 @@ const Page = () => {
                 "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px] text-center truncate",
               ],
               td: [
-                "px-6 text-center font-normal text-base text-[#363941] truncate",
+                " text-center font-normal text-base text-[#363941] truncate",
               ],
             }}
             bottomContent={
@@ -201,12 +205,12 @@ const Page = () => {
                   isSelected={allListCheckedPageNumbers.includes(page)}
                 ></Checkbox>
               </TableColumn>
-              <TableColumn className="w-[5%] truncate">번호</TableColumn>
-              <TableColumn className="w-[5%] truncate">썸네일</TableColumn>
-              <TableColumn className="w-[20%] truncate">광고 제목</TableColumn>
-              <TableColumn className="w-[15%] truncate">하위 그룹</TableColumn>
-              <TableColumn className="w-[15%] truncate">포인트</TableColumn>
-              <TableColumn className="w-[15%] truncate">상세보기</TableColumn>
+              <TableColumn>번호</TableColumn>
+              <TableColumn>썸네일</TableColumn>
+              <TableColumn>광고 제목</TableColumn>
+              <TableColumn>하위 그룹</TableColumn>
+              <TableColumn>포인트</TableColumn>
+              <TableColumn>상세보기</TableColumn>
             </TableHeader>
             <TableBody>
               {items.map((row) => (

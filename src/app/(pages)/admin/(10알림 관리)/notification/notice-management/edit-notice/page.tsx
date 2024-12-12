@@ -31,7 +31,7 @@ const Page = () => {
             <InputNoLabel placeholder="공지사항 제목 영역입니다." />
           </div>
         </div>
-        <div className="w-full min-h-[400px] p-[8px] mt-8">
+        <div className="w-full min-h-[400px]   mt-8">
           <p className="font-bold text-base text-mainBlack">내용</p>
           <div className="w-full mt-8">
             <JoditEditor

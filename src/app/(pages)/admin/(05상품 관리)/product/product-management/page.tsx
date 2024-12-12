@@ -4,6 +4,7 @@ import DropDown from "@/components/DropDown";
 import DropDownWithLabel from "@/components/DropDownWithLabel";
 import HeaderDropDown from "@/components/HeaderDropDown";
 import InputNoLabel from "@/components/InputNoLable";
+import InputWithLabel from "@/components/InputWithLabel";
 import row6Column1 from "@/data/tables/row6Column1";
 import {
   Button,
@@ -77,11 +78,13 @@ const Page = () => {
       <CommonHeader title="상품 관리 " />
       <header className="bg-white py-7 px-10 rounded-[20px] ">
         <div className="flex items-center gap-7 w-full">
-          <p className="min-w-[72px]">상품명</p>
           <div className="flex items-center gap-7 w-full">
             <div className="w-full">
-              {" "}
-              <InputNoLabel placeholder="상품명" />
+              <InputWithLabel
+                label="상품명"
+                placeholder="상품명"
+                labelStyles={labelStyle}
+              />
             </div>
 
             <Button className="py-3 px-5 bg-mainBlack text-white rounded-md">
@@ -89,32 +92,33 @@ const Page = () => {
             </Button>
           </div>
         </div>
-        <div className="flex items-center gap-7 mt-5">
-          <p className="min-w-[72px]">업종</p>
-          <div className="flex items-center  gap-4">
-            <div className="w-full">
-              <DropDown
+        <div className="w-full flex items-center gap-7 mt-5">
+          <div className="w-[90%] flex items-center justify-between">
+            <div className="w-[30%]">
+              <DropDownWithLabel
+                title="업종"
                 options={dropDownOptions}
                 defaultSelectedKeys={defaultDropDown}
-                selectStyles="w-[220px]"
+                titleStyles={labelStyle}
+                selectStyles="w-full"
               />
             </div>
-            <div className="w-full">
+            <div className="w-[30%]">
               <DropDownWithLabel
                 title="그룹"
                 options={dropDownOptions}
                 defaultSelectedKeys={defaultDropDown}
                 titleStyles={labelStyle}
-                selectStyles="w-[220px]"
+                selectStyles="w-full"
               />
             </div>
-            <div className="w-full">
+            <div className="w-[30%]">
               <DropDownWithLabel
                 title="하위 그룹"
                 options={dropDownOptions}
                 defaultSelectedKeys={defaultDropDown}
                 titleStyles={labelStyle}
-                selectStyles="w-[220px]"
+                selectStyles="w-full"
               />
             </div>
           </div>
@@ -124,19 +128,23 @@ const Page = () => {
         <header className="flex items-center justify-between">
           <p className="font-bold text-mainBlack">총 00건</p>
           <div className="flex items-center gap-3">
-            <DropDown
-              options={dropDownOptions}
-              defaultSelectedKeys={defaultDropDown}
-              selectStyles="w-[120px]"
-            />
-            <HeaderDropDown
-              options={viewOptions}
-              defaultSelectedKey={viewOptionsDefault}
-              value={viewValue}
-              setNewValue={setViewValue}
-              styles="w-[100px] "
-              mainStyles="bg-transparent border border-grayBorder rounded-[5px]"
-            />
+            <div className="w-[150px]">
+              <DropDown
+                options={dropDownOptions}
+                defaultSelectedKeys={defaultDropDown}
+                selectStyles="w-full"
+              />
+            </div>
+            <div>
+              <HeaderDropDown
+                options={viewOptions}
+                defaultSelectedKey={viewOptionsDefault}
+                value={viewValue}
+                setNewValue={setViewValue}
+                styles="w-[100px] "
+                mainStyles="bg-transparent border border-grayBorder rounded-[5px]"
+              />
+            </div>
             <Button className="py-3 px-5 rounded-md bg-grayLight text-white">
               삭제
             </Button>

@@ -1,8 +1,10 @@
 "use client";
 import CommonHeader from "@/components/CommonHeader";
 import DropDown from "@/components/DropDown";
+import DropDownWithLabel from "@/components/DropDownWithLabel";
 import HeaderDropDown from "@/components/HeaderDropDown";
 import InputNoLabel from "@/components/InputNoLable";
+import InputWithLabel from "@/components/InputWithLabel";
 import row15Column1 from "@/data/tables/row15Column1";
 import {
   Button,
@@ -73,32 +75,37 @@ const Page = () => {
 
   const defaultSelectedKey = dropDownOptions[0].key;
 
+  const labelStyle1 = "font-bold text-base text-mainBlack min-w-[80px]";
+
   return (
     <section>
       <CommonHeader title="데일리 퀴즈 관리 " />
-      <header className=" bg-white py-10 px-10 rounded-[20px] ">
-        <div className="flex items-center gap-16">
-          <div className="flex items-center gap-7 w-full">
-            <p className="min-w-[72px]">질문</p>
-            <div className="w-full">
-              <InputNoLabel placeholder="질문명" />
-            </div>
-          </div>
-          <div className="flex items-center gap-7">
-            <p className="min-w-[72px]">대답</p>
-            <div className="flex items-center gap-7 w-full">
-              <DropDown
-                options={dropDownOptions}
-                defaultSelectedKeys={defaultDropDown}
-                selectStyles="w-[330px]"
-              />
-              <Button className="py-3 px-16 bg-mainBlack text-white rounded-md">
-                검색
-              </Button>
-            </div>
-          </div>
+
+      <header className=" w-full bg-white py-10 px-10 rounded-[20px] flex items-center gap-4">
+        <div className="w-1/2">
+          <InputWithLabel
+            label="질문"
+            labelStyles={labelStyle}
+            placeholder="질문명"
+            inputStyles="w-full"
+          />
         </div>
+
+        <div className="w-1/2">
+          <DropDownWithLabel
+            title="대답"
+            titleStyles={labelStyle}
+            options={dropDownOptions}
+            defaultSelectedKeys={defaultDropDown}
+            selectStyles="w-full"
+          />
+        </div>
+
+        <Button className="py-3 px-16 bg-mainBlack text-white rounded-md">
+          검색
+        </Button>
       </header>
+
       <div className="bg-white py-10 px-10 rounded-[20px] mt-9">
         <header className="flex items-center justify-between">
           <p className="font-bold text-mainBlack">총 00건</p>
@@ -112,10 +119,10 @@ const Page = () => {
               mainStyles="bg-transparent border border-grayBorder rounded-[5px]"
             />
             <Button className="py-3 px-5 rounded-md bg-mainBlack text-white">
-              삭제
+              등록
             </Button>
             <Button className="py-3 px-10 rounded-md bg-mainBlack text-white">
-              등록
+              엑셀 업로드
             </Button>
           </div>
         </header>
@@ -127,7 +134,7 @@ const Page = () => {
               th: [
                 "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px] text-center",
               ],
-              td: ["px-6 text-center font-normal text-base text-[#363941]"],
+              td: ["text-center font-normal text-base text-[#363941]"],
             }}
             bottomContent={
               <div className="flex w-full justify-center mt-8">
