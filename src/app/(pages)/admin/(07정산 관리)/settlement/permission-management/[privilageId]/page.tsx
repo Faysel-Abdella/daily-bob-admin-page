@@ -18,65 +18,71 @@ const Page = () => {
     <section>
       <CommonHeader title="관리자 권한 관리" />
       <header className=" bg-white py-10 px-10 rounded-[20px] ">
-        <div className="flex items-center gap-16 w-full">
-          <div className="w-full">
+        <div className="flex items-center gap-10 w-full">
+          <div className="w-1/2">
             <InputWithLabel
               label="이름"
               placeholder="전체 회원"
               labelStyles={labelStyle}
+              inputStyles="w-full"
             />
           </div>
 
-          <div className="flex items-center justify-center gap-4 w-full">
-            <div className="w-full">
-              <InputWithLabel label="ID" labelStyles={labelStyle} />
-            </div>
-
-            <Button className="bg-mainBlack text-white px-5 py-3">검색</Button>
+          <div className="w-1/2">
+            <InputWithLabel
+              label="ID"
+              labelStyles={labelStyle}
+              inputStyles="w-full"
+            />
           </div>
+
+          <Button className="bg-mainBlack rounded-md text-white px-5 py-3">
+            검색
+          </Button>
         </div>
-        <div className="flex items-center gap-16 w-full mt-6">
-          <div className="w-full">
+        <div className="w-[90%] flex items-center gap-10  mt-6">
+          <div className="w-1/2">
             <InputWithLabel
               label="휴대폰 번호"
               placeholder="01011111111"
               labelStyles={labelStyle}
+              inputStyles="w-full"
             />
           </div>
-          <div className="w-full">
+          <div className="w-1/2">
             <DropDownWithLabel
               title="권한"
               options={dropDownOptions}
               defaultSelectedKeys="option1"
               titleStyles={labelStyle}
-              selectStyles="w-[370px]"
-              // Default selected key
+              selectStyles="w-full"
             />
           </div>
         </div>
-        <div className="flex items-center gap-16 w-full mt-6">
-          <div className="w-full">
+
+        <div className="w-[90%] flex items-center gap-10  mt-6">
+          <div className="w-1/2">
             <InputWithLabel
               label="가입 일시"
               placeholder="2024-10-08 19:16:09"
               labelStyles={labelStyle}
+              inputStyles="w-full"
             />
           </div>
-          <div className="w-full flex items-center gap-4">
-            <div className="w-full">
-              <InputWithLabel
-                label="승인일시"
-                placeholder="2024-10-08 19:16:09"
-                labelStyles={labelStyle}
-              />
-            </div>
-            <div className="py- px-10"></div>
+
+          <div className="w-1/2">
+            <InputWithLabel
+              label="승인일시"
+              placeholder="2024-10-08 19:16:09"
+              labelStyles={labelStyle}
+              inputStyles="w-full"
+            />
           </div>
         </div>
       </header>
       <div className="flex items-center justify-center mt-11">
-        <Button className="py-3 px-7 bg-mainBlack text-white">
-          <Link href="/admin/settlement/permission-management/1/1">n확인</Link>
+        <Button className="py-3 px-7 rounded-md bg-mainBlack text-white">
+          <Link href="/admin/settlement/permission-management/1/1">확인</Link>
         </Button>
       </div>
     </section>

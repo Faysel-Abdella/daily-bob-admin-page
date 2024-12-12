@@ -75,7 +75,7 @@ const Page = () => {
         <div className="flex items-center gap-16 mt-7">
           <div className="w-[30%]">
             <DropDownWithLabel
-              title="광고 제목"
+              title="회차"
               titleStyles={labelStyle}
               options={dropDownOptions1}
               defaultSelectedKeys={defaultDropDown1}
@@ -102,7 +102,7 @@ const Page = () => {
 
         <div className="w-full flex items-center  gap-6  mt-7">
           <div className="w-[40%]">
-            <InputWithLabel label="광고 제목" labelStyles={labelStyle} />
+            <InputWithLabel label="상품명" labelStyles={labelStyle} />
           </div>
 
           <div className="w-[60%] flex items-center gap-6">
@@ -129,7 +129,7 @@ const Page = () => {
         <div className="w-full flex items-center gap-3 mt-7">
           <div className="w-1/6">
             <InputWithLabel
-              label="광고 제목"
+              label="조회수"
               labelStyles={labelStyle}
               inputStyles="w-full"
             />
@@ -137,7 +137,7 @@ const Page = () => {
           <div className="w-1/6">
             <InputWithLabel
               label="총 참여인원"
-              labelStyles={labelStyle}
+              labelStyles={`font-bold text-base text-mainBlack min-w-[90px]`}
               inputStyles="w-full"
             />
           </div>
@@ -152,11 +152,13 @@ const Page = () => {
           </div>
 
           <div className="w-1/6">
-            <InputWithLabel
-              label="당첨자"
-              labelStyles="font-bold text-base text-mainBlack min-w-[60px]"
-              inputStyles="w-full"
-            />
+            <button onClick={onCheckBtn}>
+              <InputWithLabel
+                label="당첨자"
+                labelStyles="font-bold text-base text-mainBlack min-w-[60px]"
+                inputStyles="w-full"
+              />
+            </button>
           </div>
 
           <div className="w-1/6">
@@ -195,8 +197,8 @@ const Page = () => {
         onOpenChange={onCheckBtnChange}
         hideCloseButton
         classNames={{
-          base: ["flex justify-center items-center"],
-          body: ["p-6 flex justify-center items-center"],
+          base: ["min-w-[500px]"],
+          body: ["p-6 px-8"],
         }}
       >
         <ModalContent>
@@ -206,20 +208,25 @@ const Page = () => {
                 <h3 className="mt-3 text-mainBlack font-bold text-3xl text-center">
                   당첨자 정보 확인
                 </h3>
-
-                <div className="flex items-center gap-8">
-                  <p className="min-w-[63px text-[#868F9A] font-bold">이름</p>
-                  <p className="text-[#868F9A] text-sm">홍길동</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <p className="min-w-[63px text-[#868F9A] font-bold">
-                    전화번호
-                  </p>
-                  <p className="text-[#868F9A] text-sm">010-1111-1111</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <p className="min-w-[63px text-[#868F9A] font-bold">주소</p>
-                  <p className="text-[#FF5E18] text-sm">미 입력 상태</p>
+                <div className="space-y-5">
+                  <div className="flex items-center  mt-2">
+                    <p className="min-w-[90px] text-[#868F9A] font-bold">
+                      이름
+                    </p>
+                    <p className="text-[#868F9A] text-sm">홍길동</p>
+                  </div>
+                  <div className="flex items-center ">
+                    <p className="min-w-[90px] text-[#868F9A] font-bold">
+                      전화번호
+                    </p>
+                    <p className="text-[#868F9A] text-sm">010-1111-1111</p>
+                  </div>
+                  <div className="flex items-center ">
+                    <p className="min-w-[90px] text-[#868F9A] font-bold">
+                      주소
+                    </p>
+                    <p className="text-[#FF5E18] text-sm">미 입력 상태</p>
+                  </div>
                 </div>
 
                 <div className="mt-7 flex justify-center items-center gap-3">

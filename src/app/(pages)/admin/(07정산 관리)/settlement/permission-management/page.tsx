@@ -77,6 +77,9 @@ const Page = () => {
   const [allListCheckedPageNumbers, setAllListCheckedPageNumbers] = useState<
     number[]
   >([]);
+
+  const [selectedRows, setSelectedRows] = useState<number[]>([]);
+
   return (
     <section>
       <CommonHeader title="관리자 정보 관리" />
@@ -249,7 +252,20 @@ const Page = () => {
                     {row.approvalDate}
                   </TableCell>
                   <TableCell className="max-w-[130px]">
-                    <Button className="border  border-[#4D4D4D] py-2 px-3 bg-white text-mainBlack">
+                    <Button
+                      onClick={() =>
+                        selectedRows.includes(row.number)
+                          ? setSelectedRows(
+                              selectedRows.filter((id) => id !== row.number)
+                            )
+                          : setSelectedRows([...selectedRows, row.number])
+                      }
+                      className={`border-2  border-mainBlack py-2 px-3  ${
+                        selectedRows.includes(row.number)
+                          ? "bg-mainBlack text-white"
+                          : "bg-transparent text-mainBlack"
+                      }`}
+                    >
                       승인
                     </Button>
                   </TableCell>
