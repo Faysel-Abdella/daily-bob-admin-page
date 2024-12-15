@@ -84,34 +84,39 @@ const Page = () => {
     <section>
       <CommonHeader title='관리자 정보 관리' />
       <header className='bg-white py-7 px-10 rounded-[20px] '>
-        <div className='flex items-center gap-7 w-full'>
-          <p className='min-w-[72px] font-normal text-base'>광고제목</p>
-          <div className='flex items-center gap-7 w-full'>
-            <div className='w-full'>
-              {' '}
-              <InputNoLabel placeholder='상품명' />
+        <div className='flex gap-12 '>
+          <div className='flex flex-col flex-1 justify-center'>
+            <div className='flex items-center gap-7 w-full'>
+              <p className='min-w-[72px] font-normal text-base'>광고제목</p>
+              <div className='flex items-center gap-7 w-full'>
+                <div className='w-full'>
+                  <InputNoLabel placeholder='상품명' />
+                </div>
+              </div>
             </div>
-
-            <Button className='py-3 px-5 bg-mainBlack text-white rounded-md'>
-              검색
-            </Button>
+            {/* second row  */}
+            <div className='flex items-center gap-8 mt-5'>
+              <div className='flex-1'>
+                <DropDownWithLabel
+                  options={dropDownOptions1}
+                  defaultSelectedKeys={defaultDropDown1}
+                  title='그룹'
+                  titleStyles={labelStyle}
+                />
+              </div>
+              <div className='flex-1'>
+                <DropDownWithLabel
+                  options={dropDownOptions1}
+                  defaultSelectedKeys={defaultDropDown1}
+                  title='하위 그룹'
+                  titleStyles={labelStyle}
+                />
+              </div>
+            </div>
           </div>
-        </div>
-        <div className='flex items-center gap-8 mt-5'>
-          <DropDownWithLabel
-            options={dropDownOptions1}
-            defaultSelectedKeys={defaultDropDown1}
-            title='그룹'
-            titleStyles={labelStyle}
-            selectStyles='w-[300px]'
-          />
-          <DropDownWithLabel
-            options={dropDownOptions1}
-            defaultSelectedKeys={defaultDropDown1}
-            title='하위 그룹'
-            titleStyles={labelStyle}
-            selectStyles='w-[300px]'
-          />
+          <Button className='py-3 px-5 bg-mainBlack text-white rounded-md'>
+            검색
+          </Button>
         </div>
       </header>
       <section className=' bg-white py-10 px-10 rounded-[20px] mt-5'>
@@ -142,7 +147,7 @@ const Page = () => {
             </Button>
           </div>
         </div>
-        <article className='mt-10'>
+        <article className='mt-5'>
           <Table
             aria-label='Data Table'
             shadow='none'

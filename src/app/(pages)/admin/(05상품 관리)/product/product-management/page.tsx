@@ -130,7 +130,7 @@ const Page = () => {
           </div>
         </div>
       </header>
-      <div className='bg-white py-10 px-10 rounded-[20px] mt-9'>
+      <div className='bg-white py-5 px-10 rounded-[20px] mt-9'>
         <header className='flex mt-5 items-center justify-between'>
           <p className='font-bold text-mainBlack'>총 00건</p>
           <div className='flex items-center gap-3'>

@@ -66,15 +66,15 @@ const Page = () => {
 
       <header className='bg-white py-5 px-10 rounded-[20px] flex items-center justify-between gap-8'>
         <div className='flex flex-col gap-6 flex-1'>
-          <div className='flex items-center gap-14 w-full'>
-            <div className='w-[420px]'>
+          <div className='flex flex-wrap -mx-2'>
+            <div className='w-1/2 px-2 mb-4'>
               <InputWithLabel
                 label='아이디'
                 labelStyles={`${labelStyle}`}
                 inputStyles='w-full'
               />
             </div>
-            <div className='flex-1'>
+            <div className='w-1/2 px-2 mb-4 '>
               <InputWithLabel
                 label='휴대폰번호'
                 labelStyles={`${labelStyle}`}
@@ -83,7 +83,7 @@ const Page = () => {
               />
             </div>
           </div>
-          <div className=' w-[420px]'>
+          <div className='w-1/2 px-2'>
             <InputWithLabel label='이름' labelStyles={`${labelStyle}`} />
           </div>
         </div>
