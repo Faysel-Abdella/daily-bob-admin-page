@@ -1,10 +1,10 @@
-'use client';
-import CommonHeader from '@/components/CommonHeader';
-import DropDownWithLabel from '@/components/DropDownWithLabel';
-import HeaderDropDown from '@/components/HeaderDropDown';
-import InputNoLabel from '@/components/InputNoLable';
-import InputWithLabel from '@/components/InputWithLabel';
-import row1Column1 from '@/data/tables/row1Column1';
+"use client";
+import CommonHeader from "@/components/CommonHeader";
+import DropDownWithLabel from "@/components/DropDownWithLabel";
+import HeaderDropDown from "@/components/HeaderDropDown";
+import InputNoLabel from "@/components/InputNoLable";
+import InputWithLabel from "@/components/InputWithLabel";
+import row1Column1 from "@/data/tables/row1Column1";
 import {
   Button,
   Checkbox,
@@ -21,9 +21,9 @@ import {
   ModalContent,
   ModalFooter,
   useDisclosure,
-} from '@nextui-org/react';
-import React, { useState } from 'react';
-import row4Column1 from '@/data/tables/row4Column1';
+} from "@nextui-org/react";
+import React, { useState } from "react";
+import row4Column1 from "@/data/tables/row4Column1";
 
 const Page = () => {
   const {
@@ -45,20 +45,20 @@ const Page = () => {
 
   const viewOptions = [
     {
-      key: '10',
-      label: '10개씩 보기',
+      key: "10",
+      label: "10개씩 보기",
     },
     {
-      key: '20',
-      label: '20개씩 보기',
+      key: "20",
+      label: "20개씩 보기",
     },
     {
-      key: '50',
-      label: '50개씩 보기',
+      key: "50",
+      label: "50개씩 보기",
     },
     {
-      key: '100',
-      label: '100개씩 보기',
+      key: "100",
+      label: "100개씩 보기",
     },
   ];
 
@@ -82,16 +82,16 @@ const Page = () => {
     setCurrentData(row4Column1.slice(start, end));
     return row4Column1.slice(start, end);
   }, [page, row4Column1, viewValue, rowsPerPage]);
-  const labelStyle = ' text-base text-mainBlack min-w-[98px]';
+  const labelStyle = " text-base text-mainBlack min-w-[98px]";
   const dropDownOptions1 = [
-    { key: 'option1', label: '차단 중' },
-    { key: 'option2', label: '차단 중' },
-    { key: 'option3', label: '차단 중' },
+    { key: "option1", label: "차단 중" },
+    { key: "option2", label: "차단 중" },
+    { key: "option3", label: "차단 중" },
   ];
   const dropDownOptions2 = [
-    { key: 'option1', label: '자체' },
-    { key: 'option2', label: '자체' },
-    { key: 'option3', label: '자체' },
+    { key: "option1", label: "자체" },
+    { key: "option2", label: "자체" },
+    { key: "option3", label: "자체" },
   ];
   // Selection Logic
   const [clickedRowIds, setClickedRowIds] = useState<number[]>([]);
@@ -101,121 +101,122 @@ const Page = () => {
 
   return (
     <section>
-      <CommonHeader title='회원 관리' />
-      <header className='w-full bg-white py-7 px-8 rounded-[20px] '>
-        <div className='w-full flex items-center gap-6'>
-          <div className='w-full'>
-            <div className='flex items-center gap-6 justify-between w-full'>
-              <div className='w-1/2'>
+      <CommonHeader title="회원 관리" />
+      <header className="w-full bg-white py-7 px-8 rounded-[20px] ">
+        <div className="w-full flex items-center gap-6">
+          <div className="w-full">
+            <div className="flex items-center gap-6 justify-between w-full">
+              <div className="w-1/2">
                 <InputWithLabel
-                  label='아이디'
+                  label="아이디"
                   labelStyles={`${labelStyle}`}
-                  inputStyles='w-full'
+                  inputStyles="w-full"
                 />
               </div>
-              <div className='w-1/2'>
+              <div className="w-1/2">
                 <InputWithLabel
-                  label='휴대폰번호'
+                  label="휴대폰번호"
                   labelStyles={`${labelStyle}`}
-                  inputStyles='w-full'
-                  placeholder='01000000000'
+                  inputStyles="w-full"
+                  placeholder="01000000000"
                 />
               </div>
             </div>
-            <div className='flex items-center gap-6 justify-between w-full mt-6'>
-              <div className='flex-1'>
+            <div className="flex items-center gap-6 justify-between w-full mt-6">
+              <div className="flex-1">
                 <InputWithLabel
-                  label='이름'
+                  label="이름"
                   labelStyles={`${labelStyle}`}
-                  inputStyles='w-full'
+                  inputStyles="w-full"
                 />
               </div>
-              <div className=' flex flex-1 items-center gap-3 '>
-                <div className='flex-1'>
+              <div className=" flex flex-1 items-center gap-3 ">
+                <div className="flex-1">
                   <InputWithLabel
-                    type='date'
-                    label='등록일'
-                    labelStyles='text-base text-mainBlack min-w-[98px]'
+                    type="date"
+                    label="등록일"
+                    labelStyles="text-base text-mainBlack min-w-[98px]"
                   />
                 </div>
-                <p className='text-mainBlack '>~</p>
-                <div className='flex-1'>
-                  <InputNoLabel type='date' />
+                <p className="text-mainBlack ">~</p>
+                <div className="flex-1">
+                  <InputNoLabel type="date" />
                 </div>
               </div>
             </div>
           </div>
 
           <div>
-            <Button className='bg-mainBlack py-2 px-14 text-white rounded-md'>
+            <Button className="bg-mainBlack py-2 px-14 text-white rounded-md">
               검색
             </Button>
           </div>
         </div>
 
-        <div className='w-[87%] flex items-center gap-6  mt-6 '>
-          <div className='w-1/2'>
+        <div className="w-[87%] flex items-center gap-6  mt-6 ">
+          <div className="w-1/2">
             <DropDownWithLabel
-              title='차단 여부'
+              title="차단 여부"
               options={dropDownOptions1}
-              defaultSelectedKeys='option1'
+              defaultSelectedKeys="option1"
               titleStyles={labelStyle}
             />
           </div>
-          <div className='w-1/2'>
+          <div className="w-1/2">
             <DropDownWithLabel
-              title='로그인 방식'
+              title="로그인 방식"
               options={dropDownOptions2}
-              defaultSelectedKeys='option1'
+              defaultSelectedKeys="option1"
               titleStyles={labelStyle}
             />
           </div>
         </div>
       </header>
 
-      <div className='bg-white py-5 px-10 rounded-[20px] mt-9'>
-        <header className='flex mt-5 items-center justify-between'>
-          <p className='font-bold text-mainBlack'>총 00건</p>
-          <div className='flex items-center gap-3'>
+      <div className="bg-white py-5 px-10 rounded-[20px] mt-9">
+        <header className="flex mt-5 items-center justify-between">
+          <p className="font-bold text-mainBlack">총 00건</p>
+          <div className="flex items-center gap-3">
             <HeaderDropDown
               options={viewOptions}
               defaultSelectedKey={viewOptionsDefault}
               value={viewValue}
               setNewValue={setViewValue}
-              styles='w-[100px] '
-              mainStyles='bg-transparent border border-grayBorder rounded-[5px]'
+              styles="w-[100px] "
+              mainStyles="bg-transparent border border-grayBorder rounded-[5px]"
             />
             <Button
-              className='py-3 px-5 rounded-md bg-grayLight text-white'
+              className="py-3 px-5 rounded-md bg-grayLight text-white"
               onClick={onDeleteBtn}
             >
               삭제
             </Button>
             <Button
-              className='py-3 px-10 rounded-md bg-mainBlack text-white'
+              className="py-3 px-10 rounded-md bg-mainBlack text-white"
               onClick={onblockBtn}
             >
               회원 차단
             </Button>
           </div>
         </header>
-        <article className='mt-5 '>
+        <article className="mt-5 ">
           <Table
-            aria-label='Data Table'
-            shadow='none'
+            aria-label="Data Table"
+            shadow="none"
             classNames={{
               th: [
-                'font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px]  text-center',
+                "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px]  text-center !rounded-none",
               ],
-              td: ['  text-center font-normal text-base text-[#363941] '],
+              td: ["  text-center font-normal text-base text-[#363941] "],
+              wrapper: ["p-0 !rounded-none overflow-hidden"],
             }}
             bottomContent={
-              <div className='flex w-full justify-center  mt-8'>
+              <div className="flex w-full justify-center  mt-8">
                 <Pagination
                   isCompact
                   showControls
                   showShadow
-                  color='secondary'
+                  color="secondary"
                   page={page}
                   total={pages}
                   onChange={(page) => setPage(page)}
@@ -224,7 +225,7 @@ const Page = () => {
             }
           >
             <TableHeader>
-              <TableColumn className='flex justify-center items-center'>
+              <TableColumn className="flex justify-center items-center">
                 <Checkbox
                   onClick={() => {
                     if (allListCheckedPageNumbers.includes(page)) {
@@ -266,7 +267,7 @@ const Page = () => {
             </TableHeader>
             <TableBody>
               {items.map((row) => (
-                <TableRow key={row.number} className='border-b-1'>
+                <TableRow key={row.number} className="border-b-1">
                   <TableCell>
                     <Checkbox
                       className={`text-center size-[14px] rounded-[2px]`}
@@ -288,7 +289,7 @@ const Page = () => {
                   <TableCell>{row.phoneNumber}</TableCell>
                   <TableCell>{row.login}</TableCell>
                   <TableCell>{row.joinDate}</TableCell>
-                  <TableCell className='text-mainBlue underline underline-offset-1'>
+                  <TableCell className="text-mainBlue underline underline-offset-1">
                     <button onClick={onUnblockBtn}>{row.unblock}</button>
                   </TableCell>
                 </TableRow>
@@ -300,29 +301,29 @@ const Page = () => {
 
       <Modal
         isOpen={isDeleteBtn}
-        placement='center'
+        placement="center"
         onOpenChange={onDeleteBtnChange}
         hideCloseButton
         classNames={{
-          base: ['flex justify-center items-center'],
-          body: ['p-4 flex justify-center items-center'],
+          base: ["flex justify-center items-center"],
+          body: ["p-4 flex justify-center items-center"],
         }}
       >
         <ModalContent>
           {(onClose) => (
             <>
               <ModalBody>
-                <h3 className='mt-3 text-black font-bold text-3xl text-center'>
+                <h3 className="mt-3 text-black font-bold text-3xl text-center">
                   회원 삭제
                 </h3>
 
-                <p className='font-normal text-lg text-[#9D9D9D]'>
+                <p className="font-normal text-lg text-[#9D9D9D]">
                   삭제하면 되돌릴 수 없어요
                 </p>
 
-                <div className='mt-4 flex justify-center items-center gap-3'>
+                <div className="mt-4 flex justify-center items-center gap-3">
                   <Button
-                    className='  py-6 px-[30px] rounded-md bg-[#9D9D9D]  text-base text-white'
+                    className="  py-6 px-[30px] rounded-md bg-[#9D9D9D]  text-base text-white"
                     onClick={() => {
                       onDeleteBtnChange();
                     }}
@@ -330,7 +331,7 @@ const Page = () => {
                     이전
                   </Button>
                   <Button
-                    className=' py-6 px-[30px]  rounded-md bg-[#F05858]  text-base text-white'
+                    className=" py-6 px-[30px]  rounded-md bg-[#F05858]  text-base text-white"
                     onClick={() => {
                       onDeleteBtnChange();
                     }}
@@ -346,25 +347,25 @@ const Page = () => {
       </Modal>
       <Modal
         isOpen={isUnblockBtn}
-        placement='center'
+        placement="center"
         onOpenChange={onUnblockBtnChange}
         hideCloseButton
         classNames={{
-          base: ['flex justify-center items-center'],
-          body: ['p-4 flex justify-center items-center'],
+          base: ["flex justify-center items-center"],
+          body: ["p-4 flex justify-center items-center"],
         }}
       >
-        <ModalContent className='w-[400px] pt-3 rounded-md bg-white shadow-lg'>
+        <ModalContent className="w-[400px] pt-3 rounded-md bg-white shadow-lg">
           {(onClose) => (
             <>
               <ModalBody>
-                <h3 className='mt-3 text-secondaryBlack font-bold text-xl text-center'>
+                <h3 className="mt-3 text-secondaryBlack font-bold text-xl text-center">
                   차단을 해제하시겠습니까?
                 </h3>
 
-                <div className='mt-7 flex justify-center items-center gap-3'>
+                <div className="mt-7 flex justify-center items-center gap-3">
                   <Button
-                    className='  py-3 px-5 rounded-md bg-whiteGray font-bold text-base text-[#868F9A]'
+                    className="  py-3 px-5 rounded-md bg-whiteGray font-bold text-base text-[#868F9A]"
                     onClick={() => {
                       onUnblockBtnChange();
                     }}
@@ -372,7 +373,7 @@ const Page = () => {
                     취소
                   </Button>
                   <Button
-                    className=' py-3 px-8 rounded-md bg-whiteGray font-bold text-base text-[#ED3D2E]'
+                    className=" py-3 px-8 rounded-md bg-whiteGray font-bold text-base text-[#ED3D2E]"
                     onClick={() => {
                       onUnblockBtnChange();
                     }}
@@ -388,50 +389,50 @@ const Page = () => {
       </Modal>
       <Modal
         isOpen={isblockBtn}
-        placement='center'
+        placement="center"
         onOpenChange={onblockBtnChange}
         hideCloseButton
         classNames={{
-          base: ['flex justify-center items-center'],
-          body: ['p-6 flex justify-center items-center'],
+          base: ["flex justify-center items-center"],
+          body: ["p-6 flex justify-center items-center"],
         }}
       >
         <ModalContent>
           {(onClose) => (
             <>
               <ModalBody>
-                <h3 className='mt-3 text-secondaryBlack font-bold text-xl text-center'>
+                <h3 className="mt-3 text-secondaryBlack font-bold text-xl text-center">
                   회원 제재
                 </h3>
-                <div className='mt-8'>
-                  <div className=' flex items-center justify-center gap-10 '>
-                    <p className='font-bold text-sm text-secondWhiteGray'>
+                <div className="mt-8">
+                  <div className=" flex items-center justify-center gap-10 ">
+                    <p className="font-bold text-sm text-secondWhiteGray">
                       제재기간
                     </p>
-                    <div className='flex items-center'>
-                      <Checkbox radius='full' size='sm'></Checkbox>
-                      <p className='text-sm text-secondWhiteGray'>7일</p>
+                    <div className="flex items-center">
+                      <Checkbox radius="full" size="sm"></Checkbox>
+                      <p className="text-sm text-secondWhiteGray">7일</p>
                     </div>
-                    <div className='flex items-center gap-1'>
-                      <Checkbox radius='full' size='sm'></Checkbox>
-                      <p className='text-sm text-secondWhiteGray'>30일</p>
+                    <div className="flex items-center gap-1">
+                      <Checkbox radius="full" size="sm"></Checkbox>
+                      <p className="text-sm text-secondWhiteGray">30일</p>
                     </div>
-                    <div className='flex items-center gap-1'>
-                      <Checkbox radius='full' size='sm'></Checkbox>
-                      <p className='text-sm text-secondWhiteGray'>영구</p>
+                    <div className="flex items-center gap-1">
+                      <Checkbox radius="full" size="sm"></Checkbox>
+                      <p className="text-sm text-secondWhiteGray">영구</p>
                     </div>
                   </div>
-                  <div className='mt-4 w-full'>
+                  <div className="mt-4 w-full">
                     <InputWithLabel
-                      label='제재사유'
-                      labelStyles='font-bold text-sm text-secondWhiteGray min-w-[88px]'
+                      label="제재사유"
+                      labelStyles="font-bold text-sm text-secondWhiteGray min-w-[88px]"
                     />
                   </div>
                 </div>
 
-                <div className='mt-7 flex justify-center items-center gap-3'>
+                <div className="mt-7 flex justify-center items-center gap-3">
                   <Button
-                    className='  py-3 px-5 rounded-md bg-whiteGray font-bold text-base text-[#868F9A]'
+                    className="  py-3 px-5 rounded-md bg-whiteGray font-bold text-base text-[#868F9A]"
                     onClick={() => {
                       onblockBtnChange();
                     }}
@@ -439,7 +440,7 @@ const Page = () => {
                     <p>취소</p>
                   </Button>
                   <Button
-                    className=' py-3 px-8 rounded-md bg-whiteGray text-[#ED3D2E] font-bold text-base'
+                    className=" py-3 px-8 rounded-md bg-whiteGray text-[#ED3D2E] font-bold text-base"
                     onClick={() => {
                       onblockBtnChange();
                     }}

@@ -108,9 +108,10 @@ const Page = () => {
           shadow="none"
           classNames={{
             th: [
-              "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px]  text-center",
+              "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px]  text-center !rounded-none",
             ],
             td: ["  text-center font-normal text-base text-[#363941] "],
+            wrapper: ["p-0 !rounded-none overflow-hidden"],
           }}
         >
           <TableHeader>

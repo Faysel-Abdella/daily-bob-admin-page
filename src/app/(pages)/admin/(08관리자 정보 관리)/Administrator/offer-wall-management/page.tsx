@@ -85,51 +85,51 @@ const Page = () => {
   >([]);
   return (
     <section>
-      <CommonHeader title='오퍼월 관리 ' />
-      <header className='bg-white py-7 px-10 rounded-[20px] '>
-        <div className='flex gap-12'>
-          <div className='flex flex-1 flex-col gap-6'>
-            <div className='flex items-center gap-7 w-full'>
-              <p className='min-w-[80px] font-normal text-base'>광고제목</p>
-              <div className='flex items-center gap-7 w-full'>
-                <div className='w-full'>
-                  <InputNoLabel placeholder='상품명' />
+      <CommonHeader title="오퍼월 관리 " />
+      <header className="bg-white py-7 px-10 rounded-[20px] ">
+        <div className="flex gap-12">
+          <div className="flex flex-1 flex-col gap-6">
+            <div className="flex items-center gap-7 w-full">
+              <p className="min-w-[80px] font-normal text-base">광고제목</p>
+              <div className="flex items-center gap-7 w-full">
+                <div className="w-full">
+                  <InputNoLabel placeholder="상품명" />
                 </div>
               </div>
             </div>
-            <div className='flex  flex-1 gap-6'>
-              <div className='w-full'>
+            <div className="flex  flex-1 gap-6">
+              <div className="w-full">
                 <DropDownWithLabel
                   options={dropDownOptions1}
                   defaultSelectedKeys={defaultDropDown1}
-                  title='그룹'
+                  title="그룹"
                   titleStyles={labelStyle}
                 />
               </div>
-              <div className='w-full'>
+              <div className="w-full">
                 <DropDownWithLabel
                   options={dropDownOptions2}
                   defaultSelectedKeys={defaultDropDown2}
-                  title='하하위 그룹'
+                  title="하하위 그룹"
                   titleStyles={labelStyle}
                 />
               </div>
             </div>
           </div>
-          <Button className='py-3 px-5 bg-mainBlack text-white rounded-md'>
+          <Button className="py-3 px-5 bg-mainBlack text-white rounded-md">
             검색
           </Button>
         </div>
       </header>
-      <header className=' bg-white py-10 px-10 rounded-[20px] mt-5'>
-        <div className='flex items-center justify-between'>
-          <p className='font-bold text-mainBlack'>총 00건</p>
-          <div className='flex items-center gap-3'>
-            <div className='w-[150px]'>
+      <header className=" bg-white py-10 px-10 rounded-[20px] mt-5">
+        <div className="flex items-center justify-between">
+          <p className="font-bold text-mainBlack">총 00건</p>
+          <div className="flex items-center gap-3">
+            <div className="w-[150px]">
               <DropDown
                 options={dropDownOptions3}
                 defaultSelectedKeys={defaultDropDown3}
-                selectStyles='w-full'
+                selectStyles="w-full"
               />
             </div>
             <div>
@@ -138,37 +138,38 @@ const Page = () => {
                 defaultSelectedKey={viewOptionsDefault}
                 value={viewValue}
                 setNewValue={setViewValue}
-                styles='w-[100px] '
-                mainStyles='bg-transparent border border-grayBorder rounded-[5px]'
+                styles="w-[100px] "
+                mainStyles="bg-transparent border border-grayBorder rounded-[5px]"
               />
             </div>
-            <Button className='py-3 px-5 rounded-md bg-mainBlack text-white'>
+            <Button className="py-3 px-5 rounded-md bg-mainBlack text-white">
               삭제
             </Button>
-            <Button className='py-3 px-5 rounded-md bg-grayLight text-white'>
+            <Button className="py-3 px-5 rounded-md bg-grayLight text-white">
               등록
             </Button>
           </div>
         </div>
-        <article className='mt-5'>
+        <article className="mt-5">
           <Table
-            aria-label='Data Table'
-            shadow='none'
+            aria-label="Data Table"
+            shadow="none"
             classNames={{
               th: [
-                'font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px] text-center truncate',
+                "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px] text-center truncate !rounded-none",
               ],
               td: [
-                ' text-center font-normal text-base text-[#363941] truncate',
+                " text-center font-normal text-base text-[#363941] truncate",
               ],
+              wrapper: ["p-0 !rounded-none overflow-hidden"],
             }}
             bottomContent={
-              <div className='flex w-full justify-center mt-8'>
+              <div className="flex w-full justify-center mt-8">
                 <Pagination
                   isCompact
                   showControls
                   showShadow
-                  color='secondary'
+                  color="secondary"
                   page={page}
                   total={pages}
                   onChange={(page) => setPage(page)}
@@ -177,7 +178,7 @@ const Page = () => {
             }
           >
             <TableHeader>
-              <TableColumn className='flex justify-center items-center'>
+              <TableColumn className="flex justify-center items-center">
                 <Checkbox
                   onClick={() => {
                     if (allListCheckedPageNumbers.includes(page)) {
@@ -205,7 +206,7 @@ const Page = () => {
                       ]);
                     }
                   }}
-                  className='size-[14px] rounded-[2px] bg-transparent'
+                  className="size-[14px] rounded-[2px] bg-transparent"
                   isSelected={allListCheckedPageNumbers.includes(page)}
                 ></Checkbox>
               </TableColumn>
@@ -218,10 +219,10 @@ const Page = () => {
             </TableHeader>
             <TableBody>
               {items.map((row) => (
-                <TableRow key={row.number} className='border-b-1'>
+                <TableRow key={row.number} className="border-b-1">
                   <TableCell>
                     <Checkbox
-                      className='text-center size-[14px] rounded-[2px]'
+                      className="text-center size-[14px] rounded-[2px]"
                       onClick={() => {
                         if (clickedRowIds.includes(row.number)) {
                           setClickedRowIds(
@@ -234,21 +235,21 @@ const Page = () => {
                       isSelected={clickedRowIds.includes(row.number)}
                     ></Checkbox>
                   </TableCell>
-                  <TableCell className='truncate max-w-[100px] overflow-hidden  whitespace-nowrap'>
+                  <TableCell className="truncate max-w-[100px] overflow-hidden  whitespace-nowrap">
                     {row.number}
                   </TableCell>
-                  <TableCell className='max-w-[100px]'>
-                    <div className='w-[49px] h-[49px] bg-[#FFE8E8]'></div>
+                  <TableCell className="max-w-[100px]">
+                    <div className="w-[49px] h-[49px] bg-[#FFE8E8]"></div>
                   </TableCell>
-                  <TableCell className='truncate max-w-[150px] overflow-hidden text-ellipsis whitespace-nowrap'>
+                  <TableCell className="truncate max-w-[150px] overflow-hidden text-ellipsis whitespace-nowrap">
                     {row.advertisement}
                   </TableCell>
                   <TableCell>{row.subGroup}</TableCell>
                   <TableCell>{row.point}</TableCell>
-                  <TableCell className='truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap'>
+                  <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
                     <Link
-                      className='text-[#4A3AFF] underline underline-offset-1'
-                      href='/admin/Administrator/offer-wall-management/1'
+                      className="text-[#4A3AFF] underline underline-offset-1"
+                      href="/admin/Administrator/offer-wall-management/1"
                     >
                       {row.viewDetails}
                     </Link>

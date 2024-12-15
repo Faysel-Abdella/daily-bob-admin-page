@@ -26,7 +26,7 @@ const Page = () => {
     { key: "option3", label: "사용" },
   ];
   const defaultDropDown1 = dropDownOptions1[0].key;
-  const dropDownOptions2= [
+  const dropDownOptions2 = [
     { key: "option1", label: "최신순" },
     { key: "option2", label: "최신순" },
     { key: "option3", label: "최신순" },
@@ -37,7 +37,7 @@ const Page = () => {
     { key: "option2", label: "사용" },
     { key: "option3", label: "사용" },
   ];
-  const defaultDropDown3= dropDownOptions3[0].key;
+  const defaultDropDown3 = dropDownOptions3[0].key;
   const dropDownOptions4 = [
     { key: "option1", label: "1" },
     { key: "option2", label: "1" },
@@ -164,11 +164,12 @@ const Page = () => {
             shadow="none"
             classNames={{
               th: [
-                "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px] text-center truncate",
+                "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px] text-center truncate !rounded-none",
               ],
               td: [
                 "px-6 text-center font-normal text-base text-[#363941] truncate",
               ],
+              wrapper: ["p-0 !rounded-none overflow-hidden"],
             }}
             bottomContent={
               <div className="flex w-full justify-center mt-8">

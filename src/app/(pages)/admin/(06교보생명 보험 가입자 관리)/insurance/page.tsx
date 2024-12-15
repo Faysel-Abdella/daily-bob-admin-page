@@ -1,7 +1,7 @@
-'use client';
-import CommonHeader from '@/components/CommonHeader';
-import InputNoLabel from '@/components/InputNoLable';
-import row8Column1 from '@/data/tables/row8Column1';
+"use client";
+import CommonHeader from "@/components/CommonHeader";
+import InputNoLabel from "@/components/InputNoLable";
+import row8Column1 from "@/data/tables/row8Column1";
 import {
   Button,
   Pagination,
@@ -11,15 +11,15 @@ import {
   TableColumn,
   TableHeader,
   TableRow,
-} from '@nextui-org/react';
-import React, { useState } from 'react';
+} from "@nextui-org/react";
+import React, { useState } from "react";
 
 const Page = () => {
   const viewOptions = [
-    { key: '10', label: '10개씩 보기' },
-    { key: '20', label: '20개씩 보기' },
-    { key: '50', label: '50개씩 보기' },
-    { key: '100', label: '100개씩 보기' },
+    { key: "10", label: "10개씩 보기" },
+    { key: "20", label: "20개씩 보기" },
+    { key: "50", label: "50개씩 보기" },
+    { key: "100", label: "100개씩 보기" },
   ];
 
   const viewOptionsDefault = viewOptions[0].key;
@@ -37,47 +37,48 @@ const Page = () => {
 
   return (
     <section>
-      <CommonHeader title='상품 관리 ' />
-      <header className='flex items-center gap-16 bg-white py-10 px-10 rounded-[20px] '>
-        <div className='flex items-center gap-7 w-full'>
-          <p className='text-base font-normal min-w-[72px]'>상품명</p>
-          <div className='w-full'>
-            <InputNoLabel placeholder='상품명' />
+      <CommonHeader title="상품 관리 " />
+      <header className="flex items-center gap-16 bg-white py-10 px-10 rounded-[20px] ">
+        <div className="flex items-center gap-7 w-full">
+          <p className="text-base font-normal min-w-[72px]">상품명</p>
+          <div className="w-full">
+            <InputNoLabel placeholder="상품명" />
           </div>
         </div>
-        <div className='flex items-center gap-7 w-full'>
-          <p className='text-base font-normal  min-w-[72px]'>이름</p>
-          <div className='w-full'>
+        <div className="flex items-center gap-7 w-full">
+          <p className="text-base font-normal  min-w-[72px]">이름</p>
+          <div className="w-full">
             <InputNoLabel />
           </div>
         </div>
-        <Button className='bg-mainBlack text-white px-5 py-3 rounded-md'>
+        <Button className="bg-mainBlack text-white px-5 py-3 rounded-md">
           검색
         </Button>
       </header>
-      <header className=' bg-white py-10 px-10 rounded-[20px] mt-10'>
-        <div className='flex items-center justify-between'>
-          <p className='font-bold text-base'>총 00건</p>
-          <Button className='bg-mainBlack text-white px-5 py-4 rounded-md'>
+      <header className=" bg-white py-10 px-10 rounded-[20px] mt-10">
+        <div className="flex items-center justify-between">
+          <p className="font-bold text-base">총 00건</p>
+          <Button className="bg-mainBlack text-white px-5 py-4 rounded-md">
             엑셀 다운로드
           </Button>
         </div>
       </header>
-      <article className='mt-6'>
+      <article className="mt-6">
         <Table
-          aria-label='Data Table'
-          shadow='none'
+          aria-label="Data Table"
+          shadow="none"
           classNames={{
-            th: 'font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px] text-center',
-            td: ' text-center font-normal text-base text-[#363941]',
+            th: "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px] text-center !rounded-none",
+            td: " text-center font-normal text-base text-[#363941]",
+            wrapper: ["p-0 !rounded-none overflow-hidden"],
           }}
           bottomContent={
-            <div className='flex w-full justify-center mt-8'>
+            <div className="flex w-full justify-center mt-8">
               <Pagination
                 isCompact
                 showControls
                 showShadow
-                color='secondary'
+                color="secondary"
                 page={page}
                 total={pages}
                 onChange={setPage}
@@ -86,40 +87,40 @@ const Page = () => {
           }
         >
           <TableHeader>
-            <TableColumn className='w-[10%]'>SIMSMCID</TableColumn>
-            <TableColumn className='w-[10%]'>성명</TableColumn>
-            <TableColumn className='w-[10%]'>생년월일</TableColumn>
-            <TableColumn className='w-[10%]'>성별</TableColumn>
-            <TableColumn className='w-[25%]'>상품명</TableColumn>
-            <TableColumn className='w-[10%]'>결제완료일시</TableColumn>
-            <TableColumn className='w-[10%]'>결제완료일시</TableColumn>
-            <TableColumn className='w-[10%]'>유입처</TableColumn>
+            <TableColumn className="w-[10%]">SIMSMCID</TableColumn>
+            <TableColumn className="w-[10%]">성명</TableColumn>
+            <TableColumn className="w-[10%]">생년월일</TableColumn>
+            <TableColumn className="w-[10%]">성별</TableColumn>
+            <TableColumn className="w-[25%]">상품명</TableColumn>
+            <TableColumn className="w-[10%]">결제완료일시</TableColumn>
+            <TableColumn className="w-[10%]">결제완료일시</TableColumn>
+            <TableColumn className="w-[10%]">유입처</TableColumn>
           </TableHeader>
           <TableBody>
             {items.map((row) => (
-              <TableRow key={row.SIMSMCID} className='border-b-1'>
-                <TableCell className='truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap'>
+              <TableRow key={row.SIMSMCID} className="border-b-1">
+                <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
                   {row.SIMSMCID}
                 </TableCell>
-                <TableCell className='truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap'>
+                <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
                   {row.name}
                 </TableCell>
-                <TableCell className='truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap'>
+                <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
                   {row.birthDate}
                 </TableCell>
-                <TableCell className='truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap'>
+                <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
                   {row.gender}
                 </TableCell>
-                <TableCell className='truncate max-w-[150px] overflow-hidden text-ellipsis whitespace-nowrap'>
+                <TableCell className="truncate max-w-[150px] overflow-hidden text-ellipsis whitespace-nowrap">
                   {row.productName}
                 </TableCell>
-                <TableCell className='truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap'>
+                <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
                   {row.insuranceDateAndTime}
                 </TableCell>
-                <TableCell className='truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap'>
+                <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
                   {row.paymentDateAndTime}
                 </TableCell>
-                <TableCell className='truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap'>
+                <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
                   {row.inflow}
                 </TableCell>
               </TableRow>
