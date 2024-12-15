@@ -113,16 +113,16 @@ const Page = () => {
                 title='아이디'
                 titleStyles={labelStyle}
               />
-              <div className=' flex items-center gap-3 '>
-                <div>
+              <div className=' flex flex-1 items-center gap-3 '>
+                <div className='flex-1'>
                   <InputWithLabel
                     type='date'
                     label='등록일'
-                    labelStyles={`${labelStyle}`}
+                    labelStyles='text-base text-mainBlack min-w-[98px]'
                   />
                 </div>
-                <p className='text-mainBlack'>~</p>
-                <div>
+                <p className='text-mainBlack '>~</p>
+                <div className='flex-1'>
                   <InputNoLabel type='date' />
                 </div>
               </div>

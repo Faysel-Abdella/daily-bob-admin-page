@@ -123,22 +123,25 @@ const Page = () => {
               </div>
             </div>
             <div className='flex items-center gap-6 justify-between w-full mt-6'>
-              <div className='w-1/2'>
+              <div className='flex-1'>
                 <InputWithLabel
                   label='이름'
                   labelStyles={`${labelStyle}`}
                   inputStyles='w-full'
                 />
               </div>
-              <div className=' flex  items-center gap-3 w-1/2 '>
-                <InputWithLabel
-                  type='date'
-                  label='등록일'
-                  labelStyles={`${labelStyle}`}
-                  inputStyles='w-full'
-                />
-                <p className='text-mainBlack'>~</p>
-                <InputNoLabel type='date' inputStyles='w-full' />
+              <div className=' flex flex-1 items-center gap-3 '>
+                <div className='flex-1'>
+                  <InputWithLabel
+                    type='date'
+                    label='등록일'
+                    labelStyles='text-base text-mainBlack min-w-[98px]'
+                  />
+                </div>
+                <p className='text-mainBlack '>~</p>
+                <div className='flex-1'>
+                  <InputNoLabel type='date' />
+                </div>
               </div>
             </div>
           </div>
@@ -150,7 +153,7 @@ const Page = () => {
           </div>
         </div>
 
-        <div className='w-[85%] flex items-center gap-6  mt-6 '>
+        <div className='w-[87%] flex items-center gap-6  mt-6 '>
           <div className='w-1/2'>
             <DropDownWithLabel
               title='차단 여부'

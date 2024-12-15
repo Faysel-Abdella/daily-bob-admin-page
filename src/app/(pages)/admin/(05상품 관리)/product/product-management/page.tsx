@@ -77,50 +77,56 @@ const Page = () => {
     <section>
       <CommonHeader title='상품 관리 ' />
       <header className='bg-white py-7 px-10 rounded-[20px] '>
-        <div className='flex items-center gap-7 w-full'>
-          <div className='flex items-center gap-7 w-full'>
-            <div className='w-full'>
-              <InputWithLabel
-                label='상품명'
-                placeholder='상품명'
-                labelStyles={labelStyle}
-              />
+        <div className='flex gap-12'>
+          {' '}
+          <div className='flex flex-col flex-1 gap-5'>
+            <div className='flex items-center gap-7 w-full'>
+              <div className='flex items-center gap-7 w-full'>
+                <div className='w-full'>
+                  <InputWithLabel
+                    label='상품명'
+                    placeholder='상품명'
+                    labelStyles={labelStyle}
+                  />
+                </div>
+              </div>
             </div>
-
+            {/* second row */}
+            <div className=' flex flex-1 gap-5 items-center justify-between'>
+              <div className='w-full'>
+                <DropDownWithLabel
+                  title='업종'
+                  options={dropDownOptions}
+                  defaultSelectedKeys={defaultDropDown}
+                  titleStyles={labelStyle}
+                  selectStyles='w-full'
+                />
+              </div>
+              <div className='w-full'>
+                <DropDownWithLabel
+                  title='그룹'
+                  options={dropDownOptions}
+                  defaultSelectedKeys={defaultDropDown}
+                  titleStyles={labelStyle}
+                  selectStyles='w-full'
+                />
+              </div>
+              <div className='w-full'>
+                <DropDownWithLabel
+                  title='하위 그룹'
+                  options={dropDownOptions}
+                  defaultSelectedKeys={defaultDropDown}
+                  titleStyles={labelStyle}
+                  selectStyles='w-full'
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            {' '}
             <Button className='py-3 px-5 bg-mainBlack text-white rounded-md'>
               검색
             </Button>
-          </div>
-        </div>
-        <div className='w-full flex items-center gap-7 mt-5'>
-          <div className='w-[90%] flex items-center justify-between'>
-            <div className='w-[30%]'>
-              <DropDownWithLabel
-                title='업종'
-                options={dropDownOptions}
-                defaultSelectedKeys={defaultDropDown}
-                titleStyles={labelStyle}
-                selectStyles='w-full'
-              />
-            </div>
-            <div className='w-[30%]'>
-              <DropDownWithLabel
-                title='그룹'
-                options={dropDownOptions}
-                defaultSelectedKeys={defaultDropDown}
-                titleStyles={labelStyle}
-                selectStyles='w-full'
-              />
-            </div>
-            <div className='w-[30%]'>
-              <DropDownWithLabel
-                title='하위 그룹'
-                options={dropDownOptions}
-                defaultSelectedKeys={defaultDropDown}
-                titleStyles={labelStyle}
-                selectStyles='w-full'
-              />
-            </div>
           </div>
         </div>
       </header>
